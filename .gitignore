@@ -17,3 +17,11 @@
 /yarn-error.log
 
 .byebug_history
+
+
+/config/database.yml
+.gitignore
+/config/application.yml  
+db.dump 
+node_modules 
+*.un~  
