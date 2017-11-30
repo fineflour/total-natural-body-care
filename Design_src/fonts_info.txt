@@ -1,0 +1,7 @@
+List of Fonts used in template 
+
+
+
+Baumans			http://www.google.com/fonts/specimen/Baumans
+Font Awesome		http://fortawesome.github.io/Font-Awesome
+Roboto			http://www.google.com/fonts/specimen/Roboto
