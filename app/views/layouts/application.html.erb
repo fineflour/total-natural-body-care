@@ -2,45 +2,54 @@
 <html>
 	<head>
 		<title>Total Natural Body Care</title>
+
 		<%= render partial: "/layouts/script" %>
 
 		<%= csrf_meta_tags %>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 	</head>
 
 	<body>
 		<div id="back-top"><i class="fa fa-arrow-up"></i></div>    
 		<div class="main">
 			<div class="div-content">  
-				<%= render partial: "/layouts/header" %>
-				<%= yield %>
-				<%= render partial: "/layouts/footer" %>
-		</div>
-	</div>
-			
-<script type="text/javascript">
+				<% if controller.controller_name == "articles" %> 
+					<%= render partial: "/layouts/article_header" %>
+				<% else %>
+					<%= render partial: "/layouts/main_header" %>
+        <% end %>
 
-	 $(document).ready(function(){
-		// Initialize the gallery
-		$('.magnifier2').touchTouch();
-	 });
+        <div class="container">
+          <%= yield %>
+        </div>
+        <%= render partial: "/layouts/footer" %>
+      </div>
+    </div>
 
-	 function myFocus(element){
-			 if (element.value == element.defaultValue){
-					 element.focus();
-					 element.value = '';
-			 }
-		}
-		function myBlur(element){
-			 if (element.value == ''){
-					 element.blur();
-					 element.value = element.defaultValue;
-			 }
-		}
+    <script type="text/javascript">
+
+$(document).ready(function(){
+  // Initialize the gallery
+  $('.magnifier2').touchTouch();
+});
+
+function myFocus(element){
+  if (element.value == element.defaultValue){
+    element.focus();
+    element.value = '';
+  }
+}
+function myBlur(element){
+  if (element.value == ''){
+    element.blur();
+    element.value = element.defaultValue;
+  }
+}
 
 
-</script>
+    </script>
 
-	</body>
+  </body>
 </html>
