@@ -1,0 +1,15 @@
+<!-- Required local params
+-->
+<!-- @param material [Material] an instance of Material to render the form for.
+-->
+<%= simple_form_for contact,  html: { class: "form-horizontal"},  input_html: { :class => "new-article" } do  |f| %>                               
+  <%= f.input :name, placeholder: "Full Name", label: false %>
+  <%= f.input :email, placeholder: "Email", label: false %>
+  <%= f.input :phone, placeholder: "Phone Number", label: false %>
+  <%= f.input :subject, placeholder: "Subject", label: false %>
+  <%= f.input :message, placeholder: "Message", label: false, :rows => 30 %>
+  <div class="button-padding txt_cntr">
+    <%= link_to "Back to index", articles_path, class: "btn btn-default" %>
+    <%= f.submit "Submit", class: "btn btn-info" %>
+  </div>
+<% end %>

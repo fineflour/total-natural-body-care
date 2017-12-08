@@ -593,8 +593,8 @@ blockquote{
 .box-4{
 	background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
 	margin-top: 4px;
-	padding-top: 31px;
-	padding-bottom: 65px;
+	padding-top: 20px;
+	padding-bottom: 26px;
 	text-align: center;
 	color: #fff;
 }
@@ -741,7 +741,7 @@ footer{
 }
 footer.v2{border-top: 1px solid #c9c9c9;}
 .footer_priv{
-	padding: 24px 0 34px;
+	padding: 20px 0 30px;
 }
 
 p.txt_priv{
@@ -912,26 +912,40 @@ p.txt_priv{
   text-transform: uppercase;
 }
 
-input:not([type=submit]), input:not([type=checkbox]), textarea {
+input[type=text], input[type=email], input[type=tel], textarea {
   -webkit-appearance: textfield;
   background-color: white;
   -webkit-rtl-ordering: logical;
   user-select: text;
   cursor: auto;
-  padding: 1px;
+  padding: 5px;
   margin: 4px;
   margin-left: 20px;
   border-width: 1px;
-  border-style: none;
-  border-color: #333;
+  border-style: solid;
+  border-color: #dfdfdf;
   size: 30;
   width: 600px;
 }
 
 textarea#article_body {
-  
-  width: 600px;
-  height: 600px;
+	width: 600px;
+	height: 600px;
 }
+
+h3.sm {
+	margin-top: 0px;
+}
+
+input#contact_name, input#contact_email, input#contact_subject, input#contact_phone, input#contact_message {
+	width: 300px	
+}
+
+input#contact_message{
+	height: 260px;
+}
+
+input#contact_name {
+	margin-top: 38px;
 
 
