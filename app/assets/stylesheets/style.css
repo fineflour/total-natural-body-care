@@ -1,9 +1,9 @@
 /*css*/
-@import "../css/grid.css";
-@import "../css/superfish.css";
-@import "../css/touchTouch.css";
-@import "../css/form.css";
-@import "../css/stuck.css";
+@import "grid.css";
+@import "superfish.css";
+@import "touchTouch.css";
+@import "form.css";
+@import "stuck.css";
 
 @import url(//fonts.googleapis.com/css?family=Roboto:400,400italic,300,700);
 @import url(//fonts.googleapis.com/css?family=Baumans);
