@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Total Natural Body Care</title>
+  <head>
+    <title>Total Natural Body Care</title>
 
-		<%= render partial: "/layouts/script" %>
+    <%= render partial: "/layouts/script" %>
 
-		<%= csrf_meta_tags %>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-	</head>
+  </head>
 
-	<body>
-		<div id="back-top"><i class="fa fa-arrow-up"></i></div>    
-		<div class="main">
-			<div class="div-content">  
-				<% if controller.controller_name == "articles" %> 
-					<%= render partial: "/layouts/article_header" %>
-				<% else %>
-					<%= render partial: "/layouts/main_header" %>
-        <% end %>
-
-          <%= yield %>
+  <body>
+    <div id="back-top"><i class="fa fa-arrow-up"></i></div>    
+    <div class="main">
+      <div class="div-content">  
+        <%= render partial: "/layouts/header" %>
+        <%= yield %>
         <%= render partial: "/layouts/footer" %>
       </div>
     </div>
