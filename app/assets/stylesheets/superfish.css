@@ -100,7 +100,7 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 	height: 5px;
 	left: 47%;
 	top: -5px;
-	background: url(assets/submenu1_corner.png) no-repeat 0 0;
+	background: url(/assets/submenu1_corner.png) no-repeat 0 0;
 }*/
 
 .sf-menu>li>ul>li {
@@ -150,13 +150,13 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 	height: 9px;
 	left: -5px;
 	top: 40px;
-	background: url(assets/submenu2_corner.png) no-repeat 0 0;
+	background: url(/assets/submenu2_corner.png) no-repeat 0 0;
 }
 */
 
 
 .sf-menu>li>ul>li>a>span {
-	background: url(assets/subindicator.png) 0 0 no-repeat;
+	background: url(/assets/subindicator.png) 0 0 no-repeat;
 	display: block;
 	position: absolute;
 	width: 4px;

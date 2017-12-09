@@ -1,7 +1,6 @@
 <p class="title">Articles</p>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <%= link_to "Add new article", new_article_path, class: "btn btn-info" %>
   </div>
   <!-- -div class="panel-body"
   -->
@@ -19,19 +18,19 @@
         </tr>
       </thead>
       <tbody>
-        <% @articles.each do |a| %>
+        <% @contacts.each do |a| %>
           <tr id="arricle-<%= m.id %>">
             <td>
               <%= link_to a.title, material_path(a) %>
             </td>
             <td>
-              <%= a.source %>
+              <%= a.name%>
             </td>
             <td>
-              <%= a.active %>
+              <%= a.email%>
             </td>
             <td>
-              <%= a.user %>
+              <%= a.phone%>
             </td>
             <td>
               <%= a.updated_at.strftime("%m/%d/%Y") %>

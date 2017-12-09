@@ -1,7 +1,8 @@
 class ContactsController < ApplicationController
 
   def index
-    @contacts =  contact_for_index  
+    @contact = 
+
   end
 
 	def new
@@ -9,8 +10,8 @@ class ContactsController < ApplicationController
 	end
 
   def create
-    @contact= Contact.new(contact_params)
-    if @contact.save
+    @contact= Contact.new(contact_create_params)
+    if @article.save
       flash[:notice] = "Your request has been processed successfully!"
       redirect_to articles_path
     else
@@ -20,13 +21,14 @@ class ContactsController < ApplicationController
   end
 
   def show
-
-  end
+	end
 
 	def destroy
 	end
 
+
   private
+
   def contact_for_index
     Contact.order("created_at DESC").
       #includes(:products, :orderproducts, :orderproduct_transitions).
@@ -38,4 +40,5 @@ class ContactsController < ApplicationController
     params.require(:contact)
       .permit(:name, :email, :phone, :subject, :message)
   end
+
 end

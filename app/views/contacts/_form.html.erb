@@ -2,14 +2,30 @@
 -->
 <!-- @param material [Material] an instance of Material to render the form for.
 -->
-<%= simple_form_for contact,  html: { class: "form-horizontal"},  input_html: { :class => "new-article" } do  |f| %>                               
-  <%= f.input :name, placeholder: "Full Name", label: false %>
-  <%= f.input :email, placeholder: "Email", label: false %>
-  <%= f.input :phone, placeholder: "Phone Number", label: false %>
-  <%= f.input :subject, placeholder: "Subject", label: false %>
-  <%= f.input :message, placeholder: "Message", label: false, :rows => 30 %>
+<%= form_for contact,  html: { class: "form-horizontal"},  input_html: { :class => "new-article" } do  |f| %>                               
+  <div class="form-group">
+    <label for="Email1", class=lblContactName>*Full Name:</label>
+    <%= f.text_field :name, required: true, label: false%>
+  </div>
+  <div class="form-group">
+    <label for="Email1">*Email:</label>
+    <%= f.email_field :email, required: true, label: false%>
+  </div>
+  <div class="form-group">
+    <label for="Phone">*Phone: </label>
+    <%= f.phone_field :phone, required: true, label: false %>
+  </div>
+  <div class="form-group">
+    <label for="Subejct">*Subejct:</label>
+    <%= f.select :subject, Contact::SUBJECT, :prompt => 'Select Question' %>
+  </div>
+  <div class="form-group">
+    <label for="Message">*Message:</label>
+    <%= f.text_area :message, required: true, :rows => 30, label: false %>
+  </div>
   <div class="button-padding txt_cntr">
     <%= link_to "Back to index", articles_path, class: "btn btn-default" %>
-    <%= f.submit "Submit", class: "btn btn-info" %>
+    <%= f.submit "Submit", class: "btn btn-info", label: false %>
+  </div>
   </div>
 <% end %>

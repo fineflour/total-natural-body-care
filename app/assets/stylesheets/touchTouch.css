@@ -9,7 +9,7 @@
 	opacity:0;
 	z-index:100000;
 	/*background-color:#fff;*/
-	background: url("assets/bg_transparent.png");
+	background: url("/assets/touchtouch/bg_transparent.png");
 	/*background-color:rgba(0,0,0,0.8);*/
 	overflow:hidden;
 	display:none;
@@ -41,7 +41,7 @@
 }
 
 #gallerySlider .placeholder{
-	background: url("../images/touchtouch/preloader.gif") no-repeat center center;
+	background: url("/assets/touchtouch/preloader.gif") no-repeat center center;
 	height: 100%;
 	line-height: 1px;
 	text-align: center;

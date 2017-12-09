@@ -142,7 +142,8 @@ html, body { margin:0; padding:0; height:100%;}
 body {
 	min-width:300px;
 	background: #f8f8f8;
-	color:#9a9a9a;
+	/*color:#9a9a9a;*/
+	color:#757474;
 	font:300 14px/21px "Roboto", Arial, Helvetica, sans-serif ;
 }
 .fs_14{font-size: 14px;}
@@ -928,6 +929,8 @@ input[type=text], input[type=email], input[type=tel], textarea {
   width: 600px;
 }
 
+
+
 textarea#article_body {
 	width: 600px;
 	height: 600px;
@@ -941,12 +944,24 @@ input#contact_name, input#contact_email, input#contact_subject, input#contact_ph
 	width: 300px	
 }
 
-input#contact_message{
+select {
+  margin-left: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dfdfdf;
+  size: 30;
+  width: 310px;
+}
+
+
+#contact_message{
+  width: 300px;
 	height: 260px;
 }
 
-input#contact_name {
+.lblContactName{
 	margin-top: 38px;
 }
-
-
+span.error {
+  font: red;
+}
