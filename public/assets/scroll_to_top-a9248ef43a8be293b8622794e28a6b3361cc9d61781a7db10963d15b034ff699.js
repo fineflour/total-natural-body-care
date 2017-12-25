@@ -1,0 +1,1 @@
+$(document).ready(function(){$(window).scroll(function(){$(this).scrollTop()>20?$("#back-top").stop(!0).css({display:"block"}).animate({opacity:1},400):$("#back-top").stop(!0).animate({opacity:0},400,function(){$(this).css({display:"none"})})}),$("#back-top").click(function(){return $("body, html").stop(!0).animate({scrollTop:0},600),!1})});
