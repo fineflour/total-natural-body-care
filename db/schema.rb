@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171208034420) do
     t.text "body"
     t.boolean "active"
     t.string "source"
+    t.date "written_at"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

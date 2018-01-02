@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.text :body
       t.boolean :active
       t.string :source
+      t.date :written_at
       t.references :user, foreign_key: true
 
       t.timestamps
