@@ -1,10 +1,9 @@
 /*css*/
-@import "/assets/grid.css";
-@import "/assets/superfish.css";
-@import "/assets/touchTouch.css";
-@import "/assets/form.css";
-@import "/assets/stuck.css";
-@import "/assets/animation.css";
+@import "../css/grid.css";
+@import "../css/superfish.css";
+@import "../css/touchTouch.css";
+@import "../css/form.css";
+@import "../css/stuck.css";
 
 @import url(//fonts.googleapis.com/css?family=Roboto:400,400italic,300,700);
 @import url(//fonts.googleapis.com/css?family=Baumans);
@@ -58,7 +57,7 @@ a[href^="tel:"] {
 
 .txt_left{text-align: left;}
 .txt_right{text-align: right;}
-.txt_center{text-align: center;}
+.txt_cntr{text-align: center;}
 .txt_ital{font-style: italic;}
 .txt_line_through{text-decoration: line-through;}
 
@@ -143,7 +142,7 @@ html, body { margin:0; padding:0; height:100%;}
 body {
 	min-width:300px;
 	background: #f8f8f8;
-	color:#535353;
+	color:#9a9a9a;
 	font:300 14px/21px "Roboto", Arial, Helvetica, sans-serif ;
 }
 .fs_14{font-size: 14px;}
@@ -156,7 +155,7 @@ body {
 	margin-left: 620px;
 	width: 26px;
 	height: 26px;
-	background: url(/assets/up-arrow.png) 50% 50% no-repeat;
+	background: url(../images/up-arrow.png) 50% 50% no-repeat;
 	color: #c5c5c5;
 	text-align: center;
 	cursor: pointer;
@@ -170,7 +169,7 @@ body {
 #back-top i{line-height: 73px; font-size: 22px; display: none}
 #back-top:hover {
 	color: #3498db;
-	background: url(/assets/up-arrow.png) 50% 50% no-repeat #b5fa9c;
+	background: url(../images/up-arrow.png) 50% 50% no-repeat #b5fa9c;
 }
 .main{
 	padding:0 0 0 0;
@@ -240,14 +239,16 @@ h2.v3{margin-bottom: -11px;}
 h3 {
 	font:15px/24px 'Roboto', Arial, sans-serif;
 	color:#656464;
+	text-transform: uppercase;
 	margin-top: 38px;
 }
 
 
 h4 {
 	font:300 20px/25px 'Roboto', Arial, sans-serif;
-	color:#656464;
+	color:#f25f43;
 	margin-top: 37px;
+	text-transform: uppercase;
 }
 
 
@@ -358,7 +359,7 @@ h5{
 	margin-top: 13px;
 	text-transform: uppercase;
 	padding-left: 28px;
-	background: url(/assets/sign1.png) 0 0px no-repeat;
+	background: url(../images/sign1.png) 0 0px no-repeat;
 }
 
 .year_section{
@@ -465,7 +466,7 @@ a{
 	margin: -17px -2px 0 19px;
 	width: 63px;
 	height: 55px;
-	background: url(/assets/comment_icon_big.png) 0 0 no-repeat;
+	background: url(../images/comment_icon_big.png) 0 0 no-repeat;
 }
 .section_year{
 	float: left;
@@ -511,7 +512,7 @@ header{
 	position: relative;
 	z-index: 9;
 	padding: 0;
-	padding-top: 26px;
+	padding-top: 56px;
 	padding-bottom: 10px;
 }
 header.content_header{
@@ -542,7 +543,7 @@ header.content_header{
 blockquote{
 	margin-top: 0px;
 	position: relative;
-	background: url(/assets/bq_sign.png) 0 5px no-repeat;
+	background: url(../images/bq_sign.png) 0 5px no-repeat;
 	padding-top: 0px;
 	margin-top: 19px;
 	display: block;
@@ -569,8 +570,8 @@ blockquote{
 }
 
 .box-1{
-	-background: url(/assets/bg_pic1.jpg) 50% 0 repeat-x #2eb73b;
-	margin-top: 0px;
+	background: url(../images/bg_pic1.jpg) 50% 0 repeat-x #2eb73b;
+	margin-top: 48px;
 	padding-top: 86px;
 	padding-bottom: 399px;
 }
@@ -590,7 +591,7 @@ blockquote{
 	padding: 20px 73px 36px;
 }
 .box-4{
-	background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
+	background: url(../images/bg_pic2.jpg) 50% 0 repeat-x #828282;
 	margin-top: 4px;
 	padding-top: 31px;
 	padding-bottom: 65px;
@@ -612,7 +613,7 @@ blockquote{
 	display: block;
 	margin-bottom: 12px;
 	padding-left: 16px;
-	background: url(/assetes/list_marker.png) 1px 5px no-repeat;
+	background: url(../images/list_marker.png) 1px 5px no-repeat;
 }
 .listWithMarker li a {
 	color: #4bb624;
@@ -644,7 +645,7 @@ blockquote{
 
 .comments_btn{
 	padding-left: 19px;
-	background: url(/assets/comment_icon.png) 0 2px no-repeat;
+	background: url(../images/comment_icon.png) 0 2px no-repeat;
 	color: #6b6b6b;
 }
 
@@ -719,7 +720,7 @@ address dd span{
 		box-sizing: border-box;
 	width: 100%;
 	height: 100%;
-	background: url(/assets/img_zoom_icon.png) 50% 50% no-repeat;
+	background: url(../images/img_zoom_icon.png) 50% 50% no-repeat;
 	-webkit-transition: all 0.6s ease;
 		-moz-transition: all 0.6s ease;
 		-o-transition: all 0.6s ease;
@@ -893,76 +894,4 @@ p.txt_priv{
 @media only screen and (max-width: 320px) {
 
 
-}
-
-
-/*========= My customed ==================*/
-
-.btn-book {
-	font:normal 'Poppins' Arial, sans-serif;
-  background-color: #00761f;
-  border-radius: 6px;
-  padding: 4px 4px;
-  margin-top: 70px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: bottom;
-}
-
-.site-button, .site-button-secondry {
-  color: #fff;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  outline: none;
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
-  line-height: 1.42857;
-}
-
-
-.h2-green{
-	font:normal 'Poppins' Arial, sans-serif;
-  font-size: 50px;
-  font-weight: 800;
-	color:#074800;
-	margin-top: 30px;
-	padding-bottom: 10px;
-	border-bottom: 0px solid #c9c9c9;
-}
-
-.h4-white {
-	font:normal 24px/28px 'Poppins', Arial, sans-serif;
-	color:#FFF;
-	margin-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: 0px solid #c9c9c9;
-}
-
-.txt_dgreen {
-  color: #269300;
-}
-
-.txt_geen {
-  color: #269300;
-}
-
-
-
-.img5 {
-	border-radius: 20px;
-}
-
-
-.sub_title{
-  font: bold 28px/32px 'Roboto', Arial, sans-serif;
-  color: #757575;
-  margin-top: 40px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 10px;
 }

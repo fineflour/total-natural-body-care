@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user! 
   respond_to :html, :json, :js
   def index
     @articles =  article_for_index  
   end
-
 
   def show
     @article = Article.find(params[:id])

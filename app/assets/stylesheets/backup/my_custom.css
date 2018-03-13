@@ -307,7 +307,7 @@ h5{
 	margin-top: 10px;
 }
 .txt4 {
-	font:44px/44px 'Baumans', Arial, sans-serif;
+	font:60px/60px 'Baumans', Arial, sans-serif;
 	margin-top: 10px;
 	color: #787878;
 	text-transform: uppercase;
@@ -913,7 +913,7 @@ p.txt_priv{
   text-transform: uppercase;
 }
 
-input[type=text], input[type=tel], textarea {
+input[type=text],  input[type=tel], textarea {
   -webkit-appearance: textfield;
   background-color: white;
   -webkit-rtl-ordering: logical;
@@ -929,14 +929,14 @@ input[type=text], input[type=tel], textarea {
   width: 600px;
 }
 
-input[type=email], input[type=password]  {
+input[type=email], input[type=password]{
   -webkit-appearance: textfield;
   background-color: white;
   -webkit-rtl-ordering: logical;
   user-select: text;
   cursor: auto;
   padding: 5px;
-  margin: 0px;
+  margin: 4px;
   margin-left: 0px;
   border-width: 1px;
   border-style: solid;
@@ -944,34 +944,18 @@ input[type=email], input[type=password]  {
   size: 30;
   width: 500px;
 }
-.sign_in {
-  width: 500px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.btn {width: 500px;}
-.form-actions {
-  padding: 4px 4px 4px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background-color: #f8f8f8;
-  border-top: 1px solid #e5e5e5;
-}
-
-
-
 
 textarea#article_body {
-  width: 800px;
-  height: 600px;
+	width: 600px;
+	height: 600px;
 }
 
 h3.sm {
-  margin-top: 0px;
+	margin-top: 0px;
 }
 
 input#contact_name, input#contact_email, input#contact_subject, input#contact_phone, input#contact_message {
-  width: 300px	
+	width: 300px	
 }
 
 select {
@@ -986,37 +970,42 @@ select {
 
 #contact_message{
   width: 300px;
-  height: 260px;
+	height: 260px;
 }
 
 .lblContactName{
-  margin-top: 38px;
+	margin-top: 38px;
 }
 span.error {
   font: red;
-}
-
-under-line {
-  text-decoration: underline;
-}
-
-.radio input[type="radio"], .checkbox input[type="checkbox"] {
-  border-style: solid;
-  width: 10px;
-  height: 10px;
-  margin-left: 0px;
-  margin-right: 20px;
-  border-color: #d7d7d7;
-  border-width: 1px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-}
-.checkbox input:checked {
-  background-color: #c3c3c3;
 }
 
 .center {
   margin: auto;
   width: 50%;
   padding: 10px;
+}
+
+input[type=checkbox] {
+  height: 10px;
+  width: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: solid #e5e5e5;
+  border-width: 1px;
+}
+
+
+input[type=checkbox]:checked {
+  background-color: #dfdfdf;
+}
+
+.checkbox {
+  padding-left: 40px;
+}
+.form-actions {
+  background-color: #f8f8f8;
+}
+label {
+  margin-top: 6px;
 }

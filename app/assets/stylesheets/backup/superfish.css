@@ -16,7 +16,7 @@ nav{
 ul.sf-menu li:hover li ul,ul.sf-menu li.sfHover li ul {top:-999px; display:none;z-index:999}
 ul.sf-menu li li:hover ul,ul.sf-menu li li.sfHover ul {left:100%; top:0;z-index:999}
 ul.sf-menu>li{
-  font:16px/18px "Roboto", Georgia, sans-serif;
+  font:18px/20px "Roboto", Georgia, sans-serif;
   float:left; 
   position:relative;
   margin-right: 40px;
@@ -42,12 +42,12 @@ ul.sf-menu>li>a{
 	position: relative;
 	display:block;
 	color:#2f2f2f;
-	font:300 16px/18px "Roboto", Georgia, sans-serif;
+	font:300 24px/30px "Roboto", Georgia, sans-serif;
 	padding: 0px 13px 0px;
 	text-align: center;
 	letter-spacing: 0px;
 	z-index: 1;
-	text-transform: uppercase;
+	text-transform: lowercase;
 }
 ul.sf-menu>li>a img{margin-top: -2px;}
 
@@ -66,7 +66,7 @@ ul.sf-menu>li>a strong{
 	background: #2f2f2f;
 	display: inline-block;
 	left: 0;
-	top: 33px;
+	top: 38px;
 	-webkit-transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
@@ -83,8 +83,8 @@ ul.sf-menu>li.current>a strong, ul.sf-menu>li.sfHover>a strong, ul.sf-menu>li>a:
 /*submenu1*/
 .sf-menu>li>ul{
 	left:0px;
-	top:33px;
-	width: 136px;
+	top:82px;
+	width: 130px;
 	z-index:99;
 	background: #2e2e2e;
 	padding:14px 16px 10px;

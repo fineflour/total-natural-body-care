@@ -4,7 +4,7 @@
     <title>Total Natural Body Care</title>
     <%= render partial: "/layouts/script" %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all'  %>
+    <%= stylesheet_link_tag 'application', media: 'all'  %>
     <%= javascript_include_tag 'application'  %>
   </head>
 
@@ -12,10 +12,12 @@
     <div id="back-top"><i class="fa fa-arrow-up"></i></div>    
     <div class="main">
       <div class="div-content">  
-        <%= render partial: "/layouts/header" %>
-        <div class="center">
+        <% if current_page?(root_url) %>
+          <%= render partial: "/layouts/main_header" %>
+        <% else %>
+          <%= render partial: "/layouts/header" %>
+        <% end %>
         <%= yield %>
-        </div>
         <%= render partial: "/layouts/footer" %>
       </div>
     </div>
@@ -40,8 +42,6 @@ function myBlur(element){
     element.value = element.defaultValue;
   }
 }
-
-
     </script>
 
   </body>
