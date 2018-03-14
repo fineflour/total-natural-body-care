@@ -1,49 +1,49 @@
 <div id="stuck_container">
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="grid_12">
-          <nav>
-            <ul class="sf-menu header_menu">
-              <li class="current"><a href="/">Home<strong></strong></a></li>
-              <!--li><a href="index-1.html"><span></span>About us<strong></strong></a-->
-                <!--ul class='submenu'>
-                  <li><a href="#">History</a></li>
-                  <li><a href="#">Staff</a></li>
-                  <li class='sub-menu'><a href="#">News</a>
-                  <ul class='submenu2'>
-                  <li><a href="#">Fresh</a></li>
-                  <li><a href="#">Archive</a></li>
-                  </ul>
-                  </li>
-                  </ul>
-                  </li-->
-                  <!--li><a href="index-2.html">News &amp; events<strong></strong></a></li>
-                    <li><a href="index-3.html">Our tips<strong></strong></a></li-->
-                    <li id="last-li"><a href="/contacts/new">Contact Us<strong></strong></a></li>
-                    </ul>
-          </nav>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="grid_12">
+					<nav>
+						<ul class="sf-menu header_menu">
+							<li class="current"><a href="/">Home<strong></strong></a></li>
+							<li><a href="index-1.html"><span></span>Our Services<strong></strong></a>
+							<!--ul class='submenu'>
+				 <li><a href="#">History</a></li>
+				 <li><a href="#">Staff</a></li>
+				 <li class='sub-menu'><a href="#">News</a>
+				 <ul class='submenu2'>
+				 <li><a href="#">Fresh</a></li>
+				 <li><a href="#">Archive</a></li>
+				 </ul>
+				 </li>
+				 </ul>
+				 </li-->
+				 <li><a href="index-2.html">Benefits of Acupuncture<strong></strong></a></li>
+			 <!--li><a href="index-3.html">Our tips<strong></strong></a></li-->
+			 <li id="last-li"><a href="/contacts/new">Contact Us<strong></strong></a></li>
+			 </ul>
+					</nav>
 
-          <ul class="soc_icons">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
+					<ul class="soc_icons">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
 
-          <div class="clear"></div>
-        </div>
-      </div>
-    </div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
 
-    <% if current_page?(root_url)  %> 
-      <%= render partial: "/layouts/main_header" %>
-    <% else %>
-      <%= render partial: "/layouts/article_header" %>
-    <% end %>
+		<% if current_page?(root_url)  %> 
+			<%= render partial: "/layouts/main_header" %>
+		<% else %>
+			<%= render partial: "/layouts/article_header" %>
+		<% end %>
 
-  </header>
+	</header>
 </div>
 
 

@@ -227,7 +227,7 @@ h1 img{max-width: inherit;}
 h2 {
 	font:bold 28px/32px 'Roboto', Arial, sans-serif;
 	color:#595959;
-	margin-top: 15px;
+	margin-top: 30px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #c9c9c9;
 	text-transform: uppercase;
@@ -248,8 +248,7 @@ h3 {
 h4 {
 	font:300 20px/25px 'Roboto', Arial, sans-serif;
 	color:#f25f43;
-	margin-top: 37px;
-	text-transform: uppercase;
+	margin-top: 20px;
 }
 
 
@@ -571,10 +570,9 @@ blockquote{
 }
 
 .box-1{
-	background: url(/assets/bg_pic1.jpg) 50% 0 repeat-x #2eb73b;
 	margin-top: 14px;
 	padding-top: 40px;
-	padding-bottom: 399px;
+	padding-bottom: 140px;
 }
 .box-1.content_box{padding-bottom: 62px;margin-bottom: -16px;}
 .box-2{
@@ -1003,4 +1001,84 @@ input[type=checkbox]:checked {
 .checkbox {
   padding-left: 40px;
 }
+
+/*========= My customed ==================*/
+
+.btn-book {
+  font:normal 'Poppins' Arial, sans-serif;
+  background-color: #00761f;
+  color: #fff;
+  border-radius: 6px;
+  padding: 20px 20px;
+  margin-top: 70px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 160px;
+  cursor: pointer;
+}
+
+.site-button, .site-button-secondry {
+  color: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  outline: none;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  line-height: 1.42857;
+}
+
+
+.h2-green{
+  font:normal 'Poppins' Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+	line-height: 60px;
+  color:#074800;
+  margin-top: 90px;
+  padding-bottom: 10px;
+  border-bottom: 0px solid #c9c9c9;
+}
+
+.h4-white {
+  font:normal 24px/28px 'Poppins', Arial, sans-serif;
+  color:#FFF;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0px solid #c9c9c9;
+}
+
+.txt_dgreen {
+  color: #269300;
+}
+
+.txt_geen {
+  color: #269300;
+}
+
+
+
+.img5 {
+  border-radius: 20px;
+}
+
+
+.sub_title{
+  font: bold 28px/32px 'Roboto', Arial, sans-serif;
+  color: #757575;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.main_logo {
+  margin-top: 80px;
+}
+
 
