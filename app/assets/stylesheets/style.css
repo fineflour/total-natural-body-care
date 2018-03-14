@@ -760,7 +760,7 @@ p.txt_priv{
 .soc_icons {
 	position: relative;
 	display: inline-block;
-	margin-top: 9px;
+	margin-top: 16px;
 	white-space: nowrap;
 	text-align: left;
 	float: right;
@@ -1071,7 +1071,7 @@ input[type=checkbox]:checked {
 .sub_title{
   font: bold 28px/32px 'Roboto', Arial, sans-serif;
   color: #757575;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-left: 10px;
   margin-right: 10px;
   padding-bottom: 10px;

@@ -8,6 +8,8 @@ nav{
 	min-height: 17px;
 	float: left;
 	margin-left: -13px;
+  margin-top: 16px;
+  margin-bottom: 10px;
 }
 .sf-menu{display:block;}
 .sf-menu ul {position:absolute; top:-999px; display:none; z-index:999;}
@@ -66,7 +68,7 @@ ul.sf-menu>li>a strong{
 	background: #2f2f2f;
 	display: inline-block;
 	left: 0;
-	top: 38px;
+	top: 48px;
 	-webkit-transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
