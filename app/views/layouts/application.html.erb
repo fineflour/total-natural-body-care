@@ -12,11 +12,7 @@
     <div id="back-top"><i class="fa fa-arrow-up"></i></div>    
     <div class="main">
       <div class="div-content">  
-        <% if current_page?(root_url) %>
-          <%= render partial: "/layouts/main_header" %>
-        <% else %>
           <%= render partial: "/layouts/header" %>
-        <% end %>
         <%= yield %>
         <%= render partial: "/layouts/footer" %>
       </div>
