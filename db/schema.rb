@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208034420) do
+ActiveRecord::Schema.define(version: 20180314202323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
+    t.text "answer"
+    t.string "entered_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -33,6 +42,65 @@ ActiveRecord::Schema.define(version: 20171208034420) do
     t.string "phone"
     t.string "subject"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "online_bookings", force: :cascade do |t|
+    t.string "fname"
+    t.string "lname"
+    t.string "email"
+    t.string "phone"
+    t.string "appnt_date"
+    t.string "appnt_time"
+    t.string "doctor"
+    t.string "status"
+    t.boolean "first_visit", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_addresses", force: :cascade do |t|
+    t.bigint "patient_id"
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.boolean "primary", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_patient_addresses_on_patient_id"
+  end
+
+  create_table "patient_emails", force: :cascade do |t|
+    t.bigint "patient_id"
+    t.string "email"
+    t.boolean "primary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_patient_emails_on_patient_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.integer "unique_id", null: false
+    t.string "fname"
+    t.string "lname"
+    t.string "dob"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "category"
+    t.string "fname"
+    t.string "lname"
+    t.string "email"
+    t.string "phone"
+    t.string "subject"
+    t.text "message"
+    t.boolean "display", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

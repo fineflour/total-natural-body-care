@@ -1,0 +1,10 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+"no": 'No'
+required:
+  text: 'required'
+mark: '*'
+placeholders:
+  user:
+    name: 'name'

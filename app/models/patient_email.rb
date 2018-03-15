@@ -1,0 +1,2 @@
+class PatientEmail < ApplicationRecord
+end

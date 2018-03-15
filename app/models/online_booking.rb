@@ -1,0 +1,2 @@
+class OnlineBooking < ApplicationRecord
+end

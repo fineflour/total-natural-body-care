@@ -158,3 +158,160 @@ input{-webkit-appearance:none;}
 	#contact-form textarea {height: 200px !important;}
 }
 
+
+
+/*--- booking_form ------*/
+#new_online_booking {
+	position: relative;
+	margin-top: 45px;
+}
+#new_online_booking label {
+	position: relative;
+	/*!*/
+	display: block;
+	min-height: 32px;
+	margin-bottom: 0px;
+	width: 100px;
+	box-shadow: none;
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  font:300 12px/18px "Roboto", Arial, Helvetica, sans-serif;
+  color: #3e3e3e;
+  /*width: 200px;*/
+}
+#new_online_booking label.last{margin-right: 0;}
+#new_online_booking label.message{width: 100%; float: none;}
+#new_online_booking label.phone{margin-right: 0;}
+#new_online_booking span {display: block;}
+#new_online_booking ._placeholder {
+  position: absolute;
+  /*!*/
+  left: 0;
+  right: 0;
+  top: 0;
+  /*top: 0 !important;*/
+  bottom: 0;
+  cursor: text;
+  padding: 5px 10px 5px 12px;
+  font:300 14px/20px "Roboto", Arial, Helvetica, sans-serif;
+  color: #9a9a9a;
+  display: block;
+}
+#new_online_booking ._placeholder.focused {
+  opacity: .4;
+  filter: alpha(opacity=40);
+  /*.box-shadow(0px 0px 7px 0px rgba(0, 0, 255, 0.5));*/
+}
+#new_online_booking ._placeholder.hidden {
+  display: none;
+}
+input{-webkit-appearance:none;}
+#datetimepicker1 input,
+#new_online_booking input,
+#new_online_booking textarea {
+  outline: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 5px;
+  font:300 14px/20px "Roboto", Arial, Helvetica, sans-serif;
+  color: #3e3e3e;
+  border: none;
+  border: 1px solid #fff;
+  border-radius: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: none;
+  -webkit-appearance:none;
+  resize: none;
+  height: 26px;
+  padding-left: 0px;
+  margin-left: 0px;
+
+
+  -webkit-box-sizing: border-box; /* Safari */
+  -moz-box-sizing: border-box; /*Firefox 1-3*/
+  box-sizing: border-box;
+}
+#new_online_booking textarea {
+  width: 100%;
+  height: 356px;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#new_online_booking .message {
+  width: 100%;
+}
+#new_online_booking .error-message,
+#new_online_booking .empty-message {
+  height: 0;
+  overflow: hidden;
+  font: 10px/20px Arial;
+  -webkit-transition: 0.3s ease-in height;
+  -moz-transition: 0.3s ease-in height;
+  -o-transition: 0.3s ease-in height;
+  transition: 0.3s ease-in height;
+  position: absolute;
+  right: 3px;
+  top: 0;
+}
+#new_online_booking .invalid .error-message,
+#new_online_booking .empty .empty-message {
+  height: 20px;
+}
+#new_online_booking .success-message {
+  position: absolute;
+  overflow: hidden;
+  height: 0;
+  left: 0;
+  top: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #fff;
+  border-radius: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  padding: 0px 0;
+}
+#new_online_booking.success .success-message {
+  height: 116px;
+  padding: 53px 0 0;
+  border: none;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+.form_btns {
+  display: block;
+  float: left;
+  margin-top: 27px;
+}
+.form_btns a {
+  margin-right: 20px;
+  margin-top: 2px !important;
+  padding: 11px 26px !important;
+  float: left;
+}
+
+
+#new_online_booking.form-group {
+  margin-bottom: 0px; 
+}
+/*--- booking_form end------*/
+
+

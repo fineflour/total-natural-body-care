@@ -1,0 +1,2 @@
+class PatientAddress < ApplicationRecord
+end

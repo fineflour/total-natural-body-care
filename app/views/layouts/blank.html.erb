@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Total Natural Body Care</title>
+    <%= render partial: "/layouts/script" %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all'  %>
+    <%= javascript_include_tag 'application'  %>
+  </head>
+
+  <body>
+    <div id="back-top"><i class="fa fa-arrow-up"></i></div>    
+    <div class="main">
+      <div class="div-content">  
+        <%= yield %>
+      </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+
+$(document).ready(function(){
+  // Initialize the gallery
+  $('.magnifier2').touchTouch();
+});
+
+function myFocus(element){
+  if (element.value == element.defaultValue){
+    element.focus();
+    element.value = '';
+  }
+}
+function myBlur(element){
+  if (element.value == ''){
+    element.blur();
+    element.value = element.defaultValue;
+  }
+}
+
+
+    </script>
+
+  </body>
+</html>

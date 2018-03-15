@@ -1,0 +1,44 @@
+= javascript_include_tag "/assets/bootstrap-datepicker.js"
+%link{:href => "/assets/datepicker.css", :rel => "stylesheet"}
+.container
+  .row
+    .grid_7
+      %h2 How to find us
+      .row
+        .grid_5
+          %figure.img_inner
+            %iframe{:src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13257.325197630973!2d-117.92362451838835!3d33.82956583915403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd638c8f4ace3%3A0xa8e1b697e8ffca00!2s1175+E+Lincoln+Ave%2C+Anaheim%2C+CA+92805!5e0!3m2!1sen!2sus!4v1512708016776", :frameborder=> "0", :allowfullscreen => true}
+        .grid_2
+          .h4.top-margin-20.bold  Our Hours
+          %p 
+            .bold Monday 
+            9:00Am ~ 12:00PM
+            %br/
+            1:00PM ~ 6:00PM
+          %p 
+            .bold Tuesday
+            9:00Am ~ 12:00PM
+            %br/
+            1:00PM ~ 6:00PM
+          %p 
+            .bold Wednesday
+            9:00Am ~ 12:00PM
+            %br/
+            1:00PM ~ 6:00PM
+          %p 
+            .bold Thursday
+            9:00Am ~ 12:00PM
+            %br/
+            1:00PM ~ 6:00PM
+          %p 
+            .bold Friday
+            9:00Am ~ 12:00PM
+            %br/
+            1:00PM ~ 6:00PM
+          %p 
+            .bold Saturday
+            9:00Am ~ 12:00PM
+
+    .grid_5
+      %h2 Request an Appointment
+      = render "form", online_booking: @online_booking
