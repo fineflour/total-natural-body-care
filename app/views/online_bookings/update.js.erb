@@ -1,0 +1,5 @@
+<% if @online_booking.valid? %>
+    $('#appoitment').html('<%= escape_javascript( render :partial => "update" ) %>');
+  <% else %>
+      alert('Could not update');
+    <% end %>

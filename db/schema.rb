@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180314202323) do
     t.string "appnt_time"
     t.string "doctor"
     t.string "status"
+    t.string "note"
     t.boolean "first_visit", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

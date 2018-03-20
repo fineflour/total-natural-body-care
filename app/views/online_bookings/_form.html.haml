@@ -7,8 +7,7 @@
   = f.input :email,  label: "* Email", class: "booking-label"
   = f.input :phone,  label: "* Phone", class: "booking-label"
   = f.input :appnt_date,  label: "* Date", class: "booking-label"
-  = f.input :appnt_time,  label: "* Time", class: "booking-label"
-
-  .button-padding.pull-right
-    = link_to "Back to index", online_bookings_path, class: "btn btn-default"
-    = f.submit "Submit", class: "btn btn-info"
+  = f.input :appnt_time, label: "* Time", collection: OnlineBooking::BUSINESS_HOURS, prompt: "Select an appointment time"
+  = f.input :note,  label: " Note", class: "booking-label", as: :text, input_html: {rows: 3, cols: 10}
+  .button-padding.txt_center
+    = f.submit "Submit", class: "btn btn-info margin-left-80"

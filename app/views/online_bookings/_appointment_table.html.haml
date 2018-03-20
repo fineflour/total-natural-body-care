@@ -1,0 +1,50 @@
+%body
+  .table-responsive
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th ID
+          %th Name
+          %th Phone 
+          %th Email
+          %th Scheduled Date
+          %th Scheduled Time
+          %th Note
+          %th Created At
+          %th{:style => "width: 50px;"} Actions
+      - @list.each do |appnt|
+        %tr{:id => "online_booking-#{appnt.id}"}
+          %td= appnt.id
+          %td
+            = appnt.fname
+            = appnt.lname
+          %td= appnt.email
+          %td= appnt.phone
+          %td
+            = appnt.appnt_date
+          %td
+            = appnt.appnt_time
+
+          / td><haml_loud> link_to order.products.size, order_path(order) </haml_loud></td
+          %td
+            = appnt.note
+          %td
+            = formatted_date(appnt.created_at)
+            = formatted_time(appnt.created_at)
+
+          %td.col-md-2
+            = link_to "Show", online_booking_path(appnt)
+            = link_to "Edit", edit_online_booking_path(appnt)
+
+:javascript
+  $('.cancel-appnt').click(function(){
+    var cancelUrl = "orders/" + $(this).data("attribute") + "/cancel";
+    var deleteUrl = "orders/" + $(this).data("attribute");
+    $("#cancel-order-form").attr("action", cancelUrl);
+    $("#delete-order-btn").attr("href", deleteUrl);
+  });
+  $('.destroy-appnt').click(function(){
+    var deleteUrl = "orders/" + $(this).data("attribute");
+    $("#cancel-order-form").hide();
+    $("#delete-order-btn").attr("href", deleteUrl);
+  });

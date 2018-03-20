@@ -1,0 +1,34 @@
+.container
+  .row
+    .grid_12
+      %h2.txt_center Appointments
+      .notice Your appointment has been made successfully!
+      %table.table-bordered.table-hover.wrap
+        %tr
+          %td Name
+          %td 
+            = @online_booking.fname
+            = @online_booking.lname
+        %tr
+          %td Email
+          %td 
+            = @online_booking.email
+        %tr
+          %td Phone
+          %td 
+            = @online_booking.phone
+        %tr
+          %td Appointment Date
+          %td 
+            = @online_booking.appnt_date
+        %tr
+          %td Appointment Time
+          %td 
+            = @online_booking.appnt_time
+        %tr
+          %td Note
+          %td 
+            = @online_booking.note
+
+
+
