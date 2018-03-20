@@ -11,9 +11,23 @@
  * It is generally better to create a new file per style scope.
  *
   *
-  *= require_tree .
-  *= require_self
  */
+/*
+ k
+
+ *= require style.css
+ *= require ie.css
+ *= require datepicker.css
+ *= require components.css
+ *= require animation.css
+ *= require bootstrap
+ *= require rails_bootstrap_forms
+ *= require bootstrap.min
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+
+
+ *      */
+
 
 
 
