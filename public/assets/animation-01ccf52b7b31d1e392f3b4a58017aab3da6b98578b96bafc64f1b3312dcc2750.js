@@ -1,0 +1,1 @@
+$(window).load(function(){function i(){$("#ani-wrap img.bgfade").first().appendTo("#ani-wrap").fadeOut(5e3),$("#ani-wrap img").first().fadeIn(5e3),setTimeout(i,8e3)}$("img.bgfade").hide();$(window).height(),$(window).width();i()});
