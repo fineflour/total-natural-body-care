@@ -8,6 +8,186 @@
 @import url(//fonts.googleapis.com/css?family=Roboto:400,400italic,300,700);
 @import url(//fonts.googleapis.com/css?family=Baumans);
 
+
+/*========= My customed ==================*/
+
+.btn-book {
+  font:normal 'Poppins' Arial, sans-serif;
+  background-color: #00761f;
+  color: #fff;
+  border-radius: 6px;
+  padding: 20px 20px;
+  font-weight: 700;
+  margin-top: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 160px;
+  cursor: pointer;
+}
+
+.site-button, .site-button-secondry {
+  color: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  outline: none;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+  line-height: 1.42857;
+}
+
+
+.h2-green{
+  font:normal 'Poppins' Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 60px;
+  color:#074800;
+  margin-top: 90px;
+  padding-bottom: 10px;
+  border-bottom: 0px solid #c9c9c9;
+}
+
+.h4-white {
+  font:normal 24px/28px 'Poppins', Arial, sans-serif;
+  color:#FFF;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0px solid #c9c9c9;
+}
+
+.txt_dgreen {
+  color: #269300;
+}
+
+.txt_pink {
+  color: #e87570; 
+}
+
+.txt_green {
+  color: #269300;
+}
+
+.bs-glyphicons .glyphicon {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+
+
+.img5 {
+  border-radius: 20px;
+}
+
+
+.sub_title{
+  font: bold 28px/32px 'Roboto', Arial, sans-serif;
+  color: #757575;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.main_logo {
+  margin-top: 80px;
+}
+
+.fade {
+  opacity: 90%; 
+}
+
+.sub_logo {
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+
+.box-logo.content_box {
+  padding-bottom: 20px;
+  margin-bottom: -16px;
+  background: url(/assets/bg_pic1.jpg) 50% 50% no-repeat;
+}
+
+.box-logo {
+  margin-top: 14px;
+  padding-top: 20px;
+  padding-bottom: 140px;
+}
+
+.top-margin-40 {
+  margin-top: 40px;
+}
+
+.top-margin-60 {
+  margin-top: 60px;
+}
+
+table {
+  margin: 0px auto;            
+  margin-bottom: 50px;
+}
+
+td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.notice {
+  color: #079813;
+  margin-top: 20px;
+  margin-bottom : 20px;
+  text-align: center;
+  font:18px/24px 'Roboto', Arial, sans-serif;
+}
+
+h4 {
+  font:300 18px/22px 'Roboto', Arial, sans-serif;
+  color:#959595;
+  margin-top: 16px;
+}
+
+.box-4-no-img {
+  margin-top: 4px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+  text-align: center;
+  color: #fff;
+}
+
+
+.marBoth1{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.img7{
+  margin: 30px;
+  margin-bottom: 50px;
+  float: center;
+  text-align: center;
+  height:45px; 
+  max-height:45px; 
+  width:auto;
+}
+
+.bg6{background: #fff !important;}
+.marTop5{margin-top: 60px}
+
+.btn-book:hover {
+  color: #00ff00;
+}
+
+
+/*========= End of My customed ==================*/
+
 input::-ms-clear {
 	 display: none;
 }
@@ -654,7 +834,7 @@ blockquote{
 }
 
 
-.more_btn{
+.btn-more{
   display: inline-block;
   margin-top: 6px;
   padding: 6px 16px;
@@ -1019,173 +1199,4 @@ input[type=checkbox]:checked {
   padding-left: 40px;
 }
 
-/*========= My customed ==================*/
 
-.btn-book {
-  font:normal 'Poppins' Arial, sans-serif;
-  background-color: #00761f;
-  color: #fff;
-  border-radius: 6px;
-  padding: 20px 20px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  position: absolute;
-  top: 160px;
-  cursor: pointer;
-}
-
-.site-button, .site-button-secondry {
-  color: #fff;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  outline: none;
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
-  line-height: 1.42857;
-}
-
-
-.h2-green{
-  font:normal 'Poppins' Arial, sans-serif;
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 60px;
-  color:#074800;
-  margin-top: 90px;
-  padding-bottom: 10px;
-  border-bottom: 0px solid #c9c9c9;
-}
-
-.h4-white {
-  font:normal 24px/28px 'Poppins', Arial, sans-serif;
-  color:#FFF;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 0px solid #c9c9c9;
-}
-
-.txt_dgreen {
-  color: #269300;
-}
-
-.txt_pink {
-  color: #e87570; 
-}
-
-.txt_green {
-  color: #269300;
-}
-
-.bs-glyphicons .glyphicon {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-
-
-.img5 {
-  border-radius: 20px;
-}
-
-
-.sub_title{
-  font: bold 28px/32px 'Roboto', Arial, sans-serif;
-  color: #757575;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 10px;
-}
-
-.main_logo {
-  margin-top: 80px;
-}
-
-.fade {
-  opacity: 90%; 
-}
-
-.sub_logo {
-  margin-top:20px;
-  margin-bottom:20px;
-}
-
-
-.box-logo.content_box {
-  padding-bottom: 20px;
-  margin-bottom: -16px;
-  background: url(/assets/bg_pic1.jpg) 50% 50% no-repeat;
-}
-
-.box-logo {
-  margin-top: 14px;
-  padding-top: 20px;
-  padding-bottom: 140px;
-}
-
-.top-margin-40 {
-  margin-top: 40px;
-}
-
-.top-margin-60 {
-  margin-top: 60px;
-}
-
-table {
-  margin: 0px auto;            
-  margin-bottom: 50px;
-}
-
-td {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.notice {
-  color: #079813;
-  margin-top: 20px;
-  margin-bottom : 20px;
-  text-align: center;
-  font:18px/24px 'Roboto', Arial, sans-serif;
-}
-
-h4 {
-  font:300 18px/22px 'Roboto', Arial, sans-serif;
-  color:#959595;
-  margin-top: 16px;
-}
-
-.box-4-no-img {
-  margin-top: 4px;
-  padding-top: 20px;
-  padding-bottom: 26px;
-  text-align: center;
-  color: #fff;
-}
-
-
-.marBoth1{
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-.img7{
-  margin: 30px;
-  margin-bottom: 50px;
-  float: center;
-  text-align: center;
-  height:45px; 
-  max-height:45px; 
-  width:auto;
-}
-
-.bg6{background: #fff !important;}
-.marTop5{margin-top: 60px}
