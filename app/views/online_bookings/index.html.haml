@@ -1,6 +1,6 @@
 .container
   .row
-    .grid_12
+    .grid_12.marTop5
       %h2.txt_center Appointments
       = will_paginate @list, renderer: BootstrapPagination::Rails  
       = render partial: "appointment_table"

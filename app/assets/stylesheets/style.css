@@ -825,8 +825,9 @@ p.txt_priv{
 
   .list_menu_footer li{margin-left: 20px;}
 
-
-
+.btn-book {
+  margin-top: 70px;
+}
 }
 
 
@@ -855,12 +856,19 @@ p.txt_priv{
 
   address {font-size: 12px;}
   address dd span {width: 64px;}
-
+.btn-book {
+  margin-top: 70px;
+}
 
 }
 
 
 @media only screen and (max-width: 767px) {
+ .btn-book {
+    margin-top: 230px;
+  }
+
+
 
   img{width: 100%;}
   img.no_resize{width: auto;}
@@ -885,7 +893,6 @@ p.txt_priv{
   .img4, .img5, .img6{margin-bottom: 10px;}
 
 
-
 }
 
 
@@ -893,11 +900,17 @@ p.txt_priv{
   /*.main{width: 300px;}*/
   /*h1 img{width: 100%;}*/
   .list_menu_footer{display: none;}
+  .btn-book {
+    margin-top: 230px;
+  }
+
+
 
 }
 @media only screen and (max-width: 320px) {
-
-
+.btn-book {
+    margin-top: 230px;
+  }
 }
 
 .h3 {
@@ -1014,7 +1027,6 @@ input[type=checkbox]:checked {
   color: #fff;
   border-radius: 6px;
   padding: 20px 20px;
-  margin-top: 70px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;

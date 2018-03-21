@@ -3,15 +3,15 @@
     %table.table.table-bordered.table-hover
       %thead
         %tr
-          %th ID
-          %th Name
-          %th Phone 
-          %th Email
-          %th Scheduled Date
-          %th Scheduled Time
-          %th Note
-          %th Created At
-          %th{:style => "width: 50px;"} Actions
+          %th.txt_center ID
+          %th.txt_center Name
+          %th.txt_center Phone 
+          %th.txt_center Email
+          %th.txt_center Scheduled Date
+          %th.txt_center Scheduled Time
+          %th.txt_center Note
+          %th.txt_center Created At
+          %th.txt_center{:style => "width: 50px;"} Actions
       - @list.each do |appnt|
         %tr{:id => "online_booking-#{appnt.id}"}
           %td= appnt.id
