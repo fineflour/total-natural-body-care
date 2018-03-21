@@ -13,14 +13,11 @@
   *
  */
 /*
- *= require style.css
- *= require ie.css
- *= require datepicker.css
- *= require components.css
- *= require animation.css
- *= require bootstrap
- *= require rails_bootstrap_forms
+ **= require bootstrap
+ *= require_tree .       
+ *= require_self    
  */
+
 
 
 
