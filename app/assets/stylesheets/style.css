@@ -69,7 +69,7 @@
 }
 
 .txt_green {
-  color: #269300;
+  color: #60d400;
 }
 
 .bs-glyphicons .glyphicon {
@@ -111,7 +111,6 @@
 .box-logo.content_box {
   padding-bottom: 20px;
   margin-bottom: -16px;
-  background: url(/assets/bg_pic1.jpg) 50% 50% no-repeat;
 }
 
 .box-logo {
@@ -405,12 +404,11 @@ h1 img{max-width: inherit;}
 
 
 h2 {
-	font:bold 28px/32px 'Roboto', Arial, sans-serif;
-	color:#595959;
+	font:bold 40px/44px 'Poppins','Roboto', Arial, sans-serif;
+	color:#000;
 	margin-top: 0px;
 	padding-bottom: 15px;
-	border-bottom: 1px solid #c9c9c9;
-	text-transform: uppercase;
+  line-height: 50px;
 }
 h2.no_line{border: none; margin-top: 38px;}
 h2.no_line2{border: none; margin-top: 38px; padding-bottom: 19px;}
@@ -945,7 +943,7 @@ p.txt_priv{
 .soc_icons {
   position: relative;
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 6px;
   white-space: nowrap;
   text-align: left;
   float: right;

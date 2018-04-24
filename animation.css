@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Cherry+Swash);
+#ani-wrap{
+	z-index:-1; 
+	margin-top: 0px;
+  top: 0;
+	background-color :#000;
+	width:100%;
+	height:100%;
+}
+#ani-wrap img.bgfade{
+	position: absolute;
+	margin-top: 0px;
+	display:none;
+  top: 0;
+	width:100%;
+	height:100%;
+	z-index:-1
+}
+
