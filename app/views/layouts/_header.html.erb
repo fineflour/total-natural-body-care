@@ -6,26 +6,35 @@
           <a href="index.html"><img src="/assets/logo-s.png" class="s_logo" alt="Nature"></a>
 
           <ul class="sf-menu header_menu">
-            <li class="current"><a href="/">Home
-                <% if current_page?('/') %>
-                  <strong></strong>
-                <% end %>
-              </a></li>
+            <% if current_page?('/') %>
+              <li class="current"><a href="/">Home
+            <% else %>
+              <li><a href="/">Home
+            <% end %>
+            <strong></strong>
+            </a></li>
+            
+            <% if params["page"] == "services" %>
+              <li class="current"><a href="/pages/services">Our Services
+            <% else %>
               <li><a href="/pages/services">Our Services
-                  <% if params["page"] == "services" %>
-                    <strong></strong>
-                  <% end %>
-                </a></li>
-                <li><a href="/pages/acupuncture">Acupuncture
-                    <% if params["page"] == "acupuncture" %>
-                      <strong></strong>
-                    <% end %>
-                  </a></li>
-                  <li id="last-li"><a href="/online_bookings/new">Contact Us
-                      <% if current_page?('/online_bookings/new') %>
-                        <strong></strong>
-                      <% end %>
-                    </a></li>
+            <% end %>
+            <strong></strong>
+            </a></li>
+            <% if params["page"] == "acupuncture" %>
+              <li class="current"><a href="/pages/acupuncture">Acupuncture
+            <% else %>
+              <li><a href="/pages/acupuncture">Acupuncture
+            <% end %>
+            <strong></strong>
+            </a></li>
+            <% if current_page?('/online_bookings/new') %>
+              <li class="current" id="last-li"><a href="/online_bookings/new">Contact Us
+            <% else %>
+              <li id="last-li"><a href="/online_bookings/new">Contact Us
+            <% end %>
+            <strong></strong>
+            </a></li>
           </ul>
 
           <ul class="soc_icons">
