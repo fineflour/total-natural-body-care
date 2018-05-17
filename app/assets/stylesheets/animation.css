@@ -3,15 +3,13 @@
   z-index:-1; 
   margin-top: 25px;
   background-color :#000;
-  width:100%;
-  height:80%;
+  width: 100%;
 }
 #ani-wrap img.bgfade{
   position: absolute;
   margin-top: 25px;
   display:none;
-  width:100%;
-  height:80%;
+  width: 100%;
   z-index:-1
 }
 

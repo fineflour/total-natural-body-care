@@ -50,6 +50,7 @@
   margin-top: 90px;
   padding-bottom: 10px;
   border-bottom: 0px solid #c9c9c9;
+  text-align: right;
 }
 
 .h4-white {
@@ -58,6 +59,7 @@
   margin-top: 10px;
   padding-bottom: 10px;
   border-bottom: 0px solid #c9c9c9;
+  text-align: right;
 }
 
 .txt_dgreen {
@@ -1042,9 +1044,45 @@ p.txt_priv{
 
 
 @media only screen and (max-width: 767px) {
- .btn-book {
+  .btn-book {
     margin-top: 230px;
   }
+  .s_logo {
+    display: none;
+  }
+
+  .h2-green  {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 46px;
+  margin-top: 60px;
+  padding-bottom: 0px;
+  }
+
+.h4-white {
+  color:#888;
+  margin-top: 10px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid #c9c9c9;
+  text-align: center;
+}
+
+.box-1{
+	padding-bottom: 40px;
+}
+
+
+
+
+  .btn-book {
+    display: none;
+  }
+
+  .main_logo {
+    margin-top: 20px;
+  }
+
 
 
 
@@ -1081,14 +1119,29 @@ p.txt_priv{
   .btn-book {
     margin-top: 230px;
   }
+  .s_logo {
+    display: none;
+  }
+
+  .main_logo {
+    margin-top: 20px;
+  }
 
 
 
 }
 @media only screen and (max-width: 320px) {
-.btn-book {
+  .btn-book {
     margin-top: 230px;
   }
+  .s_logo {
+    display: none;
+  }
+
+  .main_logo {
+    margin-top: 20px;
+  }
+
 }
 
 .h3 {
