@@ -5,7 +5,7 @@ $(window).load(function(){
   //$('#ani-wrap').css({'height':dg_H/4,'width':dg_W});
   function anim() {
     $("#ani-wrap img.bgfade").first().appendTo('#ani-wrap').fadeOut(8000);
-    $("#ani-wrap img").first().fadeIn(7000);
+    $("#ani-wrap img").first().fadeIn(3000);
     setTimeout(anim, 12000);
   }
   anim();})
