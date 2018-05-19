@@ -40,6 +40,7 @@
   position: absolute;
   top: 160px;
   cursor: pointer;
+  z-index: -1;
 }
 
 .site-button, .site-button-secondry {
@@ -67,6 +68,10 @@
   padding-bottom: 10px;
   border-bottom: 0px solid #c9c9c9;
   text-align: right;
+}
+.bg_grey {
+  background: #545c56;
+  
 }
 
 .h4-white {
@@ -110,6 +115,7 @@
 
 .main_logo {
   margin-top: 80px;
+  z-index: -1;
 }
 
 .fade {
