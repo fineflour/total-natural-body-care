@@ -4,10 +4,11 @@ $(window).load(function(){
   var dg_W = $(window).width();
   //$('#ani-wrap').css({'height':dg_H/4,'width':dg_W});
   function anim() {
-    $("#ani-wrap").first();
+    $("#ani-wrap img.bgfade").first().appendTo('#ani-wrap');
     $("#ani-wrap img.bgfade").first().appendTo('#ani-wrap').fadeOut(6000);
     $("#ani-wrap img").first().fadeIn(6000);
     setTimeout(anim, 18000);
   }
-  anim();})
+  anim();}
+  )
 //$(window).resize(function(){window.location.href=window.location.href})
