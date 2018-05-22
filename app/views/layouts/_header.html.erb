@@ -1,70 +1,85 @@
 <div id="stuck_container">
-<header>
-  <nav>
-    <div class="container row">
-      <div class="grid_12 no-left-margin">
-        <a href="/"><img src="/assets/logo-s.png" class="s_logo" alt="Nature"></a>
+  <header>
+    <div class="container">
+      <div class= "row">
+        <div class="grid_12">
+          <nav>
+            <a href="/"><img src="/assets/logo-s.png" class="s_logo" alt="Nature"></a>
 
-        <ul class="sf-menu header_menu">
-          <% if current_page?('/') %>
-            <li class="current"><a href="/">Home
-              <% else %>
-            <li><a href="/">Home
-              <% end %>
-            <strong></strong>
-            </a></li>
-            <li><a href="#">SERVICES</a>
-             <ul class='submenu'>
-               <li><a href="/pages/acupuncture">Acupuncture</a></li>
-               <li><a href="https://www.adjustforlife.com/">Chiropractic</a></li>
-               <li><a href="https://www.adjustforlife.com/article/massage-therapy-for-low-back-pain">Message Theraphy</a></li>
-             </ul>
-             </li>
+            <ul class="sf-menu header_menu">
+              <% if current_page?('/') %>
+                <li class="current"><a href="/">Home
+                  <% else %>
+                    <li><a href="/">Home
+                      <% end %>
+                      <strong></strong>
+                      </a></li>
+                      <!--li><a href="#">SERVICES</a>
+                        <ul class='submenu'>
+                          <li><a href="/pages/acupuncture">Acupuncture</a></li>
+                          <li><a href="https://www.adjustforlife.com/">Chiropractic</a></li>
+                          <li><a href="https://www.adjustforlife.com/article/massage-therapy-for-low-back-pain">Message Theraphy</a></li>
+                        </ul>
+                      </li-->
 
-                    <% if params["page"] == "acupuncture" %>
-                      <li class="current"><a href="/pages/acupuncture">Acupuncture
-                    <% else %>
-                      <li><a href="/pages/acupuncture">Acupuncture
-                    <% end %>
-                            <strong></strong>
-                            </a></li>
+                      <% if params["page"] == "acupuncture" %>
+                        <li class="current"><a href="/pages/acupuncture">Acupuncture
+                     <% else %>
+                        <li><a href="/pages/acupuncture">Acupuncture
+                     <% end %>
+                     <strong></strong>
+                     </a></li>
+                     
+                     <li><a href="https://www.adjustforlife.com/chiropractic-injury-treatment" target="_blank">Chiropractic
+                     <strong></strong>
+                     </a></li>
 
-                            <% if params["page"] == "aboutus" %>
-                              <li class="current"><a href="/pages/aboutus">About Us
-                                <% else %>
-                                  <li><a href="/pages/aboutus">About Us
-                                    <% end %>
-                                    <strong></strong>
-                                    </a></li>
+                     <li><a href="https://www.adjustforlife.com/article/massage-therapy-for-low-back-pain" target="_blank">Massage
+                     <strong></strong>
+                     </a></li>
 
-                                    <% if current_page?('/online_bookings/new') %>
-                                      <li class="current" id="last-li"><a href="/online_bookings/new">Contact Us
-                                        <% else %>
-                                          <li id="last-li"><a href="/online_bookings/new">Contact Us
-                                            <% end %>
-                                            <strong></strong>
-                                            </a></li>
-        </ul>
 
-        <ul class="soc_icons">
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-          <li><a href="#"><i class="fa fa-rss"></i></a></li>
-          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
+
+
+
+                              <% if params["page"] == "aboutus" %>
+                                <li class="current"><a href="/pages/aboutus">About Us
+                                  <% else %>
+                                    <li><a href="/pages/aboutus">About Us
+                                      <% end %>
+                                      <strong></strong>
+                                      </a></li>
+
+                                      <% if current_page?('/online_bookings/new') %>
+                                        <li class="current" id="last-li"><a href="/online_bookings/new">Contact Us
+                                          <% else %>
+                                            <li id="last-li"><a href="/online_bookings/new">Contact Us
+                                              <% end %>
+                                              <strong></strong>
+                                              </a></li>
+            </ul>
+
+            <ul class="soc_icons">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-rss"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
 
-  </nav>
-  <div class="clear"></div>
-  <% if current_page?(root_url)  %> 
-    <%= render partial: "/layouts/main_header" %>
-  <% else %>
-    <%= render partial: "/layouts/article_header" %>
-  <% end %>
 
-</header>
+    <div class="clear"></div>
+    <% if current_page?(root_url)  %> 
+      <%= render partial: "/layouts/main_header" %>
+    <% else %>
+      <%= render partial: "/layouts/article_header" %>
+    <% end %>
+
+  </header>
 </div>
 
 
