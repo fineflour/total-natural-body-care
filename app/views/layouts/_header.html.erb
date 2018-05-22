@@ -9,34 +9,35 @@
             <ul class="sf-menu header_menu">
               <% if current_page?('/') %>
                 <li class="current"><a href="/">Home
-                  <% else %>
-                    <li><a href="/">Home
-                      <% end %>
-                      <strong></strong>
-                      </a></li>
-                      <!--li><a href="#">SERVICES</a>
-                        <ul class='submenu'>
-                          <li><a href="/pages/acupuncture">Acupuncture</a></li>
-                          <li><a href="https://www.adjustforlife.com/">Chiropractic</a></li>
-                          <li><a href="https://www.adjustforlife.com/article/massage-therapy-for-low-back-pain">Message Theraphy</a></li>
-                        </ul>
-                      </li-->
+              <% else %>
+                <li><a href="/">Home
+              <% end %>
+              <strong></strong>
+              </a></li>
 
-                      <% if params["page"] == "acupuncture" %>
-                        <li class="current"><a href="/pages/acupuncture">Acupuncture
-                     <% else %>
-                        <li><a href="/pages/acupuncture">Acupuncture
-                     <% end %>
-                     <strong></strong>
-                     </a></li>
+              <% if current_page?('/#service') %>
+                <li class="current"><a href="/#service">Services
+              <% else %>
+                <li><a href="/#service">Services
+              <% end %>
+              <strong></strong>
+              </a></li>
+
+              <% if params["page"] == "acupuncture" %>
+                 <li class="current"><a href="/pages/acupuncture">Acupuncture
+              <% else %>
+                 <li><a href="/pages/acupuncture">Acupuncture
+              <% end %>
+              <strong></strong>
+              </a></li>
                      
-                     <li><a href="https://www.adjustforlife.com/chiropractic-injury-treatment" target="_blank">Chiropractic
+                     <!--li><a href="https://www.adjustforlife.com/chiropractic-injury-treatment" target="_blank">Chiropractic
                      <strong></strong>
                      </a></li>
 
                      <li><a href="https://www.adjustforlife.com/article/massage-therapy-for-low-back-pain" target="_blank">Massage
                      <strong></strong>
-                     </a></li>
+                     </a></li-->
 
 
 
