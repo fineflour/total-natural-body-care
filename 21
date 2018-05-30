@@ -13,7 +13,7 @@
 
 
 <div class="grid_100 txt_center top-margin-60">
-  <h2 class="txt_center">Is <font class="txt_dgreen">Acupuncture </font>Safe?</h2>
+  <h2 class="txt_center">Is <font class="txt_dgreen">Acupuncture Safe</font>?</h2>
   <div class="dez-separator-outer">
     <div class="dez-separator bg-primary style-liner"></div>
   </div>
@@ -51,73 +51,48 @@
   </div>
 </div>
 
-<div class="grid_12">
-  <div class="row lt-margin-40">
-    <div><img src="/assets/why_acne.jpg" alt="" class="img11"></div>
+<div class="grid_100">
+  <div class="grid_12">
+    <div><img src="/assets/why_acne.jpg" alt="" class="img9"></div>
     <p class="sub_title_lt"><a href="#">1. Skin Conditions</a></p>
     <div>
-      <p class="h4_lt ">
+      <p class="h4">
       In traditional Chinese medicine, we look at the face as a reflection of what’s going on inside. We look at your internal well-being to decipher what’s going on. From the inside, we will make that change, and it will be reflected on the outside. In other words, the lasting solution to your breakouts or sagging skin might not be a cream or device, but rather a healthier, more balanced body.
       </p>
     </div>
 
     <p class="sub_title_lt"><a href="#">2. Healthy Weight</a></p>
     <div class="text_center">
-      <p class="h4_lt">
+      <p class="h4">
       By helping return balance to these elements, acupuncture serves as a powerful home base on the journey of weight loss. It can kick-start many positive changes within the body, including changes in hunger, fat storage, and feelings of fullness - all significant steps in the right direction.</br>
       </p>
     </div>
 
     <p class="sub_title_lt"><a href="#">3. Oncology Support</a>
     <div class="text_center">
-      <p class="h4_lt">
-      According to <a href="https://www.cancer.gov/about-cancer/treatment/cam/patient/acupuncture-pdq#link/_57" class="link4">the National Cancer Institute</a>, several studies show that acupuncture can help boost immunity and speed up recovery following cancer treatments. One randomized trial, for example, found that acupuncture treatment enhanced immunity, platelet count and prevented a decrease in healthy cells after radiation therapy or chemotherapy when compared to receiving no acupuncture. </br></br>
-        
-    Researchers reported that the patients in both acupuncture treatment groups also experienced less pain from treatments, improvements in quality of life and a decrease in various negative side effects of chemotherapy, such as nausea.
+      <p class="h4">
+      In 1997, <a href="https://www.cancer.gov/about-cancer/treatment/cam/patient/acupuncture-pdq#link/_57" class="link4">the National Institutes of Health (NIH)</a> began looking at how well acupuncture worked as a complementary therapy for cancer -related symptoms and side effects of cancer treatments. Studies of acupuncture in cancer care also have been done in China and other countries.</a>
       </p>
       <!--a href="#" class="btn-more bg5">more</a-->
     </div>
 
     <p class="sub_title_lt"><a href="#">4. Quit Adiction</a></p>
     <div class="text_center">
-      <p class="h4_lt"> 
+      <p class="h4"> 
       Acupuncture can be used to aid in treatment of addiction and to help patients to reduce prescribed medications which are difficult to withdraw from. Acupuncture treatment reduces withdrawal symptoms, aids in relaxation in cases of anxiety, improves sleep, and reduces cravings for drugs. 
       </p>   
     </div>
-    <div><img src="/assets/pain_neck2.jpg" alt="" class="img10"></div>
     <p class="sub_title_lt"><a href="#">5. Improve Chronic Pain</a></p>
     <div class="text_center">
-      <p class="h4_lt">
+      <p class="h4">
       Acupuncture treates chronic Pain, Including for the Back, Neck, Knee or Arthritis Pain. The researchers reviewed clinical trials involving over 17,000 patients, and the results showed that patients receiving acupuncture had less pain than patients in the placebo control group for back and neck muscle aches and pain, osteoarthritis, and chronic headaches. (6) The conclusion was that acupuncture is effective for the treatment of chronic pain and is “more than just a placebo effect, therefore it’s a reasonable referral option for doctors.”
       </p>
     </div>
-
-    <div><img src="/assets/neuro2.jpg" alt="" class="img11"></div>
-    <p class="sub_title_lt"><a href="#">6. Helps to Prevent Cognitive Decline</a></p>
-    <div class="text_center">
-      <p class="h4_lt">
-      Some early research has showing new information about the effectiveness of  acupuncture on Parkinson’s. Studies show that can relieve age-related cognitive decline symptoms as it generates a neural response in areas of the brain — such as the putamen and the thalamus — that are particularly affected by Parkinson’s disease.</br></br>
-
-      In a 2002 study done by the Department of Neurology at the University of Maryland School of Medicine, after 20 Parkinson’s patients were treated with acupuncture for 16 sessions, 85 percent of patients reported subjective improvements of individual symptoms, including tremor, walking, handwriting, slowness, pain, sleep, depression and anxiety. There were no adverse effects. 
-      </p>
-    </div>
-
-    <p class="sub_title_lt"><a href="#">7. Pregnancy, Labor & Postpartum Health</a></p>
-    <div class="text_center">
-      <p class="h4_lt">
-      Many doctors are now recommending acupuncture as a treatment to reduce stress, balance hormones, and ease the anxiety and pain of pregnancy and labor.</br></br>
-
-      It’s considered a safe treatment for many of the common symptoms during pregnancy — to ease the physical and emotional strain on the body — as well as after the baby is born to help with any mood, depression, mental or physical symptoms the mother may experience. It can even be used right before the baby is due to prepare the body for labor.</br></br>
-      </p>
-    </div>
-
-
-
   </div>
 </div>
 
 <div class="grid_100 txt_center top-margin-60">
-  <h2 class="txt_center">Acupuncture <font class="txt_dgreen">Side Effects?</font></h2>
+  <h2 class="txt_center">Acupuncture <font class="txt_pink">Side Effects?</font></h2>
   <div class="dez-separator-outer">
     <div class="dez-separator bg-primary style-liner"></div>
   </div>
