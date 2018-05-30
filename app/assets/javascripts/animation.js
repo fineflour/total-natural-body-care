@@ -1,4 +1,5 @@
-$(window).load(function(){
+//$(window).load(function(){
+$(document).ready(function() {
   $('img.bgfade').hide();
   var dg_H = $(window).height();
   var dg_W = $(window).width();
