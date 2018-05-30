@@ -1,6 +1,6 @@
 //$(window).load(function(){
 $(document).ready(function() {
-  $('img.bgfade').hide();
+  //$('img.bgfade').hide();
   var dg_H = $(window).height();
   var dg_W = $(window).width();
   //$('#ani-wrap').css({'height':dg_H/4,'width':dg_W});
