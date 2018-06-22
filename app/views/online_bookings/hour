@@ -1,0 +1,20 @@
+//.grid_2
+          .h4.marTop5.bold  Our Hours
+          %p 
+            .bold Monday 
+            10:00AM ~ 05:00PM
+          %p 
+            .bold Tuesday
+          %p 
+            .bold Wednesday
+            10:00AM ~ 05:00PM
+          %p 
+            .bold Thursday
+            10:00AM ~ 05:00PM
+          %p 
+            .bold Friday
+            10:00AM ~ 05:00PM
+          %p 
+            .bold Saturday
+            10:00AM ~ 4:00PM
+
