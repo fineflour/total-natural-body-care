@@ -58,7 +58,7 @@ group :development do
 end
 
 group :production, :staging do
-  gem 'rails_12factor'
+  gem 'sprockets', '3.7.2'
 end
 
 
