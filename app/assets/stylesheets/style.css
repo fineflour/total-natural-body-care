@@ -1274,6 +1274,11 @@ p.txt_priv{
     margin-top: 20px;
   }
 
+  .h2-green .h4-white {
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+
 
 
 }
