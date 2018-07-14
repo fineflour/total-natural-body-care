@@ -1,2 +1,5 @@
-<h1>Index#show</h1>
-<p>@article.title</p>
+<p class="title">Articles</p>
+<div class="panel center  panel-default">
+<p><%= @article.title %></p>
+<p><%= @article.body.html_safe %></p>
+</div>

@@ -1,5 +1,5 @@
 <p class="title">Articles</p>
-<div class="panel panel-default">
+<div class="panel center panel-default">
   <div class="panel-heading">
     <%= link_to "Add new article", new_article_path, class: "btn btn-info" %>
   </div>
@@ -14,15 +14,15 @@
           <th>Title</th>
           <th>Soruce</th>
           <th>Active</th>
-          <th>Created By</th>
           <th>Created At</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <% @articles.each do |a| %>
-          <tr id="arricle-<%= m.id %>">
+          <tr id="arricle-<%= a.id %>">
             <td>
-              <%= link_to a.title, material_path(a) %>
+              <%= link_to a.title, article_path(a) %>
             </td>
             <td>
               <%= a.source %>
@@ -31,15 +31,15 @@
               <%= a.active %>
             </td>
             <td>
-              <%= a.user %>
-            </td>
-            <td>
               <%= a.updated_at.strftime("%m/%d/%Y") %>
             </td>
             <td>
               <%= link_to "Show", article_path(a) %>
               |
-              \#{link_to "Edit", edit_article_path(a)}
+              <%= link_to "Edit", edit_article_path(a) %>
+              |
+              <%= link_to "Delete", article_path(a), :confirm => "Are you sure?", :method => :delete %>
+
             </td>
           </tr>
         <% end %>

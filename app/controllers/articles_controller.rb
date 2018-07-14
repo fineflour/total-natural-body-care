@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_create_params)
+    @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Article created successfully!"
       redirect_to articles_path
@@ -44,7 +44,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id]).destroy
     flash[:notice] = "Article successfully deleted"
     redirect_to articles_path
-
   end
 
   private 
@@ -57,6 +56,6 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article)
-      .permit(:title, :body, :active, :soruce)
+      .permit(:category, :title, :body, :active, :source)
   end
 end
