@@ -246,10 +246,12 @@ nav select{
 nav{min-height: 30px;}
 
 }
+.main_one_pix{
+  width: 200px;
+}
 
 .s_logo {
-  width: 220px;
-  margin: 20px;
+  margin: 10px;
   padding-right:40px;
   margin-bottom: 0px;
   float: left;
@@ -262,7 +264,7 @@ nav{
   position: fixed;
   background: #f8f8f8;
   margin: 0px;
-  height: 76px;
+  height: 80px;
   float: left;
   width: 100%;
   left: 0;

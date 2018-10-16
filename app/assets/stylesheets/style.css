@@ -10,6 +10,13 @@
 
 
 /*========= My customed ==================*/
+
+#main-image {
+  background: url(/assets/main_image_2nd.jpg) 50% 50% no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
 .center {
   margin: auto;
   padding: 10px;
@@ -79,11 +86,12 @@
   font-size: 56px;
   font-weight: 800;
   line-height: 60px;
-  color:#074800;
+  color:#54dd01;
   margin-top: 90px;
   padding-bottom: 10px;
   border-bottom: 0px solid #c9c9c9;
   text-align: right;
+  text-transform: uppercase;
 }
 
 .bg_grey {
@@ -92,7 +100,7 @@
 }
 
 .h4-white {
-  font:normal 24px/28px 'Poppins', Arial, sans-serif;
+  font:normal 28px/30px 'Poppins', Arial, sans-serif;
   color:#FFF;
   margin-top: 10px;
   padding-bottom: 10px;

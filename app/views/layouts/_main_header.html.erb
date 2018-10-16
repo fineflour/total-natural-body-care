@@ -1,27 +1,22 @@
 <!--script type="text/javascript" src="/assets/animation.js"></script>
 <script type="text/css" src="/assets/animation.css"></script-->
 <div id="ani-wrap">
-  <img class="bgfade" src="/assets/main_image4.jpg">
-  <img class="bgfade" src="/assets/main_image2.jpg">
-  <img class="bgfade" src="/assets/main_image3.jpg">
-  <img class="bgfade" src="/assets/main_image5.jpg">
-  <img class="bgfade" src="/assets/main_image1.jpg">
-  <!--img class="bgfade" src="http://farm9.staticflickr.com/8532/8667337535_6da0a9a261_z.jpg">
-    <img class="bgfade" src="http://farm9.staticflickr.com/8540/8667244539_d227f8c435_z.jpg"-->
+  <img class="bgfade" src="/assets/main_images_2nd.jpg">
 </div>
 <div class="box-1">
   <div class="container">
     <div class="row">
       <div class="grid_8">
-        <h1><a href="/"><img src="/assets/main_logo.png" class="main_logo" alt="Nature"></a></h1>
+        <h1><img src="/assets/one_pix.png" class="main_one_pix"></h1>
       </div>
       <div class="grid_2">
         <!--%= link_to 'Book Appointment Now!', new_online_booking_path, class: "btn-book" %-->
       </div>
     </div>
     <div class="grid_12">
-      <p class="h2-green ">We awaken the healing power of life</br>in your body in a natural way</p>
-      <p class="h4-white">We offer individualized treatment plans, diet plans and</br>preventive health care educations.</p>
+      <p class="h2-green ">Natural forces within us</br>are the true healers of disease</p>
+      <p class="h4-white">We awaken the healing power of life
+      in your body with a natural care acupuncture and</br>individualized diet plans and offer preventive health care educations.</p>
     </div>
   </div>
 </div>
@@ -36,7 +31,7 @@ $(document).ready(function() {
   function anim() {
     $("#ani-wrap img.bgfade").first().appendTo('#ani-wrap').fadeOut(8000);
     $("#ani-wrap img").first().fadeIn(8000);
-    setTimeout(anim, 16000);
+    //setTimeout(anim, 16000);
   }
   anim();}
   )
