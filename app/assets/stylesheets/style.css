@@ -108,6 +108,16 @@
   text-align: right;
 }
 
+.h3-white{
+  font:normal 32px/34px 'Poppins', Arial, sans-serif;
+  color:#fff;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  border-bottom: 0px solid #c9c9c9;
+  text-align: right;
+}
+
+
 .txt_dgreen {
   color: #269300;
 }
@@ -1211,7 +1221,7 @@ p.txt_priv{
     padding-right: 100px;
   }
 
-  .h4-white {
+.h4-white {
     font-size: 22px;
     color:#888;
     margin-top: 10px;
