@@ -72,7 +72,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
 gem 'pg_search', '0.7.9'
 
-gem 'bootstrap-sass', '~> 3.1.1.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap_form'
 gem 'simple_form'
