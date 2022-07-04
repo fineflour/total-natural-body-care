@@ -1,31 +1,103 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
+ * .txt_address {
+ *     font: 18px/20px 'Roboto', Arial, sans-serif;
+ *         margin-top: 15px;
+ *             color: #fff;
+ *             }
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
-  *
- */
-/*
- **= require bootstrap
- *= require_tree .       
+ * .box-4 {
+ *     background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
+ *         margin-top: 4px;
+ *             padding-top: 20px;
+ *                 padding-bottom: 26px;
+ *                     text-align: center;
+ *                         color: #fff;
+ *                         }
+ *= require bootstrap
  *= require_self    
+ *= require_tree .       
  */
 
+body {
+  font-family:  "Visuelt Pro", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.428571429;
+  font-size: 14px;
+  color: #333333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 
-
-
-
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../assets/glyphicons-halflings-regular.woff') format('woff'), url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+body, button, input, optgroup, select, textarea {
+  font-family: "Visuelt Pro",sans-serif;
+}
+
+.grid_100 {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-margin-60{
+  margin-top: 60px;
+}
+
+.txt_center {
+  text-align: center;
+}
+.bg-primary{
+  background-color: #69e800;
+}
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  color: #000;
+}
+.main_top_line {
+  color: #f7f8f8;
+  height: 2px;
+}
+
+.box-4 {
+  background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
+  margin-top: 4px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+footer {
+  display: block;
+  width: 100%;
+}
+
+.footer_priv {
+  padding: 20px 0 30px;
+}
+
+.marTop5 {
+  margin-top: 60px;
+}
+
+
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  margin-top: 15px;
+  color: #fff;
+}
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  margin-top: 15px;
+  color: #fff;
+}

@@ -1,0 +1,22 @@
+- # Required local params
+- # @param user [User] - an instance of User to render the form for.
+.user-info
+  %p.data-row
+    %span.data-name Name:
+    %span.data-value= user.name
+  %p.data-row
+    %span.data-name Email:
+    %span.data-value= user.email
+  %p.data-row
+    %span.data-name Role:
+    %span.data-value= user.role
+  - if !user.admin?
+    %p.data-row
+      %span.data-name Distribution Centers:
+      %span.data-value= user.distribution_centers.map {|dc| "#{dc.name}"}.join(",")
+  %p.data-row
+    %span.data-name Created on:
+    %span.data-value= user.created_at
+  %p.data-row
+    %span.data-name Last updated on:
+    %span.data-value= user.updated_at

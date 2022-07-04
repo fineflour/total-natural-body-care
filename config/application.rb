@@ -14,16 +14,21 @@ module TotalNaturalBodyCare
     config.autoload_paths += Dir["#{config.root}/lib/**/"]  
    # config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
 
-   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf)
     config.autoload_paths += %W(#{config.root}/app/assest/fonts)  
+    config.autoload_paths += %W(#{config.root}/app/assest/fonts/jost)  
     config.autoload_paths += %W(#{config.root}/app/assest/stylesheets)  
     config.autoload_paths += %W(#{config.root}/app/assest/javascripts)  
     config.autoload_paths += %W(#{config.root}/app/assets/images)  
+    config.autoload_paths += %W(#{config.root}/app/assets/resources)  
 
     config.generators do |generate|
       generate.helper false
       generate.assets false
     end
+
+
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

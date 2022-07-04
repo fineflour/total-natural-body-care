@@ -9,6 +9,7 @@ class OnlineBookingsController < ApplicationController
 	end
 
 	def new
+    menu_values
 		@online_booking = OnlineBooking.new
 	end
 
@@ -41,6 +42,7 @@ class OnlineBookingsController < ApplicationController
 
 
 	private
+
 	def online_booking_params
 		params.require(:online_booking).permit(:fname, :lname, :email, :phone, :doctor,
 																					 :appnt_date,  :appnt_time, :appnt_date, :appnt_time, :note)
@@ -49,4 +51,21 @@ class OnlineBookingsController < ApplicationController
 	def online_bookings_for_index
 		OnlineBooking.order("id").paginate(page: params[:page])
 	end
+
+  def menu_values
+    menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
+
+    if(params[:menu_values])
+      id = params[:menu_values].to_i
+    else
+      id = 100
+    end
+
+    for n in menu_values
+      if (n["id"] == id)
+        @menu_values = n
+      end
+    end
+  end
+
 end

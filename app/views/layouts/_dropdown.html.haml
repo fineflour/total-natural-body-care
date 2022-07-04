@@ -1,0 +1,63 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    .bg-white.row-cols-2
+      %a.navbar-brand{:href => "/"}
+        %img.s_logo{:alt => "Life and Nature", :src => "/assets/logo_sm.png"}/
+    .bg-white.row-cols-2
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.close ×
+        %span.navbar-toggler-icon
+    #navbarNavDropdown.collapse.navbar-collapse
+      %ul.navbar-nav
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "page", :href => "/?menu_values=100"} Home
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Services
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "/sites/acupuncture?menu_values=201"} Acupuncture
+            %li
+              %a.dropdown-item{:href => "/sites/cupping?menu_values=202"} Cupping
+            %li
+              %a.dropdown-item{:href => "/sites/massage?menu_values=203"} Medical Massage
+            %li
+              %a.dropdown-item{:href => "/sites/vitamin-herb?menu_values=204"} Vitamins & Herbs
+            %li
+              %a.dropdown-item{:href => "/sites/homeopathic?menu_values=205"} Homeopathics
+            %li
+              %a.dropdown-item{:href => "/sites/neutrition?menu_values=206"} Neutrition & Diet 
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Conditions
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "/sites/pain?menu_values=301"} Acute & Chronic Pain
+            %li
+              %a.dropdown-item{:href => "/sites/neurology?menu_values=302"} Neurology Disorder
+            %li
+              %a.dropdown-item{:href => "/sites/emotion?menu_values=303"} Emotional Disorder
+            %li
+              %a.dropdown-item{:href => "/sites/autoimmune?menu_values=304"} Autoimmune
+            %li
+              %a.dropdown-item{:href => "/sites/oncology?menu_values=305"} Oncology Supportive Care
+            %li
+              %a.dropdown-item{:href => "/sites/diabete?menu_values=306"} Diabetic Care
+        %li.nav-item
+          %a.nav-link{:href => "/ptsrcs/"} Patient Resources
+        %li.nav-item
+          %a.nav-link{:href => "/sites/qna?menu_values=500"} Q & A
+        %li.nav-item
+          %a.nav-link{:href => "/sites/appointment?menu_values=600"} Appointments
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} About us
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "/sites/aboutus?menu_values=701"} Meet us
+            %li
+              %a.dropdown-item{:href => "/sites/aboutus?menu_values=702"} Testimonials
+            %li
+              %a.dropdown-item{:href => "/online_bookings/new?menu_values=703"} Business Hours/Location
+- if current_page?(root_url)
+  = render partial: "/layouts/main_image"
+- else

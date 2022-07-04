@@ -1,0 +1,20 @@
+.grid_100.has-text-centered
+  - if params[:menu_values] != '500'
+    %h2.subtitle.center
+      %font.txt_dgreen Questions
+      and
+      %font.txt_dgreen Answers
+    .dez-separator-outer
+      .dez-separator.bg-primary.style-liner
+%br
+.grid_100.center
+  .accordion#Answer
+    - @qna_list.each do |appnt|
+      .accordion-item
+        %h2.accordion-header{:id => "heading#{appnt.id}"}
+          %button.accordion-button.collapsed{"aria-controls" => "collapse#{appnt.id}", "aria-expanded" => "false", "data-bs-target" => "#collapse#{appnt.id}", "data-bs-toggle" => "collapse", :type => "button"}
+            Q#{appnt.id}.
+            = appnt.question
+        .accordion-collapse.collapse{"id" => "collapse#{appnt.id}", "aria-labelledby" => "heading#{appnt.id}", "data-bs-parent" => "#Answer"}
+          .title.is-4.accordion-body
+            = appnt.answer

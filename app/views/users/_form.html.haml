@@ -1,0 +1,15 @@
+- # Required local params
+- # @param user [User] an instance of User to render the form for.
+= simple_form_for user, html: {class: "form-horizontal" }, |
+  wrapper: :horizontal_form,                               |
+  wrapper_mappings: {                                      |
+  } do |f|                                                 |
+  = f.input :email
+  = f.input :name
+  = f.input :role, collection: User::ROLES, checked: :role
+  = f.association :distribution_centers, collection: DistributionCenter.all.map {|dc| [dc.name, dc.id]}, input_html: { multiple: true}
+  .button-padding.pull-right
+    = link_to "Back to index", users_path, class: "btn btn-default"
+    = f.submit "Submit", class: "btn btn-info"
+    - if params[:action] == "edit"
+      = link_to "Permanently Delete User", user_path(@user.id), method: :delete, class: "btn btn-warning pull-right", data: {confirm: "Are you sure you want to permanently delete this user from the database? This action cannot be undone. Records will be permanently removed from the database."}

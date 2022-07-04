@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180702211726) do
+ActiveRecord::Schema.define(version: 20220607011939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180702211726) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+    t.string "url"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -94,6 +95,18 @@ ActiveRecord::Schema.define(version: 20180702211726) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ptsrcs", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "category"
+    t.string "link"
+    t.string "attached"
+    t.boolean "active"
+    t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "category"
     t.string "fname"
@@ -105,6 +118,18 @@ ActiveRecord::Schema.define(version: 20180702211726) do
     t.boolean "display", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "questions_and_answers", force: :cascade do |t|
+    t.string "question", default: "", null: false
+    t.text "answer", default: "", null: false
+    t.integer "view_count", default: 0, null: false
+    t.boolean "show", default: true
+    t.integer "view_order", default: 10000
+    t.text "link"
+    t.datetime "created_at", default: -> { "now()" }, null: false
+    t.datetime "updated_at", default: -> { "now()" }, null: false
+    t.text "short_answer"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,6 +145,7 @@ ActiveRecord::Schema.define(version: 20180702211726) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyString
+  answer: MyText
+  view_count: 1
+  show: false
+  view_order: 1
+  link: MyText
+
+two:
+  question: MyString
+  answer: MyText
+  view_count: 1
+  show: false
+  view_order: 1
+  link: MyText

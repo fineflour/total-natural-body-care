@@ -1,0 +1,13 @@
+%div.grid_100
+  %div.breadcrumb-box
+    %nav{"aria-label" => "breadcrumb"}
+      %ol.breadcrumb
+        - if @menu_values['category'].present?
+          %li.breadcrumb-item
+            %a{:href => "#"} 
+              = @menu_values['category'] 
+          %li.breadcrumb-item
+            %a{:href => "#"} 
+              = @menu_values['name']
+        %li.breadcrumb-item.active{"aria-current" => "page"} 
+

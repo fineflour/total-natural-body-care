@@ -1,0 +1,61 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    .bg-white.row-cols-2
+      %a.navbar-brand{:href => "/"}
+        %img.s_logo{:alt => "Life and Nature", :src => "/assets/logo_s.png"}/
+    .bg-white.row-cols-2
+      %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
+        %span.close ×
+        %span.navbar-toggler-icon
+    #navbarNavDropdown.collapse.navbar-collapse
+      %ul.navbar-nav
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "page", :href => "/"} Home
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Services
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "/pages/acupuncture"} Acupuncture
+            %li
+              %a.dropdown-item{:href => "/pages/cupping"} Cupping
+            %li
+              %a.dropdown-item{:href => "/pages/massage"} Medical Massage
+            %li
+              %a.dropdown-item{:href => "/pages/vitamin-herb"} Vitamins/Herbs
+            %li
+              %a.dropdown-item{:href => "/pages/homeopathic"} Homeopathics
+            %li
+              %a.dropdown-item{:href => "/pages/neutrition"} Neutrition Counceling
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Conditions
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "#"} Acute/Chronic Pain
+            %li
+              %a.dropdown-item{:href => "#"} Neurology Disorder
+            %li
+              %a.dropdown-item{:href => "#"} Emotional Disorder
+            %li
+              %a.dropdown-item{:href => "#"} Autoimmune
+            %li
+              %a.dropdown-item{:href => "#"} Oncology Supportive Care
+            %li
+              %a.dropdown-item{:href => "#"} Diabetic Care
+        %li.nav-item
+          %a.nav-link{:href => "#"} Patient Resources
+        %li.nav-item
+          %a.nav-link{:href => "/pages/qna"} Q and A
+        %li.nav-item
+          %a.nav-link{:href => "#"} Appointments
+        %li.nav-item.dropdown
+          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} About us
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+            %li
+              %a.dropdown-item{:href => "#"} Testimonials
+            %li
+              %a.dropdown-item{:href => "/online_bookings/new"} Business Hours/Location
+- if current_page?(root_url)
+  = render partial: "/layouts/main_image"
+- else

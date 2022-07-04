@@ -1,0 +1,12 @@
+= render partial: "/layouts/page_title" 
+.grid_100.has-text-centered
+  %h2.subtitle.txt_dgreen
+    = @ptsrc.title
+  %div.dez-separator-outer
+    %div.dez-separator.bg-primary.style-liner
+  %div.grid_100.has-text-justified
+    %h2.title.is-4
+      = @ptsrc.body.html_safe
+
+  %div.grid_100.has-text-centered
+    %iframe{:src => "/assets/" + @ptsrc.link, :width => "96%", :height => "780", :style => "border: none;"}

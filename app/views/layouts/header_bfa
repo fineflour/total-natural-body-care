@@ -1,0 +1,86 @@
+
+<div id="stuck_container">
+  <header>
+    <div class="container">
+      <div class="navbar-header">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+
+              <a class="navbar-brand" href="/">
+                <!--img src="/img/logo.svg" alt="BfA logo" class="hidden-sm hidden-xs"
+                  <img src="/img/logo-mark.svg" alt="BfA logo" class="hidden-md hidden-lg"-->
+                  <a href="/"><img src="/assets/logo_header.jpg" class="s_logo" alt="Nature"></a>
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+              <ul class="nav navbar-nav">
+
+                <li><a role="button" data-toggle="collapse" href="#mediasubmenu" aria-expanded="false" aria-controls="mediasubmenu">services</a></li>
+                <li class="nav-submenu">
+                  <div class="collapse clearfix" id="mediasubmenu">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/podcast">acupuncture</a></li>
+                      <li><a href="/videos">cupping</a></li>
+                      <li><a href="/videos">detox</a></li>
+                      <li><a href="https://gospel.biblesforamerica.org/">medical massage/accupressure</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+
+
+                <li><a role="button" data-toggle="collapse" href="#mediasubmenu" aria-expanded="false" aria-controls="mediasubmenu">Common Illness</a></li>
+                <li class="nav-submenu">
+                  <div class="collapse clearfix" id="mediasubmenu">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/podcast">Chronic Pain</a></li>
+                      <li><a href="/videos"></a></li>
+                      <li><a href="/videos">detox</a></li>
+                      <li><a href="https://gospel.biblesforamerica.org/">medical massage/accupressure</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+
+                <li><a role="button" data-toggle="collapse" href="#mediasubmenu" aria-expanded="false" aria-controls="mediasubmenu">Food Therapy</a></li>
+                <li class="nav-submenu">
+                  <div class="collapse clearfix" id="mediasubmenu">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/podcast">acupuncture</a></li>
+                      <li><a href="/videos">cupping</a></li>
+                      <li><a href="/videos">detox</a></li>
+                      <li><a href="https://gospel.biblesforamerica.org/">medical massage/accupressure</a></li>
+                    </ul>
+                  </div>
+                </li>
+
+
+                <li><a role="button" data-toggle="collapse" href="#mediaSubMenu" aria-expanded="false" aria-controls="mediaSubMenu">About </a></li>
+
+                <li class="nav-submenu">
+                  <div class="collapse clearfix" id="mediaSubMenu">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/podcast">Our Mission</a></li>
+                      <li><a href="/videos">Who We are</a></li>
+                      <li><a href="https://gospel.biblesforamerica.org/">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="/about">About</a></li>
+
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://contributions.biblesforamerica.org/support-bfa" class="btn btn-default-outline">Give</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+  </header>
+        </div>
