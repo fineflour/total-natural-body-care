@@ -61,6 +61,15 @@
   link: '' 
   active: true 
   note: 
+
+- id: 207 
+  id_no: 20000
+  category: 'Services'
+  name: 'Detox & Purification'
+  link: '' 
+  active: true 
+  note: 
+
  
 - id: 300 
   id_no: 10000
@@ -81,7 +90,7 @@
 - id: 302 
   id_no: 10000
   category: 'Conditions'
-  name: 'Neurology Disorder'
+  name: 'Neurological Disorder'
   link: '' 
   active: true
   note:
@@ -104,7 +113,7 @@
 
 - id: 305 
   id_no: 10000
-  category: 300 
+  category: 'Conditions'
   name: 'Oncology Supportive Care'
   link: '' 
   active: true
@@ -112,8 +121,56 @@
 
 - id: 306 
   id_no: 10000
-  category: 300 
+  category: 'Conditions'
   name: 'Diabetic Care'
+  link: '' 
+  active: true
+  note:
+
+- id: 307 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Weight Loss'
+  link: '' 
+  active: true
+  note:
+
+- id: 308 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Female'
+  link: '' 
+  active: true
+  note:
+
+- id: 309 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Male'
+  link: '' 
+  active: true
+  note:
+
+- id: 310
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Pediatric'
+  link: '' 
+  active: true
+  note:
+
+- id: 311
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Addictions'
+  link: '' 
+  active: true
+  note:
+
+- id: 312
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Digestive Issues'
   link: '' 
   active: true
   note:
