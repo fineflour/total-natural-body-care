@@ -1,4 +1,4 @@
-%div.grid_100
+%div.section
   %div.breadcrumb-box
     %nav{"aria-label" => "breadcrumb"}
       %ol.breadcrumb
@@ -10,4 +10,8 @@
             %a{:href => "#"} 
               = @menu_values['name']
         %li.breadcrumb-item.active{"aria-current" => "page"} 
+  %div.title-box
+    %h4.title.is-0
+      = @menu_values['name']
+
 

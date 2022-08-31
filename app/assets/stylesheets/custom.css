@@ -128,11 +128,12 @@ p.txt_priv{
 }
 
 .title.is-0 {
-  vertical-align: middle;
-  font-weight: 560;
-  font-size: 2.4rem;
+  vertical-align: top;
+  font-weight: 500;
+  font-size: 3.57rem;
+  color: hsl(0deg,0%,4%);
   line-height: 1.125;
-  color: #777;
+  font-family: "Visuelt Pro",sans-serif;
 }
 
 .title.is-2 {
@@ -222,9 +223,9 @@ p {
 
 .title-box {
   background: #fff;
-  padding-top: 0px;
-  margin-top: 0px;
-  padding-left: 40px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  padding-left: 66px;
   margin-left: 1rem;
   margin-right: 1rem;
   padding-right: 1rem;
@@ -269,8 +270,8 @@ p {
   background: #fff;
   width: 100%;
   margin-left: 0px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 .grid_90{
   background: #fff;
@@ -480,7 +481,6 @@ p {
 .breadcrumb-box {
   border-bottom: 1px;
   background-color: #FFF;
-  border-top: 1px solid #c9c9c9;
   padding: 20px;
   padding-top: 6px;
 
@@ -496,4 +496,9 @@ p {
   width: 300px;
   border: 0px solid #aaa
 }
+.section {
+      border-top: .0714285714rem solid rgba(0,0,0,.08);
+      border-bottom: .0714285714rem solid rgba(0,0,0,.08);
+    }
+
 /***************End ***********************/

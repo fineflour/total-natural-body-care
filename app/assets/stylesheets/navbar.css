@@ -1,6 +1,6 @@
 .bg-white.row-cols-2 {
   padding-top: 16px;
-  min-height: 90px;
+  min-height: 70px;
 }
 
 .navbar-toggler-icon, span.close {
@@ -79,7 +79,7 @@ span.navbar-toggler-icon:focus, button.navbar-toggler:hover, button.navbar-toggl
 
 .navbar {
   position: relative;
-  min-height: 90px;
+  min-height: 70px;
 }
 
 .img_container {

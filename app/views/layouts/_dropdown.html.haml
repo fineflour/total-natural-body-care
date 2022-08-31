@@ -16,19 +16,18 @@
             Services
           %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
             %li
-              %a.dropdown-item{:href => "/sites/acupuncture?menu_values=201"} Acupuncture
+              %a.dropdown-item{:href => "/sites/acupuncture?menu_values=201"} Balancing Acupuncture
             %li
-              %a.dropdown-item{:href => "/sites/cupping?menu_values=202"} Cupping
+              %a.dropdown-item{:href => "/sites/cupping?menu_values=202"} Cupping & Massage
             %li
-              %a.dropdown-item{:href => "/sites/massage?menu_values=203"} Medical Massage
+              %a.dropdown-item{:href => "/sites/neutrition?menu_values=203"} Detox / Purification / Weight Loss
             %li
-              %a.dropdown-item{:href => "/sites/vitamin-herb?menu_values=204"} Vitamins & Herbs
+              %a.dropdown-item{:href => "/sites/vitamin-herb?menu_values=204"} Lab Test
             %li
-              %a.dropdown-item{:href => "/sites/homeopathic?menu_values=205"} Homeopathics
+              %a.dropdown-item{:href => "/sites/vitamin-herb?menu_values=205"} Natural Skin Care
             %li
-              %a.dropdown-item{:href => "/sites/neutrition?menu_values=206"} Neutrition & Diet 
-            %li
-              %a.dropdown-item{:href => "/sites/neutrition?menu_values=207"} Detox & Purification
+              %a.dropdown-item{:href => "/sites/neutrition?menu_values=206"} Consulting (Diet, Suppliments, Exercise) 
+
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
             Conditions
@@ -45,14 +44,15 @@
               %a.dropdown-item{:href => "/sites/oncology?menu_values=305"} Oncology Supportive Care
             %li
               %a.dropdown-item{:href => "/sites/diabete?menu_values=306"} Diabetic Care
-            %li
-              %a.dropdown-item{:href => "/sites/diabete?menu_values=307"} Weight Loss 
-        %li.nav-item
-          %a.nav-link{:href => "/ptsrcs/"} Patient Resources
         %li.nav-item
           %a.nav-link{:href => "/sites/qna?menu_values=500"} Q & A
         %li.nav-item
-          %a.nav-link{:href => "/sites/appointment?menu_values=600"} Appointments
+          %a.nav-link{:href => "/sites/appointment"} Appointment & Visit
+        %li.nav-item
+          %a.nav-link{:href => "/sites/price"} Price & Insurance
+        %li.nav-item
+          %a.nav-link{:href => "/ptsrcs/"} Patient Resources
+        
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} About us
           %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
@@ -61,7 +61,12 @@
             %li
               %a.dropdown-item{:href => "/sites/aboutus?menu_values=702"} Testimonials
             %li
-              %a.dropdown-item{:href => "/online_bookings/new?menu_values=703"} Business Hours/Location
+              %a.dropdown-item{:href => "/online_bookings/new?menu_values=703"} Gallery
+            %li
+              %a.dropdown-item{:href => "/online_bookings/new?menu_values=704"} Business Hours/Location
+        %li.nav-item
+          %a.nav-link{:href => "/shop/"} Shop
+
 - if current_page?(root_url)
   = render partial: "/layouts/main_image"
 - else

@@ -17,7 +17,7 @@
 - id: 201 
   id_no: 20000
   category: 'Services'
-  name: 'Acupuncture'
+  name: 'Balancing Acupuncture'
   link: '' 
   active: true
   note: 
@@ -25,7 +25,7 @@
 - id: 202 
   id_no: 20000
   category: 'Services'
-  name: 'Cupping'
+  name: 'Cupping & Medical Massage'
   link: '' 
   active: true
   note: 
@@ -33,7 +33,7 @@
 - id: 203 
   id_no: 20000
   category: 'Services'
-  name: 'Medical Massage'
+  name: 'Detox & Purification & Weight Loss'
   link: '' 
   active: true 
   note: 
@@ -41,36 +41,27 @@
 - id: 204 
   id_no: 20000
   category: 'Services'
-  name: 'Vitamins & Herbs'
+  name: 'Lab Test'
   link: '' 
-  active: true
+  active: true 
   note: 
 
 - id: 205 
   id_no: 20000
   category: 'Services'
-  name: 'Homeopathics'
+  name: 'Natural Skin Care'
   link: '' 
-  active: true
+  active: true 
   note: 
-  
+
 - id: 206 
   id_no: 20000
   category: 'Services'
-  name: 'Neutrition & Diet'
+  name: 'Consulting (Diet, Suppliments, Exercise)'
   link: '' 
   active: true 
   note: 
 
-- id: 207 
-  id_no: 20000
-  category: 'Services'
-  name: 'Detox & Purification'
-  link: '' 
-  active: true 
-  note: 
-
- 
 - id: 300 
   id_no: 10000
   category: 'Services'
@@ -130,7 +121,7 @@
 - id: 307 
   id_no: 10000
   category: 'Conditions'
-  name: 'Weight Loss'
+  name: ''
   link: '' 
   active: true
   note:
@@ -202,6 +193,24 @@
   active: false
   note: 
 
+- id: 601 
+  id_no: 10000
+  category: 
+  name: 'Appointments'
+  link: '' 
+  active: false
+  note: 
+
+- id: 602 
+  id_no: 10000
+  category: 
+  name: 'First Visit'
+  link: '' 
+  active: false
+  note: 
+
+
+
 - id: 700 
   id_no: 10000
   category: 0
@@ -227,6 +236,14 @@
   note: 
 
 - id: 703 
+  id_no: 10000
+  category: 'About us' 
+  name: 'Galleries'
+  link: '' 
+  active: true
+  note: 
+
+- id: 704 
   id_no: 10000
   category: 'About us' 
   name: 'Business Hours & Location'
