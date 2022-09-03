@@ -1,18 +1,4 @@
-= render partial: "/layouts/page_title" 
-.pagemenu-box
-  %nav{"aria-label" => "pagemenu"}
-    %ol.pagemenu
-      %li.pagemenu-item
-        %a{:href => "#what"} Diet
-      %li.pagemenu-item
-        %a{:href => "#safe"} Is it safe?
-      %li.pagemenu-item
-        %a{:href => "#how"} How it work?
-      %li.pagemenu-item
-        %a{:href => "#benefit"} Benefits
-      %li.pagemenu-item
-        %a{:href => "#side"} Side effects
-.grid_100.has-text-centered
+.grid_80.has-text-centered
   - if (@admin)
     .panel-heading
       = link_to "Add new ptsrc", new_ptsrc_path, class: "btn btn-info"

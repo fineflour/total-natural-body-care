@@ -4796,9 +4796,10 @@ li.breadcrumb-item {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 1rem;
-  color: #6c757d;
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  color: rgba(25,25,25,.5);
+/*  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") ;a*/
 }
+
 .breadcrumb-item.active {
   color: #6c757d;
 }

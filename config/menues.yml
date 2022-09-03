@@ -33,7 +33,7 @@
 - id: 203 
   id_no: 20000
   category: 'Services'
-  name: 'Detox & Purification & Weight Loss'
+  name: 'Detox | Purification | Weight Loss'
   link: '' 
   active: true 
   note: 
@@ -49,7 +49,7 @@
 - id: 205 
   id_no: 20000
   category: 'Services'
-  name: 'Natural Skin Care'
+  name: 'Skin Care'
   link: '' 
   active: true 
   note: 
@@ -57,15 +57,15 @@
 - id: 206 
   id_no: 20000
   category: 'Services'
-  name: 'Consulting (Diet, Suppliments, Exercise)'
+  name: 'Consulting & Education'
   link: '' 
   active: true 
   note: 
 
 - id: 300 
   id_no: 10000
-  category: 'Services'
-  name: 'Conditions'
+  category: 'Conditions'
+  name: ''
   link: '' 
   active: true
   note: 
@@ -73,7 +73,7 @@
 - id: 301 
   id_no: 10000
   category: 'Conditions'
-  name: 'Acute & Chronic Pain'
+  name: 'Chronic & Severe Pain'
   link: '' 
   active: true
   note:
@@ -81,7 +81,7 @@
 - id: 302 
   id_no: 10000
   category: 'Conditions'
-  name: 'Neurological Disorder'
+  name: 'Neurological Disorders'
   link: '' 
   active: true
   note:
@@ -89,7 +89,7 @@
 - id: 303 
   id_no: 10000
   category: 'Conditions'
-  name: 'Emotional Disorder'
+  name: 'Mood & Emotional Disorders'
   link: '' 
   active: true
   note:
@@ -97,7 +97,7 @@
 - id: 304 
   id_no: 10000
   category: 'Conditions'
-  name: 'Autoimmune'
+  name: 'Autoimmune Disorders'
   link: '' 
   active: true
   note:
@@ -105,7 +105,7 @@
 - id: 305 
   id_no: 10000
   category: 'Conditions'
-  name: 'Oncology Supportive Care'
+  name: 'Digestsive Disorders'
   link: '' 
   active: true
   note:
@@ -113,7 +113,7 @@
 - id: 306 
   id_no: 10000
   category: 'Conditions'
-  name: 'Diabetic Care'
+  name: 'Systemic Disease'
   link: '' 
   active: true
   note:
@@ -121,7 +121,7 @@
 - id: 307 
   id_no: 10000
   category: 'Conditions'
-  name: ''
+  name: 'Reproductive Disorders'
   link: '' 
   active: true
   note:
@@ -129,7 +129,7 @@
 - id: 308 
   id_no: 10000
   category: 'Conditions'
-  name: 'Female'
+  name: 'Pediatric Care'
   link: '' 
   active: true
   note:
@@ -137,7 +137,7 @@
 - id: 309 
   id_no: 10000
   category: 'Conditions'
-  name: 'Male'
+  name: 'Skin Conditions'
   link: '' 
   active: true
   note:
@@ -145,7 +145,7 @@
 - id: 310
   id_no: 10000
   category: 'Conditions'
-  name: 'Pediatric'
+  name: 'Pediatric Care'
   link: '' 
   active: true
   note:
@@ -161,7 +161,7 @@
 - id: 312
   id_no: 10000
   category: 'Conditions'
-  name: 'Digestive Issues'
+  name: 'Digestive Disorders'
   link: '' 
   active: true
   note:
@@ -195,21 +195,27 @@
 
 - id: 601 
   id_no: 10000
-  category: 
-  name: 'Appointments'
+  category: 'Appointments & Visits'
+  name: 'Appointments' 
   link: '' 
   active: false
   note: 
 
 - id: 602 
   id_no: 10000
-  category: 
+  category: 'Appointments & Visits'
   name: 'First Visit'
   link: '' 
   active: false
   note: 
 
-
+- id: 603 
+  id_no: 10000
+  category: 'Appointments & Visits'
+  name: 'Visit'
+  link: '' 
+  active: false
+  note: 
 
 - id: 700 
   id_no: 10000
@@ -219,7 +225,7 @@
   active: true
   note: 
 
-- id: 701 
+- id: 702 
   id_no: 10000
   category: 'About us' 
   name: 'Meet us'
@@ -227,7 +233,7 @@
   active: true
   note: 
 
-- id: 702 
+- id: 703 
   id_no: 10000
   category: 'About us' 
   name: 'Testimonials'
@@ -235,7 +241,7 @@
   active: true
   note: 
 
-- id: 703 
+- id: 704 
   id_no: 10000
   category: 'About us' 
   name: 'Galleries'
@@ -243,11 +249,19 @@
   active: true
   note: 
 
-- id: 704 
+- id: 701 
   id_no: 10000
   category: 'About us' 
   name: 'Business Hours & Location'
   link: '' 
   active: true
+  note: 
+
+- id: 800 
+  id_no: 10000
+  category: 
+  name: 'Price & Insurance'
+  link: '' 
+  active: false
   note: 
 

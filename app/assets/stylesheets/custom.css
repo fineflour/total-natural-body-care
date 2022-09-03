@@ -1,5 +1,17 @@
+
+[class*="grid-"] {
+  float: left;
+  min-height: 1px;
+}
+
+[class*="grid_"] {
+  float: center;
+  min-height: 1px;
+}
+
 div {
   margin: auto;
+  display: block;
 }
 
 h1 {
@@ -12,15 +24,17 @@ h1 {
   font-weight: bold;
 }
 
-a {
-  transition: all 0.3s ease;
-}
 
 a {
-  text-decoration: none;
   cursor: pointer;
-  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease;
 }
+
+a, strong {
+      color: #191919;
+}
+
 
 a.link2:hover {
   color: #62d03a;
@@ -224,7 +238,8 @@ p {
 .title-box {
   background: #fff;
   padding-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 0px;
+  padding-top: 0px;
   padding-left: 66px;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -275,29 +290,40 @@ p {
 }
 .grid_90{
   background: #fff;
-  width: 90%;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 92%;
+  padding: 20px;
 }
 
 .grid_80{
   background: #fff;
-  width: 80%;
-  padding-left: 20px;
-  padding-right: 20px;
+  float: ;
+  width: 86%;
+  padding: 20px;
 }
 
-.grid_4{
-  width: 24%;
+.grid-4{
+  width: 23%;
   padding: 0.3rem;
   margin: 0.3rem;
 }
 
-.grid_3{
+.grid-3{
   width: 30%;
   padding: 1rem;
   margin: 1rem;
 }
+
+.grid-2{
+  width: 50%;
+  margin: 1rem;
+}
+.grid-2{
+  width: 46%;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+
 
 
 .dez-separator[class*="style-"]:before {
@@ -391,7 +417,7 @@ p {
   border: 0px solid #aaa;
 }
 
-.title.is-2.f-white, .title.is-4.f-white {
+.title.is-2.f-white, .title.is-3.f-white, .title.is-4.f-white {
   color: #fff!important;
   font-style: italic;
 }
@@ -481,8 +507,9 @@ p {
 .breadcrumb-box {
   border-bottom: 1px;
   background-color: #FFF;
-  padding: 20px;
+  padding-left: 20px;
   padding-top: 6px;
+  padding-bottom: 6px;
 
 }
 
@@ -497,8 +524,8 @@ p {
   border: 0px solid #aaa
 }
 .section {
-      border-top: .0714285714rem solid rgba(0,0,0,.08);
-      border-bottom: .0714285714rem solid rgba(0,0,0,.08);
-    }
+  border-top: .0714285714rem solid rgba(0,0,0,.08);
+  border-bottom: .0714285714rem solid rgba(0,0,0,.08);
+}
 
 /***************End ***********************/
