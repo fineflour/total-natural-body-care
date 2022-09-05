@@ -1,9 +1,9 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light
   .container-fluid
-    .bg-white.row-cols-2
+    .bg-white
       %a.navbar-brand{:href => "/"}
         %img.s_logo{:alt => "Life and Nature", :src => "/assets/logo_sm.png"}/
-    .bg-white.row-cols-2
+    .bg-white.toggler
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
         %span.close ×
         %span.navbar-toggler-icon
@@ -24,7 +24,7 @@
             %li
               %a.dropdown-item{:href => "/sites/skincare?menu_values=205"} Skin Care
             %li
-              %a.dropdown-item{:href => "/sites/labtest?menu_values=204"} Lab Test
+              %a.dropdown-item{:href => "/sites/labtest?menu_values=204"} Health Test
             %li
               %a.dropdown-item{:href => "/sites/consulting?menu_values=206"} Consulting & Education 
 

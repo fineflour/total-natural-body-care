@@ -9,8 +9,8 @@ class QuestionsAndAnswersController < ApplicationController
   end
 
   def new
-    @user = QuestionsAndAnswerUser.new
-    authorize @user
+    @qna= QuestionsAndAnswer.new
+    authorize @qna
   end
 
   def create

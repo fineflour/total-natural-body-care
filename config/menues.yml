@@ -41,7 +41,7 @@
 - id: 204 
   id_no: 20000
   category: 'Services'
-  name: 'Lab Test'
+  name: 'Health Test'
   link: '' 
   active: true 
   note: 

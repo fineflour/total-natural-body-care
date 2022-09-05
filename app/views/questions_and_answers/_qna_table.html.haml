@@ -11,7 +11,7 @@
         %tr{:id => "questions_and_answer-#{appnt.id}"}
           %td= appnt.question
           %td
-            = appnt.answer
+            =  ActionView::Base.full_sanitizer.sanitize(appnt.answer)
           %td
             = appnt.created_at
           %td

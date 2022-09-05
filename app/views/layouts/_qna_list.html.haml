@@ -13,8 +13,8 @@
       .accordion-item
         %h2.accordion-header{:id => "heading#{appnt.id}"}
           %button.accordion-button.collapsed{"aria-controls" => "collapse#{appnt.id}", "aria-expanded" => "false", "data-bs-target" => "#collapse#{appnt.id}", "data-bs-toggle" => "collapse", :type => "button"}
-            Q#{appnt.id}.
+            %b Q.&nbsp;&nbsp;
             = appnt.question
         .accordion-collapse.collapse{"id" => "collapse#{appnt.id}", "aria-labelledby" => "heading#{appnt.id}", "data-bs-parent" => "#Answer"}
           .title.is-4.accordion-body
-            = appnt.answer
+            =  appnt.answer.html_safe

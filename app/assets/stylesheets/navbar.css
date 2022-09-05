@@ -1,6 +1,10 @@
-.bg-white.row-cols-2 {
+.bg-white {
   padding-top: 6px;
   min-height: 70px;
+}
+
+.bg-white.toggler {
+  float: left;
 }
 
 .navbar-toggler-icon, span.close {
