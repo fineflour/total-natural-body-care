@@ -20,7 +20,7 @@
             %li
               %a.dropdown-item{:href => "/sites/cupping?menu_values=202"} Cupping & Massage
             %li
-              %a.dropdown-item{:href => "/sites/detox?menu_values=203"} Detox | Purification | Weight Loss
+              %a.dropdown-item{:href => "/sites/detox?menu_values=203"} Detox ‧ Purification ‧ Weight Loss
             %li
               %a.dropdown-item{:href => "/sites/skincare?menu_values=205"} Skin Care
             %li
@@ -49,11 +49,8 @@
             %li
               %a.dropdown-item{:href => "/sites/pediatric?menu_values=308"} Pediatric Care
             %li
-              %a.dropdown-item{:href => "/sites/skin?menu_values=309"} Skin Conditions
-
-        %li.nav-item
-          %a.nav-link{:href => "/sites/qna?menu_values=500"} Q & A
-
+              %a.dropdown-item{:href => "/sites/skincondition?menu_values=309"} Skin Conditions
+        
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
             Appointments & Visits
@@ -64,12 +61,15 @@
               %a.dropdown-item{:href => "/sites/fstvisit?menu_values=602"} First Visit
             %li
               %a.dropdown-item{:href => "/sites/sndvisit?menu_values=603"} Visit
-
         %li.nav-item
           %a.nav-link{:href => "/sites/price?menu_values=800"} Price & Insurance
+
+        %li.nav-item
+          %a.nav-link{:href => "/sites/qna?menu_values=500"} Q & A
+
         %li.nav-item
           %a.nav-link{:href => "/ptsrcs/"} Patient Resources
-        
+       
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
             About Us
@@ -84,8 +84,8 @@
               %a.dropdown-item{:href => "/sites/galleries?menu_values=704"} Galleries       
 
         
-        %li.nav-item
-          %a.nav-link{:href => "/shop/"} Shop
+        /%li.nav-item
+        /  %a.nav-link{:href => "/shop/"} Shop
 
 - if current_page?(root_url)
   = render partial: "/layouts/main_image"
