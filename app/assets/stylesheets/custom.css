@@ -1,3 +1,12 @@
+@import url(https://pro.fontawesome.com/releases/v5.14.0/css/all.css)
+
+$grid-breakpoints: (
+xs: 0,
+sm: 600px,
+md: 800px,
+lg: 1000px,
+xl: 1280px
+);
 
 [class*="grid-"] {
   float: left;
@@ -14,16 +23,11 @@ div {
   display: block;
 }
 
-h1 {
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 400;
+}
 
 a {
   cursor: pointer;
@@ -32,7 +36,7 @@ a {
 }
 
 a, strong {
-      color: #191919;
+  color: #191919;
 }
 
 
@@ -40,7 +44,7 @@ a.link2:hover {
   color: #62d03a;
 }
 
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
 }
 
@@ -128,46 +132,58 @@ p.txt_priv{
   padding: 0;
   margin: 6;
 }
+
 .title {
-  font-weight: 500;
   color: #000;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
 .title.is-1{
   vertical-align: middle;
   font-weight: 580;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   line-height: 1.125;
   color: hsl(0deg,0%,4%);
 }
 
-.title.is-0 {
+.is-0 {
   vertical-align: top;
   font-weight: 500;
   font-size: 3.57rem;
   color: hsl(0deg,0%,4%);
   line-height: 1.125;
-  font-family: "Visuelt Pro",sans-serif;
 }
 
-.title.is-2 {
-  font-size: 1.5rem;
+.is-2 {
+  font-size: 2.8rem;
   font-weight: 400;
 }
 
-.title.is-3 {
-  font-size: 1.2rem;
+.is-3 {
+  font-size: 2rem;
   font-weight: 300;
 }
-.title.is-4 {
+
+.is-4 {
+  font-size: 1.4rem;
+}
+
+.is-5 {
   font-size: 1rem;
 }
 
+
+#pages-search-search-content .banner .container .title {
+  color: #191919;
+  font-size: 3.5714285714rem;
+}
 .title.thin {
   font-weight: 200;
   font-size: 2.8rem;
   font-style: italic;
 }
+
 p {
   display: block;
   margin-block-start: 1em;
@@ -206,22 +222,21 @@ p {
   text-align: center!important;
 }
 
-.navbar-toggler[aria-expanded="true"] > span.navbar-toggler-icon {
-  display: none;
+.has-text-right{
+  text-align: right!important;
 }
 
-.navbar-toggler[aria-expanded="false"] > span.close {
-  display: none;
-}
+
+
 
 .subtitle, .title {
   word-break: break-word;
 }
 
 .subtitle {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
   font-weight: 600;
+  font-size: 2rem;
+  line-height: 5rem;
 }
 
 .i_overlay
@@ -240,8 +255,6 @@ p {
   padding-bottom: 20px;
   margin-top: 0px;
   padding-top: 0px;
-  padding-left: 66px;
-  margin-left: 1rem;
   margin-right: 1rem;
   padding-right: 1rem;
 }
@@ -268,6 +281,14 @@ p {
   padding-left: 2rem;
 }
 
+.is-border-bottom {
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.is-border-top {
+  border-top: 1px solid #c9c9c9;
+}
+
 .pagemenu-item + .pagemenu-item::before {
   float: left;
   padding-right: 1.2rem;
@@ -288,10 +309,28 @@ p {
   padding-left: 0rem;
   padding-right: 0rem;
 }
+
+.grid_subtitle {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 4rem;
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 14px;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  width: 100%;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.is-margin-top-2 {
+  margin-top: 2rem;
+}
+
 .grid_90{
   background: #fff;
-  width: 92%;
-  padding: 20px;
+  width: 90%;
 }
 
 .grid_80{
@@ -302,7 +341,7 @@ p {
 }
 
 .grid-4{
-  width: 23%;
+  width: 24%;
   padding: 0.3rem;
   margin: 0.3rem;
 }
@@ -313,19 +352,25 @@ p {
   margin: 1rem;
 }
 
+
 .grid-2{
-  width: 50%;
-  margin: 1rem;
-}
-.grid-2{
-  width: 46%;
-  padding: 1rem;
-  margin: 1rem;
+  width: 48%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 
+.grid-75
+{
+  width: 73%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  padding-top: 0px;
+  margin-top: 0px;
 
-
+}
 .dez-separator[class*="style-"]:before {
   left: auto;
   right: 30px;
@@ -341,6 +386,32 @@ p {
   border-top: 1px solid #c9c9c9;
 }
 
+.is-border-1 {
+  border: 1px solid #c9c9c9;
+}
+
+.is-border-left {
+  border-left: 1px solid #c9c9c9;
+}
+
+.is-border-right{
+  border-right: 1px solid #c9c9c9;
+}
+
+.is-border-3{
+  border: 3px solid #ddd;
+  border-radius: 0.8rem;
+}
+
+.is-border-5{
+  border: 5px solid #ddd;
+  border-radius: 0.8rem;
+}
+
+
+
+
+
 
 .dez-separator.style-liner.double {
   width: 100%;
@@ -350,10 +421,9 @@ p {
 
 .dez-separator {
   display: inline-block;
-  height: 3px;
-  width: 50px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  height: 1px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   position: relative;
 }
 
@@ -385,10 +455,6 @@ p {
   max-height: 98%;
   border-radius: 0.8rem;
   padding: 4;
-}
-
-.title.is-4.has-text-justified {
-  padding: 20;
 }
 
 
@@ -507,9 +573,8 @@ p {
 .breadcrumb-box {
   border-bottom: 1px;
   background-color: #FFF;
-  padding-left: 20px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 30px;
+  padding-bottom: 4px;
 
 }
 
@@ -530,3 +595,30 @@ p {
 }
 
 /***************End ***********************/
+
+h1 {
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox:not(.b-checkbox)>span, .flex-middle, .radio:not(.b-radio) span {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1020px){
+  [class*="grid-"] {
+    width: 100%;
+  }
+}
+

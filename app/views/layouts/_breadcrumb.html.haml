@@ -1,17 +1,20 @@
-%div.section
-  %div.breadcrumb-box
-    %nav{"aria-label" => "breadcrumb"}
-      %ol.breadcrumb
-        - if @menu_values['category'].present?
-          %li.breadcrumb-item
-            %a{:href => "#"} 
-              = @menu_values['category'] 
-          %li.breadcrumb-item
-            %a{:href => "#"} 
-              = '  /  ' + @menu_values['name']
-        %li.breadcrumb-item.active{"aria-current" => "page"} 
-  %div.title-box
-    %h4.title.is-0
-      = @menu_values['name']
+.grid_100.is-border-top.is-border-bottom
+  %div.container
+    %div.breadcrumb-box
+      %nav{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+          - if @menu_values['category'].present?
+            %li.breadcrumb-item
+              %a{:href => "#"} 
+                = @menu_values['category'] 
+            %li.breadcrumb-item
+              %a{:href => "#"} 
+                = '  /  ' + @menu_values['name']
+          %li.breadcrumb-item.active{"aria-current" => "page"} 
+    %div.title-box
+      %h1.title.is-2
+        = @menu_values['name']
+    
+
 
 

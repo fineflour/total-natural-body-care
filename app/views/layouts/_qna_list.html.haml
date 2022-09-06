@@ -1,13 +1,12 @@
+.dez-separator.style-liner 
 .grid_100.has-text-centered
   - if params[:menu_values] != '500'
-    %h2.subtitle.center
+    .grid_subtitle
       %font.txt_dgreen Questions
       and
       %font.txt_dgreen Answers
-    .dez-separator-outer
-      .dez-separator.bg-primary.style-liner
 %br
-.grid_90.center
+.container
   .accordion#Answer
     - @qna_list.each do |appnt|
       .accordion-item

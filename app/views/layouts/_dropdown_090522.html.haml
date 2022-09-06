@@ -1,13 +1,13 @@
-%nav.navbar.navbar-expand-xl.navbar-light.bg-light
-  .container.is-mobile
-    %div.column.flex-middle-center
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %div.container-fluid.d-flex.is-mobile
+    %div.level-left
       %a.navbar-brand{:href => "/"}
-        %img{:alt => "Life and Nature", :src => "/assets/logo_sm.png"}/
-    %div.column.flex-middle
+        %img.s_logo{:alt => "Life and Nature", :src => "/assets/logo_sm.png"}/
+    %div.level-right.toggler
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
         %span.close ×
         %span.navbar-toggler-icon
-    %div#navbarNavDropdown.collapse.navbar-collapse
+    #navbarNavDropdown.collapse.navbar-collapse
       %ul.navbar-nav
         %li.nav-item
           %a.nav-link.active{"aria-current" => "page", :href => "/?menu_values=100"} Home
@@ -58,7 +58,9 @@
             %li
               %a.dropdown-item{:href => "/sites/appointments?menu_values=601"} Appointments
             %li
-              %a.dropdown-item{:href => "/sites/visit?menu_values=602"} Visit
+              %a.dropdown-item{:href => "/sites/fstvisit?menu_values=602"} First Visit
+            %li
+              %a.dropdown-item{:href => "/sites/sndvisit?menu_values=603"} Visit
         %li.nav-item
           %a.nav-link{:href => "/sites/price?menu_values=800"} Price & Insurance
 
@@ -66,7 +68,7 @@
           %a.nav-link{:href => "/sites/qna?menu_values=500"} Q & A
 
         %li.nav-item
-          %a.nav-link{:href => "/ptsrcs/"} Resources
+          %a.nav-link{:href => "/ptsrcs/"} Patient Resources
        
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -84,8 +86,6 @@
         
         /%li.nav-item
         /  %a.nav-link{:href => "/shop/"} Shop
-  /%div.column.flex-middle-right
-  /  shop
 
 - if current_page?(root_url)
   = render partial: "/layouts/main_image"

@@ -204,7 +204,7 @@
 - id: 602 
   id_no: 10000
   category: 'Appointments & Visits'
-  name: 'First Visit'
+  name: 'Visit'
   link: '' 
   active: false
   note: 

@@ -1,37 +1,35 @@
 .grid_80.has-text-centered
-  - if (@admin)
-    .panel-heading
-      = link_to "Add new ptsrc", new_ptsrc_path, class: "btn btn-info"
-  /
-    \-div class="panel-body"
-  /
-    table
-  .table-responsive
-    %table#article.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th Title
-          %th Contents
-          %th Link
-          %th Created At
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    - if (@admin)
+      .panel-heading
+        = link_to "Add new ptsrc", new_ptsrc_path, class: "btn btn-info"
+    .table-responsive
+      %table#article.table.table-bordered.table-hover
+        %thead
+          %tr
+            %th Title
+            %th Contents
+            %th Link
+            %th Created At
 
-          - if (@admin)
-            %th Action
-      %tbody
-        - @ptsrcs.each do |a|
-          %tr{:id => "ptsrc#{a.id}"}
-            %td
-              = link_to a.title, ptsrc_path(a)
-            %td
-              = a.body
-            %td
-              = a.link
-            %td
-              = a.updated_at.strftime("%m/%d/%Y")
             - if (@admin)
+              %th Action
+        %tbody
+          - @ptsrcs.each do |a|
+            %tr{:id => "ptsrc#{a.id}"}
               %td
-                = link_to "Show",ptsrc_path(a)
-                |
-                \#{link_to "Edit", edit_ptsrc_path(a)}
-                |
-                \#{link_to "Delete", ptsrc_path(a), :confirm => "Are you sure?", :method => :delete}
+                = link_to a.title, ptsrc_path(a)
+              %td
+                = a.body
+              %td
+                = a.link
+              %td
+                = a.updated_at.strftime("%m/%d/%Y")
+              - if (@admin)
+                %td
+                  = link_to "Show",ptsrc_path(a)
+                  |
+                  \#{link_to "Edit", edit_ptsrc_path(a)}
+                  |
+                  \#{link_to "Delete", ptsrc_path(a), :confirm => "Are you sure?", :method => :delete}
