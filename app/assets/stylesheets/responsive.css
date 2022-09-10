@@ -7,9 +7,12 @@
 
 
 /* begining of my breakpoints */
-@media screen and (min-width: 1024px)
-.container {
-  max-width: 960px;
+@media screen and (min-width: 1024px) {
+  .container {
+    /*max-width: 960px; */
+  }
+
+ 
 }
 @media screen and (max-width: 1200px) {
   .container:not(.is-max-desktop) {
@@ -22,11 +25,6 @@
 
 .section {
   padding: 3rem;
-}
-
-@media screen and (min-width: 1024px)
-.container {
-  max-width: 960px;
 }
 
 .section {
@@ -136,9 +134,7 @@
     right: 200px;
   }
 
-
 }
-
 
 
 @media (min-width: 1200px) {
@@ -169,3 +165,10 @@
   display: block;
   width: 100%;
 }
+
+ .col {
+    max-width: 960px!important;
+    min-width: 240px!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }

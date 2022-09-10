@@ -83,3 +83,5 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'bootstrap', '~>5.1.3'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'jquery-rails', '~> 4.3.5'
+
+gem "font-awesome-rails"

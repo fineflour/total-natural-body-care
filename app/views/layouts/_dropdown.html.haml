@@ -43,7 +43,7 @@
             %li
               %a.dropdown-item{:href => "/sites/gi?menu_values=305"} Digestive Disorderes 
             %li
-              %a.dropdown-item{:href => "/sites/systemic?menu_values=306"} Systemic Disease 
+              %a.dropdown-item{:href => "/sites/systemic?menu_values=306"} Systemic Diseases 
             %li
               %a.dropdown-item{:href => "/sites/reproductive?menu_values=307"} Reproductive Disorders
             %li
@@ -51,14 +51,9 @@
             %li
               %a.dropdown-item{:href => "/sites/skincondition?menu_values=309"} Skin Conditions
         
-        %li.nav-item.dropdown
-          %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
-            Appointments & Visits
-          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
-            %li
-              %a.dropdown-item{:href => "/sites/appointments?menu_values=601"} Appointments
-            %li
-              %a.dropdown-item{:href => "/sites/visit?menu_values=602"} Visit
+        %li.nav-item
+          %a.nav-link{:href => "/sites/appointments?menu_values=600"} Appointments & Visits
+
         %li.nav-item
           %a.nav-link{:href => "/sites/price?menu_values=800"} Price & Insurance
 

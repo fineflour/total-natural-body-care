@@ -5,39 +5,97 @@
     %font.txt_dgreen Conditions
     that we treat
 
-.container
-  .row
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/dig_disorder1.png"}/
-      %h2.title.is-4
-        %a{:href => "#"} Digestive Disorder
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/headache2.png"}/
-      %h2.title.is-4
-        %a{:href => "#"} Neurological Disorders
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/womens_health.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Women's Health
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/mens_health1.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Men's Health
-  .row
-    .grid-4.has-text-centered
-      .border-1
-        %img.img8{:src => "/assets/flue1.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Respiratory Disease
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/backpain1.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Musculoskeletal Disorders
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/systemic_disease2.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Systemic Diseases
-    .grid-4.has-text-centered
-      %img.img8{:src => "/assets/why_happy.jpg"}/
-      %h2.title.is-4
-        %a{:href => "#"} Your Wellbeing
+.container.text-center.is-margin-top-2
+  .row 
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-pain.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-pain-h.jpg"}
+        .card-img-overlay
+          %h2.title.is-5 Chronic & Severe Pain
+          %p.card-text
+          %small Musculoskeletal disorders, 
+          %br 
+          %small Arthritis, Sport Injury ...
+    
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-neurology.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-neurology-h.jpg"}
+        .card-img-overlay.right
+          %h2.title.is-5 Neurological Disorders 
+          %p.card-text
+          %small Post stroke, migrain,
+          %br 
+          %small Fibromyalgia, ALS, MS
+          
+
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-mood.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-mood-h.jpg"}
+        .card-img-overlay.right
+          %h2.title.is-5 Mood Emotional Disorders
+          %p.card-text
+          %small Anxiety, panic attacks,
+          %br 
+          %small depression, sleep disorder  
+
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-autoimmune.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-autoimmune-h.jpg"}
+        .card-img-overlay
+          %h2.title.is-5 Autoimmune Disorders
+          %p.card-text
+          %small Thyroiditis, chronic fatigue,
+          %br 
+          %small IBS, rheumatoid arthritis ...
+ 
+  .row 
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-systemic.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-systemic-h.jpg"}
+        .card-img-overlay
+          %h2.title.is-5 Systemic Diseases
+          %p.card-text
+          %small High blood pressure, diabetes,
+          %br 
+          %small thyroid disorders, cancer ...
+    
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-reproductive.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-reproductive-h.jpg"}
+        .card-img-overlay
+          %h2.title.is-5 Reproductive Disorders
+          %p.card-text
+          %small Infertility, miscarriage,
+          %br 
+          %small PMS, erectile dysfunction ...
+
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-pediatric.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-pediatric-h.jpg"}
+        .card-img-overlay
+          %h2.title.is-5 Pediatric Cares
+          %p.card-text
+          %small Autisms, ADHD,  allergies, 
+          %br 
+          %small frequent illness, delayed- growth ... 
+
+    .col
+      .card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "/assets/condition-skin.jpg"}
+        %img.card-img.img-top{:alt => "service", :src => "/assets/condition-skin-h.jpg"}
+        .card-img-overlay.right
+          %h2.title.is-5 Skin Conditions
+          %p.card-text
+          %small Psoriasis, eczema, 
+          %br 
+          %small irritated Skin,  acne, dermatitis  
+           
+           
+     

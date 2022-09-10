@@ -92,6 +92,8 @@ GEM
     faraday (0.17.5)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.5)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     google-api-client (0.8.6)
@@ -321,6 +323,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  font-awesome-rails
   google-api-client (< 0.9)
   google_maps_service
   haml-rails

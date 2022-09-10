@@ -16,7 +16,8 @@
  *= require bootstrap
  *= require_self    
  *= require_tree .       
- */
+ *= require font-awesome
+*/
 
 body {
   font-family:  "Visuelt Pro", sans-serif;

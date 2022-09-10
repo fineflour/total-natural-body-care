@@ -1,5 +1,7 @@
 {
   "name": "total-natural-body-care",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  }
 }

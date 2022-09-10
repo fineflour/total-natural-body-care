@@ -113,7 +113,7 @@
 - id: 306 
   id_no: 10000
   category: 'Conditions'
-  name: 'Systemic Disease'
+  name: 'Systemic Diseases'
   link: '' 
   active: true
   note:
@@ -188,7 +188,7 @@
 - id: 600 
   id_no: 10000
   category: 
-  name: 'Appointments'
+  name: 'Appointments & Visits'
   link: '' 
   active: false
   note: 
@@ -204,7 +204,7 @@
 - id: 602 
   id_no: 10000
   category: 'Appointments & Visits'
-  name: 'Visit'
+  name: 'Visits'
   link: '' 
   active: false
   note: 
