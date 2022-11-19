@@ -344,6 +344,7 @@ DEPENDENCIES
   rails_12factor
   rake
   sass-rails (~> 5.0)
+  sassc-rails
   selenium-webdriver
   signet
   simple_form

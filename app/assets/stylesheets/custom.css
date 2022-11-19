@@ -139,6 +139,17 @@ p.txt_priv{
   font-weight: 600;
 }
 
+
+.page-title {
+  color: #fff;
+  vertical-align: top;
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 2;
+
+}
+
+
 .title.is-1{
   vertical-align: middle;
   font-weight: 580;
@@ -169,7 +180,13 @@ p.txt_priv{
   font-size: 1.4rem;
 }
 
-.is-5 {
+
+.is-5{
+  font-size: 1.2rem;
+}
+
+
+.is-6 {
   font-size: 1rem;
 }
 
@@ -239,6 +256,13 @@ p {
   line-height: 5rem;
 }
 
+.s-subtitle {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+
+
 .i_overlay
 {
   border: 1px solid #ddd;
@@ -251,7 +275,6 @@ p {
 }
 
 .title-box {
-  background: #fff;
   padding-bottom: 20px;
   margin-top: 0px;
   padding-top: 0px;
@@ -334,15 +357,21 @@ p {
 
 .grid_80{
   background: #fff;
-  float: ;
+  float: none ;
   width: 86%;
   padding: 20px;
 }
 
 
 .grid_70 {
-  width: 70%;
+  width: 50%;
 }
+
+
+.grid_30 {
+  width: 20%;
+}
+
 
 .card {
   text-align: left!important;
@@ -350,21 +379,28 @@ p {
 
 .grid-4{
   width: 24%;
-  padding: 0.2rem;
+  padding: 0.4rem;
   margin: 0.2rem;
 }
 
 .grid-3{
   width: 32%;
-  padding:  0.2rem;
+  padding:  0.4rem;
   margin: 0.2rem;
 }
 
 .grid-2{
   width: 48%;
-  padding: 0.2rem;
-  margin: 0.2rem;
+  padding: 0.4rem;
+  margin: 0.4rem;
 }
+
+.grid-3-2{
+  width: 66%;
+  padding:  0.4rem;
+  margin: 0.4rem;
+}
+
 
 .col.is-multiline {
       flex-wrap: wrap;
@@ -464,7 +500,6 @@ p {
 }
 .img8 {
   margin-bottom: 10px;
-  float: center;
   width: auto;
   height: auto;
   max-width: 98.5%;
@@ -587,20 +622,15 @@ p {
 
 .breadcrumb-box {
   border-bottom: 1px;
-  background-color: #FFF;
   padding-top: 30px;
   padding-bottom: 4px;
 
 }
 
 .img9 {
-  margin-top: 20px;
-  margin-right: 30px;
-  margin-bottom: 20px;
-  margin-left: 1px;
-  float: left;
-  padding: 4px;
-  width: 300px;
+  margin: 20px;
+  padding: 6px;
+  max-width: 300px;
   border: 0px solid #aaa
 }
 
@@ -638,10 +668,11 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 }
 
 
-@media screen and (min-width: 769px), print
+@media screen and (min-width: 769px) { 
 .col.is-half, .col.is-half-tablet {
   flex: none;
   width: 50%;
+}
 }
 
 .card .img-top {
@@ -650,7 +681,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   top: 0;
   left: 0;
   z-index: 99;
-  max-width: 367px%!important;
+  max-width: 367px!important;
 }
 
 .card:hover .img-top {
@@ -668,6 +699,16 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 .right {
   text-align: right;
 }
+
+.float-right{
+  float: right;
+}
+
+
+.float-left {
+  float: left;
+}
+
 
 
 .card-text {
@@ -693,3 +734,120 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   border-top-right-radius: 1rem;
   height: 4rem;
 }
+
+.title_section {
+  height: 200px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover; 
+
+}
+
+.b-rt{
+  border-right: 1px solid #c9c9c9;
+}
+
+.b-lt{
+  border-left: 1px solid #c9c9c9;
+}
+
+.b-top {
+  border-top: 1px solid #c9c9c9;
+}
+
+.b-bot{
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.title_201 {
+  background-image:url('/assets/title-201.jpg');
+}
+
+.title_202 {
+  background-image:url('/assets/title-202.jpg');
+}
+
+.title_203 {
+  background-image:url('/assets/title-203.jpg');
+}
+.title_204 {
+  background-image:url('/assets/title-204.jpg');
+}
+
+.title_205 {
+  background-image:url('/assets/title-205.jpg');
+}
+
+.title_206 {
+  background-image:url('/assets/title-206.jpg');
+}
+
+.title_207 {
+  background-image:url('/assets/title-207.jpg');
+}
+
+.title_208 {
+  background-image:url('/assets/title-208.jpg');
+}
+
+
+.title_301 {
+  background-image:url('/assets/title-301.jpg');
+}
+
+
+.title_302 {
+  background-image:url('/assets/title-302.jpg');
+}
+
+.title_303 {
+  background-image:url('/assets/title-303.jpg');
+}
+
+.title_304 {
+  background-image:url('/assets/title-304.jpg');
+}
+
+.title_305 {
+  background-image:url('/assets/title-305.jpg');
+}
+
+
+
+.title_307 {
+  background-image:url('/assets/title-307.jpg');
+}
+
+.title_308 {
+  background-image:url('/assets/title-308.jpg');
+}
+
+.title_309 {
+  background-image:url('/assets/title-309.jpg');
+}
+
+.title_310 {
+  background-image:url('/assets/title-310.jpg');
+}
+
+.title_500 {
+  background-image:url('/assets/title-500.jpg');
+}
+
+
+.title_600 {
+  background-image:url('/assets/title-600.jpg');
+}
+
+.title_702 {
+  background-image:url('/assets/title-702.jpg');
+}
+
+.title_800 {
+  background-image:url('/assets/title-800.jpg');
+}
+
+.title_resources {
+  background-image:url('/assets/title-resources.jpg');
+}
+

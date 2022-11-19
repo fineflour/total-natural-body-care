@@ -1,0 +1,1903 @@
+// http://spin.js.org/#v2.3.2
+!function(a,b){"object"==typeof module&&module.exports?module.exports=b():"function"==typeof define&&define.amd?define(b):a.Spinner=b()}(this,function(){"use strict";function a(a,b){var c,d=document.createElement(a||"div");for(c in b)d[c]=b[c];return d}function b(a){for(var b=1,c=arguments.length;c>b;b++)a.appendChild(arguments[b]);return a}function c(a,b,c,d){var e=["opacity",b,~~(100*a),c,d].join("-"),f=.01+c/d*100,g=Math.max(1-(1-a)/b*(100-f),a),h=j.substring(0,j.indexOf("Animation")).toLowerCase(),i=h&&"-"+h+"-"||"";return m[e]||(k.insertRule("@"+i+"keyframes "+e+"{0%{opacity:"+g+"}"+f+"%{opacity:"+a+"}"+(f+.01)+"%{opacity:1}"+(f+b)%100+"%{opacity:"+a+"}100%{opacity:"+g+"}}",k.cssRules.length),m[e]=1),e}function d(a,b){var c,d,e=a.style;if(b=b.charAt(0).toUpperCase()+b.slice(1),void 0!==e[b])return b;for(d=0;d<l.length;d++)if(c=l[d]+b,void 0!==e[c])return c}function e(a,b){for(var c in b)a.style[d(a,c)||c]=b[c];return a}function f(a){for(var b=1;b<arguments.length;b++){var c=arguments[b];for(var d in c)void 0===a[d]&&(a[d]=c[d])}return a}function g(a,b){return"string"==typeof a?a:a[b%a.length]}function h(a){this.opts=f(a||{},h.defaults,n)}function i(){function c(b,c){return a("<"+b+' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">',c)}k.addRule(".spin-vml","behavior:url(#default#VML)"),h.prototype.lines=function(a,d){function f(){return e(c("group",{coordsize:k+" "+k,coordorigin:-j+" "+-j}),{width:k,height:k})}function h(a,h,i){b(m,b(e(f(),{rotation:360/d.lines*a+"deg",left:~~h}),b(e(c("roundrect",{arcsize:d.corners}),{width:j,height:d.scale*d.width,left:d.scale*d.radius,top:-d.scale*d.width>>1,filter:i}),c("fill",{color:g(d.color,a),opacity:d.opacity}),c("stroke",{opacity:0}))))}var i,j=d.scale*(d.length+d.width),k=2*d.scale*j,l=-(d.width+d.length)*d.scale*2+"px",m=e(f(),{position:"absolute",top:l,left:l});if(d.shadow)for(i=1;i<=d.lines;i++)h(i,-2,"progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)");for(i=1;i<=d.lines;i++)h(i);return b(a,m)},h.prototype.opacity=function(a,b,c,d){var e=a.firstChild;d=d.shadow&&d.lines||0,e&&b+d<e.childNodes.length&&(e=e.childNodes[b+d],e=e&&e.firstChild,e=e&&e.firstChild,e&&(e.opacity=c))}}var j,k,l=["webkit","Moz","ms","O"],m={},n={lines:12,length:7,width:5,radius:10,scale:1,corners:1,color:"#000",opacity:.25,rotate:0,direction:1,speed:1,trail:100,fps:20,zIndex:2e9,className:"spinner",top:"50%",left:"50%",shadow:!1,hwaccel:!1,position:"absolute"};if(h.defaults={},f(h.prototype,{spin:function(b){this.stop();var c=this,d=c.opts,f=c.el=a(null,{className:d.className});if(e(f,{position:d.position,width:0,zIndex:d.zIndex,left:d.left,top:d.top}),b&&b.insertBefore(f,b.firstChild||null),f.setAttribute("role","progressbar"),c.lines(f,c.opts),!j){var g,h=0,i=(d.lines-1)*(1-d.direction)/2,k=d.fps,l=k/d.speed,m=(1-d.opacity)/(l*d.trail/100),n=l/d.lines;!function o(){h++;for(var a=0;a<d.lines;a++)g=Math.max(1-(h+(d.lines-a)*n)%l*m,d.opacity),c.opacity(f,a*d.direction+i,g,d);c.timeout=c.el&&setTimeout(o,~~(1e3/k))}()}return c},stop:function(){var a=this.el;return a&&(clearTimeout(this.timeout),a.parentNode&&a.parentNode.removeChild(a),this.el=void 0),this},lines:function(d,f){function h(b,c){return e(a(),{position:"absolute",width:f.scale*(f.length+f.width)+"px",height:f.scale*f.width+"px",background:b,boxShadow:c,transformOrigin:"left",transform:"rotate("+~~(360/f.lines*k+f.rotate)+"deg) translate("+f.scale*f.radius+"px,0)",borderRadius:(f.corners*f.scale*f.width>>1)+"px"})}for(var i,k=0,l=(f.lines-1)*(1-f.direction)/2;k<f.lines;k++)i=e(a(),{position:"absolute",top:1+~(f.scale*f.width/2)+"px",transform:f.hwaccel?"translate3d(0,0,0)":"",opacity:f.opacity,animation:j&&c(f.opacity,f.trail,l+k*f.direction,f.lines)+" "+1/f.speed+"s linear infinite"}),f.shadow&&b(i,e(h("#000","0 0 4px #000"),{top:"2px"})),b(d,b(i,h(g(f.color,k),"0 0 1px rgba(0,0,0,.1)")));return d},opacity:function(a,b,c){b<a.childNodes.length&&(a.childNodes[b].style.opacity=c)}}),"undefined"!=typeof document){k=function(){var c=a("style",{type:"text/css"});return b(document.getElementsByTagName("head")[0],c),c.sheet||c.styleSheet}();var o=e(a("group"),{behavior:"url(#default#VML)"});!d(o,"transform")&&o.adj?i():j=d(o,"animation")}return h});;
+/**
+ * Copyright (c) 2011-2014 Felix Gnass
+ * Licensed under the MIT license
+ */
+
+/*
+
+Basic Usage:
+============
+
+$('#el').spin(); // Creates a default Spinner using the text color of #el.
+$('#el').spin({ ... }); // Creates a Spinner using the provided options.
+
+$('#el').spin(false); // Stops and removes the spinner.
+
+Using Presets:
+==============
+
+$('#el').spin('small'); // Creates a 'small' Spinner using the text color of #el.
+$('#el').spin('large', '#fff'); // Creates a 'large' white Spinner.
+
+Adding a custom preset:
+=======================
+
+$.fn.spin.presets.flower = {
+  lines: 9
+  length: 10
+  width: 20
+  radius: 0
+}
+
+$('#el').spin('flower', 'red');
+
+*/
+
+(function(factory) {
+
+  if (typeof exports == 'object') {
+    // CommonJS
+    factory(require('jquery'), require('spin'))
+  }
+  else if (typeof define == 'function' && define.amd) {
+    // AMD, register as anonymous module
+    define(['jquery', 'spin'], factory)
+  }
+  else {
+    // Browser globals
+    if (!window.Spinner) throw new Error('Spin.js not present')
+    factory(window.jQuery, window.Spinner)
+  }
+
+}(function($, Spinner) {
+
+  $.fn.spin = function(opts, color) {
+
+    return this.each(function() {
+      var $this = $(this),
+        data = $this.data();
+
+      if (data.spinner) {
+        data.spinner.stop();
+        delete data.spinner;
+      }
+      if (opts !== false) {
+        opts = $.extend(
+          { color: color || $this.css('color') },
+          $.fn.spin.presets[opts] || opts
+        )
+        data.spinner = new Spinner(opts).spin(this)
+      }
+    })
+  }
+
+  $.fn.spin.presets = {
+    tiny: { lines: 8, length: 2, width: 2, radius: 3 },
+    small: { lines: 8, length: 4, width: 3, radius: 5 },
+    large: { lines: 10, length: 8, width: 4, radius: 8 }
+  }
+
+}));;
+/* Tooltipster v3.3.0 */;(function(e,t,n){function s(t,n){this.bodyOverflowX;this.callbacks={hide:[],show:[]};this.checkInterval=null;this.Content;this.$el=e(t);this.$elProxy;this.elProxyPosition;this.enabled=true;this.options=e.extend({},i,n);this.mouseIsOverProxy=false;this.namespace="tooltipster-"+Math.round(Math.random()*1e5);this.Status="hidden";this.timerHide=null;this.timerShow=null;this.$tooltip;this.options.iconTheme=this.options.iconTheme.replace(".","");this.options.theme=this.options.theme.replace(".","");this._init()}function o(t,n){var r=true;e.each(t,function(e,i){if(typeof n[e]==="undefined"||t[e]!==n[e]){r=false;return false}});return r}function f(){return!a&&u}function l(){var e=n.body||n.documentElement,t=e.style,r="transition";if(typeof t[r]=="string"){return true}v=["Moz","Webkit","Khtml","O","ms"],r=r.charAt(0).toUpperCase()+r.substr(1);for(var i=0;i<v.length;i++){if(typeof t[v[i]+r]=="string"){return true}}return false}var r="tooltipster",i={animation:"fade",arrow:true,arrowColor:"",autoClose:true,content:null,contentAsHTML:false,contentCloning:true,debug:true,delay:200,minWidth:0,maxWidth:null,functionInit:function(e,t){},functionBefore:function(e,t){t()},functionReady:function(e,t){},functionAfter:function(e){},hideOnClick:false,icon:"(?)",iconCloning:true,iconDesktop:false,iconTouch:false,iconTheme:"tooltipster-icon",interactive:false,interactiveTolerance:350,multiple:false,offsetX:0,offsetY:0,onlyOne:false,position:"top",positionTracker:false,positionTrackerCallback:function(e){if(this.option("trigger")=="hover"&&this.option("autoClose")){this.hide()}},restoration:"current",speed:350,timer:0,theme:"tooltipster-default",touchDevices:true,trigger:"hover",updateAnimation:true};s.prototype={_init:function(){var t=this;if(n.querySelector){var r=null;if(t.$el.data("tooltipster-initialTitle")===undefined){r=t.$el.attr("title");if(r===undefined)r=null;t.$el.data("tooltipster-initialTitle",r)}if(t.options.content!==null){t._content_set(t.options.content)}else{t._content_set(r)}var i=t.options.functionInit.call(t.$el,t.$el,t.Content);if(typeof i!=="undefined")t._content_set(i);t.$el.removeAttr("title").addClass("tooltipstered");if(!u&&t.options.iconDesktop||u&&t.options.iconTouch){if(typeof t.options.icon==="string"){t.$elProxy=e('<span class="'+t.options.iconTheme+'"></span>');t.$elProxy.text(t.options.icon)}else{if(t.options.iconCloning)t.$elProxy=t.options.icon.clone(true);else t.$elProxy=t.options.icon}t.$elProxy.insertAfter(t.$el)}else{t.$elProxy=t.$el}if(t.options.trigger=="hover"){t.$elProxy.on("mouseenter."+t.namespace,function(){if(!f()||t.options.touchDevices){t.mouseIsOverProxy=true;t._show()}}).on("mouseleave."+t.namespace,function(){if(!f()||t.options.touchDevices){t.mouseIsOverProxy=false}});if(u&&t.options.touchDevices){t.$elProxy.on("touchstart."+t.namespace,function(){t._showNow()})}}else if(t.options.trigger=="click"){t.$elProxy.on("click."+t.namespace,function(){if(!f()||t.options.touchDevices){t._show()}})}}},_show:function(){var e=this;if(e.Status!="shown"&&e.Status!="appearing"){if(e.options.delay){e.timerShow=setTimeout(function(){if(e.options.trigger=="click"||e.options.trigger=="hover"&&e.mouseIsOverProxy){e._showNow()}},e.options.delay)}else e._showNow()}},_showNow:function(n){var r=this;r.options.functionBefore.call(r.$el,r.$el,function(){if(r.enabled&&r.Content!==null){if(n)r.callbacks.show.push(n);r.callbacks.hide=[];clearTimeout(r.timerShow);r.timerShow=null;clearTimeout(r.timerHide);r.timerHide=null;if(r.options.onlyOne){e(".tooltipstered").not(r.$el).each(function(t,n){var r=e(n),i=r.data("tooltipster-ns");e.each(i,function(e,t){var n=r.data(t),i=n.status(),s=n.option("autoClose");if(i!=="hidden"&&i!=="disappearing"&&s){n.hide()}})})}var i=function(){r.Status="shown";e.each(r.callbacks.show,function(e,t){t.call(r.$el)});r.callbacks.show=[]};if(r.Status!=="hidden"){var s=0;if(r.Status==="disappearing"){r.Status="appearing";if(l()){r.$tooltip.clearQueue().removeClass("tooltipster-dying").addClass("tooltipster-"+r.options.animation+"-show");if(r.options.speed>0)r.$tooltip.delay(r.options.speed);r.$tooltip.queue(i)}else{r.$tooltip.stop().fadeIn(i)}}else if(r.Status==="shown"){i()}}else{r.Status="appearing";var s=r.options.speed;r.bodyOverflowX=e("body").css("overflow-x");e("body").css("overflow-x","hidden");var o="tooltipster-"+r.options.animation,a="-webkit-transition-duration: "+r.options.speed+"ms; -webkit-animation-duration: "+r.options.speed+"ms; -moz-transition-duration: "+r.options.speed+"ms; -moz-animation-duration: "+r.options.speed+"ms; -o-transition-duration: "+r.options.speed+"ms; -o-animation-duration: "+r.options.speed+"ms; -ms-transition-duration: "+r.options.speed+"ms; -ms-animation-duration: "+r.options.speed+"ms; transition-duration: "+r.options.speed+"ms; animation-duration: "+r.options.speed+"ms;",f=r.options.minWidth?"min-width:"+Math.round(r.options.minWidth)+"px;":"",c=r.options.maxWidth?"max-width:"+Math.round(r.options.maxWidth)+"px;":"",h=r.options.interactive?"pointer-events: auto;":"";r.$tooltip=e('<div class="tooltipster-base '+r.options.theme+'" style="'+f+" "+c+" "+h+" "+a+'"><div class="tooltipster-content"></div></div>');if(l())r.$tooltip.addClass(o);r._content_insert();r.$tooltip.appendTo("body");r.reposition();r.options.functionReady.call(r.$el,r.$el,r.$tooltip);if(l()){r.$tooltip.addClass(o+"-show");if(r.options.speed>0)r.$tooltip.delay(r.options.speed);r.$tooltip.queue(i)}else{r.$tooltip.css("display","none").fadeIn(r.options.speed,i)}r._interval_set();e(t).on("scroll."+r.namespace+" resize."+r.namespace,function(){r.reposition()});if(r.options.autoClose){e("body").off("."+r.namespace);if(r.options.trigger=="hover"){if(u){setTimeout(function(){e("body").on("touchstart."+r.namespace,function(){r.hide()})},0)}if(r.options.interactive){if(u){r.$tooltip.on("touchstart."+r.namespace,function(e){e.stopPropagation()})}var p=null;r.$elProxy.add(r.$tooltip).on("mouseleave."+r.namespace+"-autoClose",function(){clearTimeout(p);p=setTimeout(function(){r.hide()},r.options.interactiveTolerance)}).on("mouseenter."+r.namespace+"-autoClose",function(){clearTimeout(p)})}else{r.$elProxy.on("mouseleave."+r.namespace+"-autoClose",function(){r.hide()})}if(r.options.hideOnClick){r.$elProxy.on("click."+r.namespace+"-autoClose",function(){r.hide()})}}else if(r.options.trigger=="click"){setTimeout(function(){e("body").on("click."+r.namespace+" touchstart."+r.namespace,function(){r.hide()})},0);if(r.options.interactive){r.$tooltip.on("click."+r.namespace+" touchstart."+r.namespace,function(e){e.stopPropagation()})}}}}if(r.options.timer>0){r.timerHide=setTimeout(function(){r.timerHide=null;r.hide()},r.options.timer+s)}}})},_interval_set:function(){var t=this;t.checkInterval=setInterval(function(){if(e("body").find(t.$el).length===0||e("body").find(t.$elProxy).length===0||t.Status=="hidden"||e("body").find(t.$tooltip).length===0){if(t.Status=="shown"||t.Status=="appearing")t.hide();t._interval_cancel()}else{if(t.options.positionTracker){var n=t._repositionInfo(t.$elProxy),r=false;if(o(n.dimension,t.elProxyPosition.dimension)){if(t.$elProxy.css("position")==="fixed"){if(o(n.position,t.elProxyPosition.position))r=true}else{if(o(n.offset,t.elProxyPosition.offset))r=true}}if(!r){t.reposition();t.options.positionTrackerCallback.call(t,t.$el)}}}},200)},_interval_cancel:function(){clearInterval(this.checkInterval);this.checkInterval=null},_content_set:function(e){if(typeof e==="object"&&e!==null&&this.options.contentCloning){e=e.clone(true)}this.Content=e},_content_insert:function(){var e=this,t=this.$tooltip.find(".tooltipster-content");if(typeof e.Content==="string"&&!e.options.contentAsHTML){t.text(e.Content)}else{t.empty().append(e.Content)}},_update:function(e){var t=this;t._content_set(e);if(t.Content!==null){if(t.Status!=="hidden"){t._content_insert();t.reposition();if(t.options.updateAnimation){if(l()){t.$tooltip.css({width:"","-webkit-transition":"all "+t.options.speed+"ms, width 0ms, height 0ms, left 0ms, top 0ms","-moz-transition":"all "+t.options.speed+"ms, width 0ms, height 0ms, left 0ms, top 0ms","-o-transition":"all "+t.options.speed+"ms, width 0ms, height 0ms, left 0ms, top 0ms","-ms-transition":"all "+t.options.speed+"ms, width 0ms, height 0ms, left 0ms, top 0ms",transition:"all "+t.options.speed+"ms, width 0ms, height 0ms, left 0ms, top 0ms"}).addClass("tooltipster-content-changing");setTimeout(function(){if(t.Status!="hidden"){t.$tooltip.removeClass("tooltipster-content-changing");setTimeout(function(){if(t.Status!=="hidden"){t.$tooltip.css({"-webkit-transition":t.options.speed+"ms","-moz-transition":t.options.speed+"ms","-o-transition":t.options.speed+"ms","-ms-transition":t.options.speed+"ms",transition:t.options.speed+"ms"})}},t.options.speed)}},t.options.speed)}else{t.$tooltip.fadeTo(t.options.speed,.5,function(){if(t.Status!="hidden"){t.$tooltip.fadeTo(t.options.speed,1)}})}}}}else{t.hide()}},_repositionInfo:function(e){return{dimension:{height:e.outerHeight(false),width:e.outerWidth(false)},offset:e.offset(),position:{left:parseInt(e.css("left")),top:parseInt(e.css("top"))}}},hide:function(n){var r=this;if(n)r.callbacks.hide.push(n);r.callbacks.show=[];clearTimeout(r.timerShow);r.timerShow=null;clearTimeout(r.timerHide);r.timerHide=null;var i=function(){e.each(r.callbacks.hide,function(e,t){t.call(r.$el)});r.callbacks.hide=[]};if(r.Status=="shown"||r.Status=="appearing"){r.Status="disappearing";var s=function(){r.Status="hidden";if(typeof r.Content=="object"&&r.Content!==null){r.Content.detach()}r.$tooltip.remove();r.$tooltip=null;e(t).off("."+r.namespace);e("body").off("."+r.namespace).css("overflow-x",r.bodyOverflowX);e("body").off("."+r.namespace);r.$elProxy.off("."+r.namespace+"-autoClose");r.options.functionAfter.call(r.$el,r.$el);i()};if(l()){r.$tooltip.clearQueue().removeClass("tooltipster-"+r.options.animation+"-show").addClass("tooltipster-dying");if(r.options.speed>0)r.$tooltip.delay(r.options.speed);r.$tooltip.queue(s)}else{r.$tooltip.stop().fadeOut(r.options.speed,s)}}else if(r.Status=="hidden"){i()}return r},show:function(e){this._showNow(e);return this},update:function(e){return this.content(e)},content:function(e){if(typeof e==="undefined"){return this.Content}else{this._update(e);return this}},reposition:function(){var n=this;if(e("body").find(n.$tooltip).length!==0){n.$tooltip.css("width","");n.elProxyPosition=n._repositionInfo(n.$elProxy);var r=null,i=e(t).width(),s=n.elProxyPosition,o=n.$tooltip.outerWidth(false),u=n.$tooltip.innerWidth()+1,a=n.$tooltip.outerHeight(false);if(n.$elProxy.is("area")){var f=n.$elProxy.attr("shape"),l=n.$elProxy.parent().attr("name"),c=e('img[usemap="#'+l+'"]'),h=c.offset().left,p=c.offset().top,d=n.$elProxy.attr("coords")!==undefined?n.$elProxy.attr("coords").split(","):undefined;if(f=="circle"){var v=parseInt(d[0]),m=parseInt(d[1]),g=parseInt(d[2]);s.dimension.height=g*2;s.dimension.width=g*2;s.offset.top=p+m-g;s.offset.left=h+v-g}else if(f=="rect"){var v=parseInt(d[0]),m=parseInt(d[1]),y=parseInt(d[2]),b=parseInt(d[3]);s.dimension.height=b-m;s.dimension.width=y-v;s.offset.top=p+m;s.offset.left=h+v}else if(f=="poly"){var w=[],E=[],S=0,x=0,T=0,N=0,C="even";for(var k=0;k<d.length;k++){var L=parseInt(d[k]);if(C=="even"){if(L>T){T=L;if(k===0){S=T}}if(L<S){S=L}C="odd"}else{if(L>N){N=L;if(k==1){x=N}}if(L<x){x=L}C="even"}}s.dimension.height=N-x;s.dimension.width=T-S;s.offset.top=p+x;s.offset.left=h+S}else{s.dimension.height=c.outerHeight(false);s.dimension.width=c.outerWidth(false);s.offset.top=p;s.offset.left=h}}var A=0,O=0,M=0,_=parseInt(n.options.offsetY),D=parseInt(n.options.offsetX),P=n.options.position;function H(){var n=e(t).scrollLeft();if(A-n<0){r=A-n;A=n}if(A+o-n>i){r=A-(i+n-o);A=i+n-o}}function B(n,r){if(s.offset.top-e(t).scrollTop()-a-_-12<0&&r.indexOf("top")>-1){P=n}if(s.offset.top+s.dimension.height+a+12+_>e(t).scrollTop()+e(t).height()&&r.indexOf("bottom")>-1){P=n;M=s.offset.top-a-_-12}}if(P=="top"){var j=s.offset.left+o-(s.offset.left+s.dimension.width);A=s.offset.left+D-j/2;M=s.offset.top-a-_-12;H();B("bottom","top")}if(P=="top-left"){A=s.offset.left+D;M=s.offset.top-a-_-12;H();B("bottom-left","top-left")}if(P=="top-right"){A=s.offset.left+s.dimension.width+D-o;M=s.offset.top-a-_-12;H();B("bottom-right","top-right")}if(P=="bottom"){var j=s.offset.left+o-(s.offset.left+s.dimension.width);A=s.offset.left-j/2+D;M=s.offset.top+s.dimension.height+_+12;H();B("top","bottom")}if(P=="bottom-left"){A=s.offset.left+D;M=s.offset.top+s.dimension.height+_+12;H();B("top-left","bottom-left")}if(P=="bottom-right"){A=s.offset.left+s.dimension.width+D-o;M=s.offset.top+s.dimension.height+_+12;H();B("top-right","bottom-right")}if(P=="left"){A=s.offset.left-D-o-12;O=s.offset.left+D+s.dimension.width+12;var F=s.offset.top+a-(s.offset.top+s.dimension.height);M=s.offset.top-F/2-_;if(A<0&&O+o>i){var I=parseFloat(n.$tooltip.css("border-width"))*2,q=o+A-I;n.$tooltip.css("width",q+"px");a=n.$tooltip.outerHeight(false);A=s.offset.left-D-q-12-I;F=s.offset.top+a-(s.offset.top+s.dimension.height);M=s.offset.top-F/2-_}else if(A<0){A=s.offset.left+D+s.dimension.width+12;r="left"}}if(P=="right"){A=s.offset.left+D+s.dimension.width+12;O=s.offset.left-D-o-12;var F=s.offset.top+a-(s.offset.top+s.dimension.height);M=s.offset.top-F/2-_;if(A+o>i&&O<0){var I=parseFloat(n.$tooltip.css("border-width"))*2,q=i-A-I;n.$tooltip.css("width",q+"px");a=n.$tooltip.outerHeight(false);F=s.offset.top+a-(s.offset.top+s.dimension.height);M=s.offset.top-F/2-_}else if(A+o>i){A=s.offset.left-D-o-12;r="right"}}if(n.options.arrow){var R="tooltipster-arrow-"+P;if(n.options.arrowColor.length<1){var U=n.$tooltip.css("background-color")}else{var U=n.options.arrowColor}if(!r){r=""}else if(r=="left"){R="tooltipster-arrow-right";r=""}else if(r=="right"){R="tooltipster-arrow-left";r=""}else{r="left:"+Math.round(r)+"px;"}if(P=="top"||P=="top-left"||P=="top-right"){var z=parseFloat(n.$tooltip.css("border-bottom-width")),W=n.$tooltip.css("border-bottom-color")}else if(P=="bottom"||P=="bottom-left"||P=="bottom-right"){var z=parseFloat(n.$tooltip.css("border-top-width")),W=n.$tooltip.css("border-top-color")}else if(P=="left"){var z=parseFloat(n.$tooltip.css("border-right-width")),W=n.$tooltip.css("border-right-color")}else if(P=="right"){var z=parseFloat(n.$tooltip.css("border-left-width")),W=n.$tooltip.css("border-left-color")}else{var z=parseFloat(n.$tooltip.css("border-bottom-width")),W=n.$tooltip.css("border-bottom-color")}if(z>1){z++}var X="";if(z!==0){var V="",J="border-color: "+W+";";if(R.indexOf("bottom")!==-1){V="margin-top: -"+Math.round(z)+"px;"}else if(R.indexOf("top")!==-1){V="margin-bottom: -"+Math.round(z)+"px;"}else if(R.indexOf("left")!==-1){V="margin-right: -"+Math.round(z)+"px;"}else if(R.indexOf("right")!==-1){V="margin-left: -"+Math.round(z)+"px;"}X='<span class="tooltipster-arrow-border" style="'+V+" "+J+';"></span>'}n.$tooltip.find(".tooltipster-arrow").remove();var K='<div class="'+R+' tooltipster-arrow" style="'+r+'">'+X+'<span style="border-color:'+U+';"></span></div>';n.$tooltip.append(K)}n.$tooltip.css({top:Math.round(M)+"px",left:Math.round(A)+"px"})}return n},enable:function(){this.enabled=true;return this},disable:function(){this.hide();this.enabled=false;return this},destroy:function(){var t=this;t.hide();if(t.$el[0]!==t.$elProxy[0]){t.$elProxy.remove()}t.$el.removeData(t.namespace).off("."+t.namespace);var n=t.$el.data("tooltipster-ns");if(n.length===1){var r=null;if(t.options.restoration==="previous"){r=t.$el.data("tooltipster-initialTitle")}else if(t.options.restoration==="current"){r=typeof t.Content==="string"?t.Content:e("<div></div>").append(t.Content).html()}if(r){t.$el.attr("title",r)}t.$el.removeClass("tooltipstered").removeData("tooltipster-ns").removeData("tooltipster-initialTitle")}else{n=e.grep(n,function(e,n){return e!==t.namespace});t.$el.data("tooltipster-ns",n)}return t},elementIcon:function(){return this.$el[0]!==this.$elProxy[0]?this.$elProxy[0]:undefined},elementTooltip:function(){return this.$tooltip?this.$tooltip[0]:undefined},option:function(e,t){if(typeof t=="undefined")return this.options[e];else{this.options[e]=t;return this}},status:function(){return this.Status}};e.fn[r]=function(){var t=arguments;if(this.length===0){if(typeof t[0]==="string"){var n=true;switch(t[0]){case"setDefaults":e.extend(i,t[1]);break;default:n=false;break}if(n)return true;else return this}else{return this}}else{if(typeof t[0]==="string"){var r="#*$~&";this.each(function(){var n=e(this).data("tooltipster-ns"),i=n?e(this).data(n[0]):null;if(i){if(typeof i[t[0]]==="function"){var s=i[t[0]](t[1],t[2])}else{throw new Error('Unknown method .tooltipster("'+t[0]+'")')}if(s!==i){r=s;return false}}else{throw new Error("You called Tooltipster's \""+t[0]+'" method on an uninitialized element')}});return r!=="#*$~&"?r:this}else{var o=[],u=t[0]&&typeof t[0].multiple!=="undefined",a=u&&t[0].multiple||!u&&i.multiple,f=t[0]&&typeof t[0].debug!=="undefined",l=f&&t[0].debug||!f&&i.debug;this.each(function(){var n=false,r=e(this).data("tooltipster-ns"),i=null;if(!r){n=true}else if(a){n=true}else if(l){console.log('Tooltipster: one or more tooltips are already attached to this element: ignoring. Use the "multiple" option to attach more tooltips.')}if(n){i=new s(this,t[0]);if(!r)r=[];r.push(i.namespace);e(this).data("tooltipster-ns",r);e(this).data(i.namespace,i)}o.push(i)});if(a)return o;else return this}}};var u=!!("ontouchstart"in t);var a=false;e("body").one("mousemove",function(){a=true})})(jQuery,window,document);;
+// make it a global variable so other scripts can access it
+var booked_load_calendar_date_booking_options,
+	booked_appt_form_options,
+	bookedNewAppointment;
+
+;(function($, window, document, undefined) {
+
+	var $win = $(window);
+
+	$.fn.spin.presets.booked = {
+	 	lines: 10, // The number of lines to draw
+		length: 7, // The length of each line
+		width: 5, // The line thickness
+		radius: 11, // The radius of the inner circle
+		corners: 1, // Corner roundness (0..1)
+		rotate: 0, // The rotation offset
+		direction: 1, // 1: clockwise, -1: counterclockwise
+		color: '#555', // #rgb or #rrggbb or array of colors
+		speed: 1, // Rounds per second
+		trail: 60, // Afterglow percentage
+		shadow: false, // Whether to render a shadow
+		hwaccel: false, // Whether to use hardware acceleration
+		className: 'booked-spinner', // The CSS class to assign to the spinner
+		zIndex: 2e9, // The z-index (defaults to 2000000000)
+		top: '50%', // Top position relative to parent
+		left: '50%' // Left position relative to parent
+	}
+
+	$.fn.spin.presets.booked_top = {
+	 	lines: 11, // The number of lines to draw
+		length: 10, // The length of each line
+		width: 6, // The line thickness
+		radius: 15, // The radius of the inner circle
+		corners: 1, // Corner roundness (0..1)
+		rotate: 0, // The rotation offset
+		scale: 0.5,
+		direction: 1, // 1: clockwise, -1: counterclockwise
+		color: '#aaaaaa', // #rgb or #rrggbb or array of colors
+		speed: 1, // Rounds per second
+		trail: 60, // Afterglow percentage
+		shadow: false, // Whether to render a shadow
+		hwaccel: false, // Whether to use hardware acceleration
+		className: 'booked-spinner booked-spinner-top', // The CSS class to assign to the spinner
+		zIndex: 2e9, // The z-index (defaults to 2000000000)
+		top: '15px', // Top position relative to parent
+		left: '50%' // Left position relative to parent
+	}
+
+	$.fn.spin.presets.booked_white = {
+	 	lines: 13, // The number of lines to draw
+		length: 11, // The length of each line
+		width: 5, // The line thickness
+		radius: 18, // The radius of the inner circle
+		scale: 1,
+		corners: 1, // Corner roundness (0..1)
+		rotate: 0, // The rotation offset
+		direction: 1, // 1: clockwise, -1: counterclockwise
+		color: '#fff', // #rgb or #rrggbb or array of colors
+		speed: 1, // Rounds per second
+		trail: 60, // Afterglow percentage
+		shadow: false, // Whether to render a shadow
+		hwaccel: false, // Whether to use hardware acceleration
+		className: 'booked-spinner booked-white', // The CSS class to assign to the spinner
+		zIndex: 2e9, // The z-index (defaults to 2000000000)
+		top: '50%', // Top position relative to parent
+		left: '50%' // Left position relative to parent
+	}
+
+	// Adjust the calendar sizing when resizing the window
+	$win.on('resize', function(){
+
+		adjust_calendar_boxes();
+		resize_booked_modal();
+
+	});
+
+	$win.on('load', function() {
+
+		BookedTabs.Init();
+
+		var ajaxRequests = [];
+
+		// Adjust the calendar sizing on load
+		adjust_calendar_boxes();
+
+		$('.booked-calendar-wrap').each(function(){
+			var thisCalendar = $(this);
+			var calendar_month = thisCalendar.find('div.booked-calendar').attr('data-calendar-date');
+			thisCalendar.attr('data-default',calendar_month);
+			init_tooltips(thisCalendar);
+		});
+
+		$('.booked-list-view').each(function(){
+			var thisList = $(this);
+			var list_date = thisList.find('.booked-appt-list').attr('data-list-date');
+			thisList.attr('data-default',list_date);
+		});
+
+		bookedRemoveEmptyTRs();
+		init_appt_list_date_picker();
+
+		$('.booked_calendar_chooser').change(function(e){
+
+			e.preventDefault();
+
+			var $selector 			= $(this),
+				thisIsCalendar		= $selector.parents('.booked-calendarSwitcher').hasClass('calendar');
+
+			if (!thisIsCalendar){
+
+				var thisCalendarWrap	= $selector.parents('.booked-calendar-shortcode-wrap').find('.booked-list-view'),
+				thisDefaultDate			= thisCalendarWrap.attr('data-default'),
+				thisIsCalendar			= $selector.parents('.booked-calendarSwitcher').hasClass('calendar');
+
+				if (typeof thisDefaultDate == 'undefined'){ thisDefaultDate = false; }
+
+				thisCalendarWrap.addClass('booked-loading');
+
+				var args = {
+					'action'		: 'booked_appointment_list_date',
+					'date'		: thisDefaultDate,
+					'calendar_id'	: $selector.val()
+				};
+
+				$(document).trigger("booked-before-loading-appointment-list-booking-options");
+				thisCalendarWrap.spin('booked_top');
+
+				$.ajax({
+					url: booked_js_vars.ajax_url,
+					type: 'post',
+					data: args,
+					success: function( html ) {
+
+						thisCalendarWrap.html( html );
+
+						init_appt_list_date_picker();
+						setTimeout(function(){
+							thisCalendarWrap.removeClass('booked-loading');
+						},1);
+
+					}
+				});
+
+			} else {
+
+				var thisCalendarWrap 	= $selector.parents('.booked-calendar-shortcode-wrap').find('.booked-calendar-wrap'),
+				thisDefaultDate			= thisCalendarWrap.attr('data-default');
+				if (typeof thisDefaultDate == 'undefined'){ thisDefaultDate = false; }
+
+				var args = {
+					'action'		: 'booked_calendar_month',
+					'gotoMonth'		: thisDefaultDate,
+					'calendar_id'	: $selector.val()
+				};
+
+				savingState(true,thisCalendarWrap);
+
+				$.ajax({
+					url: booked_js_vars.ajax_url,
+					type: 'post',
+					data: args,
+					success: function( html ) {
+
+						thisCalendarWrap.html( html );
+
+						adjust_calendar_boxes();
+						bookedRemoveEmptyTRs();
+						init_tooltips(thisCalendarWrap);
+					 	$(window).trigger('booked-load-calendar', args, $selector );
+
+					}
+				});
+
+			}
+
+			return false;
+
+		});
+
+		// Calendar Next/Prev Click
+		$('body').on('click', '.booked-calendar-wrap .page-right, .booked-calendar-wrap .page-left, .booked-calendar-wrap .monthName a', function(e) {
+
+			e.preventDefault();
+
+			var $button 			= $(this),
+				gotoMonth			= $button.attr('data-goto'),
+				thisCalendarWrap 	= $button.parents('.booked-calendar-wrap'),
+				thisCalendarDefault = thisCalendarWrap.attr('data-default'),
+				calendar_id			= $button.parents('div.booked-calendar').attr('data-calendar-id');
+
+			if (typeof thisCalendarDefault == 'undefined'){ thisCalendarDefault = false; }
+
+			var args = {
+				'action'		: 'booked_calendar_month',
+				'gotoMonth'		: gotoMonth,
+				'calendar_id'	: calendar_id,
+				'force_default'	: thisCalendarDefault
+			};
+
+			savingState(true,thisCalendarWrap);
+
+			$.ajax({
+				url: booked_js_vars.ajax_url,
+				type: 'post',
+				data: args,
+				success: function( html ) {
+
+					thisCalendarWrap.html( html );
+
+					adjust_calendar_boxes();
+					bookedRemoveEmptyTRs();
+					init_tooltips(thisCalendarWrap);
+					$(window).trigger('booked-load-calendar', args, $button );
+
+				}
+			});
+
+			return false;
+
+		});
+
+		// Calendar Date Click
+		$('body').on('click', '.booked-calendar-wrap .bc-row.week .bc-col', function(e) {
+
+			e.preventDefault();
+
+			var $thisDate 				= $(this),
+				booked_calendar_table 	= $thisDate.parents('div.booked-calendar'),
+				$thisRow				= $thisDate.parent(),
+				date					= $thisDate.attr('data-date'),
+				calendar_id				= booked_calendar_table.attr('data-calendar-id'),
+				colspanSetting			= $thisRow.find('.bc-col').length;
+
+			if (!calendar_id){ calendar_id = 0; }
+
+			if ($thisDate.hasClass('blur') || $thisDate.hasClass('booked') && !booked_js_vars.publicAppointments || $thisDate.hasClass('prev-date')){
+
+				// Do nothing.
+
+			} else if ($thisDate.hasClass('active')){
+
+				$thisDate.removeClass('active');
+				$('.bc-row.entryBlock').remove();
+
+				var calendarHeight = booked_calendar_table.height();
+				booked_calendar_table.parent().height(calendarHeight);
+
+			} else {
+
+				$('.bc-row.week .bc-col').removeClass('active');
+				$thisDate.addClass('active');
+
+				$('.bc-row.entryBlock').remove();
+				$thisRow.after('<div class="bc-row entryBlock booked-loading"><div class="bc-col"></div></div>');
+				$('.bc-row.entryBlock').find('.bc-col').spin('booked');
+
+				booked_load_calendar_date_booking_options = {'action':'booked_calendar_date','date':date,'calendar_id':calendar_id};
+				$(document).trigger("booked-before-loading-calendar-booking-options");
+
+				var calendarHeight = booked_calendar_table.height();
+				booked_calendar_table.parent().height(calendarHeight);
+
+				$.ajax({
+					url: booked_js_vars.ajax_url,
+					type: 'post',
+					data: booked_load_calendar_date_booking_options,
+					success: function( html ) {
+
+						$('.bc-row.entryBlock').find('.bc-col').html( html );
+
+						$('.bc-row.entryBlock').removeClass('booked-loading');
+						$('.bc-row.entryBlock').find('.booked-appt-list').fadeIn(300);
+						$('.bc-row.entryBlock').find('.booked-appt-list').addClass('shown');
+						adjust_calendar_boxes();
+
+					}
+				});
+
+			}
+
+			return;
+
+		});
+
+		// Appointment List Next/Prev Date Click
+		$('body').on('click', '.booked-list-view .booked-list-view-date-prev, .booked-list-view .booked-list-view-date-next', function(e) {
+
+			e.preventDefault();
+
+			var $thisLink 			= $(this),
+				date				= $thisLink.attr('data-date'),
+				thisList			= $thisLink.parents('.booked-list-view'),
+				defaultDate			= thisList.attr('data-default'),
+				calendar_id			= $thisLink.parents('.booked-list-view-nav').attr('data-calendar-id');
+
+			if (typeof defaultDate == 'undefined'){ defaultDate = false; }
+
+			if (!calendar_id){ calendar_id = 0; }
+
+			thisList.addClass('booked-loading');
+
+			var booked_load_list_view_date_booking_options = {
+				'action'		: 'booked_appointment_list_date',
+				'date'			: date,
+				'calendar_id'	: calendar_id,
+				'force_default'	: defaultDate
+			};
+
+			$(document).trigger("booked-before-loading-appointment-list-booking-options");
+			thisList.spin('booked_top');
+
+			$.ajax({
+				url: booked_js_vars.ajax_url,
+				type: 'post',
+				data: booked_load_list_view_date_booking_options,
+				success: function( html ) {
+
+					thisList.html( html );
+
+					init_appt_list_date_picker();
+					setTimeout(function(){
+						thisList.removeClass('booked-loading');
+					},1);
+
+				}
+			});
+
+			return false;
+
+		});
+
+		// New Appointment Click
+		bookedNewAppointment = function(e) {
+			e.preventDefault();
+
+			var $button 		= $(this),
+				title           = $button.attr('data-title'),
+				timeslot		= $button.attr('data-timeslot'),
+				date			= $button.attr('data-date'),
+				calendar_id		= $button.attr('data-calendar-id'),
+				$thisTimeslot	= $button.parents('.timeslot'),
+				is_list_view	= $button.parents('.booked-calendar-wrap').hasClass('booked-list-view');
+
+			if (typeof is_list_view != 'undefined' && is_list_view){
+				var new_calendar_id	= $button.parents('.booked-list-view').find('.booked-list-view-nav').attr('data-calendar-id');
+			} else {
+				var new_calendar_id	= $button.parents('div.booked-calendar').attr('data-calendar-id');
+			}
+			calendar_id = new_calendar_id ? new_calendar_id : calendar_id;
+
+			booked_appt_form_options = {'action':'booked_new_appointment_form','date':date,'timeslot':timeslot,'calendar_id':calendar_id,'title':title};
+			$(document).trigger("booked-before-loading-booking-form");
+
+			create_booked_modal();
+			setTimeout(function(){
+
+				$.ajax({
+					url: booked_js_vars.ajax_url,
+					type: 'post',
+					data: booked_appt_form_options,
+					success: function( html ) {
+
+						$('.bm-window').html( html );
+
+						var bookedModal = $('.booked-modal');
+						var bmWindow = bookedModal.find('.bm-window');
+						bmWindow.css({'visibility':'hidden'});
+						bookedModal.removeClass('bm-loading');
+						$(document).trigger("booked-on-new-app");
+						resize_booked_modal();
+						bmWindow.hide();
+						$('.booked-modal .bm-overlay').find('.booked-spinner').remove();
+
+						setTimeout(function(){
+							bmWindow.css({'visibility':'visible'});
+							bmWindow.show();
+						},50);
+
+					}
+				});
+
+			},100);
+
+			return false;
+		}
+		$('body').on('click', '.booked-calendar-wrap button.new-appt', bookedNewAppointment);
+
+		// Profile Tabs
+		var profileTabs = $('.booked-tabs');
+
+		if (!profileTabs.find('li.active').length){
+			profileTabs.find('li:first-child').addClass("active");
+		}
+
+		if (profileTabs.length){
+			$('.booked-tab-content').hide();
+			var activeTab = profileTabs.find('.active > a').attr('href');
+			activeTab = activeTab.split('#');
+			activeTab = activeTab[1];
+			$('#profile-'+activeTab).show();
+
+			profileTabs.find('li > a').on('click', function(e) {
+
+				e.preventDefault();
+				$('.booked-tab-content').hide();
+				profileTabs.find('li').removeClass('active');
+
+				$(this).parent().addClass('active');
+				var activeTab = $(this).attr('href');
+				activeTab = activeTab.split('#');
+				activeTab = activeTab[1];
+
+				$('#profile-'+activeTab).show();
+				return false;
+
+			});
+		}
+
+		// Show Additional Information
+		$('body').on('click', '.booked-profile-appt-list .booked-show-cf', function(e) {
+
+			e.preventDefault();
+			var hiddenBlock = $(this).parent().find('.cf-meta-values-hidden');
+
+			if(hiddenBlock.is(':visible')){
+				hiddenBlock.hide();
+				$(this).removeClass('booked-cf-active');
+			} else {
+				hiddenBlock.show();
+				$(this).addClass('booked-cf-active');
+			}
+
+			return false;
+
+		});
+
+		// Check Login/Registration/Forgot Password forms before Submitting
+		if ($('#loginform').length){
+			$('#loginform input[type="submit"]').on('click',function(e) {
+				if ($('#loginform input[name="log"]').val() && $('#loginform input[name="pwd"]').val()){
+					$('#loginform .booked-custom-error').hide();
+				} else {
+					if ( $('#loginform').parents('.booked-form-wrap').length ){
+						e.preventDefault();
+						$('#loginform').parents('.booked-form-wrap').find('.booked-custom-error').fadeOut(200).fadeIn(200);
+					}
+				}
+			});
+		}
+
+		if ($('#profile-forgot').length){
+			$('#profile-forgot input[type="submit"]').on('click',function(e) {
+				if ($('#profile-forgot input[name="user_login"]').val()){
+					$('#profile-forgot .booked-custom-error').hide();
+				} else {
+					e.preventDefault();
+					$('#profile-forgot').find('.booked-custom-error').fadeOut(200).fadeIn(200);
+				}
+			});
+		}
+
+		// Custom Upload Field
+		if ($('.booked-upload-wrap').length){
+
+			$('.booked-upload-wrap input[type=file]').on('change',function(){
+
+				var fileName = $(this).val();
+				$(this).parent().find('span').html(fileName);
+				$(this).parent().addClass('hasFile');
+
+			});
+
+		}
+
+		// Delete Appointment
+		$('body').on('click', '.booked-profile-appt-list .appt-block .cancel', function(e) {
+
+			e.preventDefault();
+
+			var $button 		= $(this),
+				$thisParent		= $button.parents('.appt-block'),
+				appt_id			= $thisParent.attr('data-appt-id');
+
+			confirm_delete = confirm(booked_js_vars.i18n_confirm_appt_delete);
+			if (confirm_delete == true){
+
+				var currentApptCount = parseInt($('.booked-profile-appt-list').find('h4').find('span.count').html());
+				currentApptCount = parseInt(currentApptCount - 1);
+				if (currentApptCount < 1){
+					$('.booked-profile-appt-list').find('h4').find('span.count').html('0');
+					$('.no-appts-message').slideDown('fast');
+				} else {
+					$('.booked-profile-appt-list').find('h4').find('span.count').html(currentApptCount);
+				}
+
+				$('.appt-block').animate({'opacity':0.4},0);
+
+	  			$thisParent.slideUp('fast',function(){
+					$(this).remove();
+				});
+
+				$.ajax({
+					'url' 		: booked_js_vars.ajax_url,
+					'method' 	: 'post',
+					'data'		: {
+						'action'     	: 'booked_cancel_appt',
+						'appt_id'     	: appt_id
+					},
+					success: function(data) {
+						$('.appt-block').animate({'opacity':1},150);
+					}
+				});
+
+			}
+
+			return false;
+
+		});
+
+		$('body').on('touchstart click','.bm-overlay, .bm-window .close, .booked-form .cancel',function(e){
+			e.preventDefault();
+			close_booked_modal();
+			return false;
+		});
+
+		$('body')
+		.on('focusin', '.booked-form input', function() {
+			if(this.title==this.value) {
+				$(this).addClass('hasContent');
+				this.value = '';
+			}
+		}).on('focusout', '.booked-form input', function(){
+			if(this.value==='') {
+				$(this).removeClass('hasContent');
+				this.value = this.title;
+			}
+		});
+
+		$('body').on('change','.booked-form input',function(){
+
+			var condition = $(this).attr('data-condition'),
+				thisVal = $(this).val();
+
+			if (condition && $('.condition-block').length) {
+				$('.condition-block.'+condition).hide();
+				$('#condition-'+thisVal).fadeIn(200);
+				resize_booked_modal();
+			}
+
+		});
+
+		// Perform AJAX login on form submit
+	    $('body').on('submit','form#ajaxlogin', function(e){
+		    e.preventDefault();
+
+	        $('form#ajaxlogin p.status').show().html('<i class="fa-solid fa-circle-notch fa-spin"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_please_wait);
+	        resize_booked_modal();
+
+	        var $this = $(this),
+	        	date = $this.data('date'),
+	        	title = $this.data('title'),
+	        	timeslot = $this.data('timeslot'),
+	        	calendar_id = $this.data('calendar-id');
+
+	        $.ajax({
+		        type	: 'post',
+				url 	: booked_js_vars.ajax_url,
+				data	: $('form#ajaxlogin').serialize(),
+				success	: function(data) {
+					if (data == 'success'){
+
+						// close the modal box
+						close_booked_modal();
+
+						// reopen the modal box
+						var $button = $( '<button data-title="' + title + '" data-timeslot="' + timeslot + '" data-date="' + date + '" data-calendar-id="' + calendar_id + '"></button>' );
+						$button.on( 'click', window.bookedNewAppointment );
+						$button.triggerHandler( 'click' );
+						$button.unbind( 'click', window.bookedNewAppointment );
+						$button.detach();
+
+					} else {
+						$('form#ajaxlogin p.status').show().html('<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_wrong_username_pass);
+						resize_booked_modal();
+					}
+	            }
+	        });
+	        e.preventDefault();
+	    });
+
+	    $('body').on('click','.booked-forgot-password',function(e){
+
+			e.preventDefault();
+			$('#ajaxlogin').hide();
+			$('#ajaxforgot').show();
+
+			resize_booked_modal();
+
+	    });
+
+	     $('body').on('click','.booked-forgot-goback',function(e){
+
+			e.preventDefault();
+			$('#ajaxlogin').show();
+			$('#ajaxforgot').hide();
+
+			resize_booked_modal();
+
+	    });
+
+	    // Perform AJAX login on form submit
+
+	    $('body').on('submit','form#ajaxforgot', function(e){
+		    e.preventDefault();
+
+	        $('form#ajaxforgot p.status').show().html('<i class="fa-solid fa-circle-notch fa-spin"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_please_wait);
+	        resize_booked_modal();
+
+	        var $this = $(this);
+
+	        $.ajax({
+		        type	: 'post',
+				url 	: booked_js_vars.ajax_url,
+				data	: $('form#ajaxforgot').serialize(),
+				success	: function(data) {
+					if (data == 'success'){
+
+						e.preventDefault();
+						$('#ajaxlogin').show();
+						$('#ajaxforgot').hide();
+
+						$('form#ajaxlogin p.status').show().html('<i class="fa-solid fa-check" style="color:#56c477"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_password_reset);
+						resize_booked_modal();
+
+					} else {
+
+						//console.log(data);
+						$('form#ajaxforgot p.status').show().html('<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_password_reset_error);
+						resize_booked_modal();
+
+					}
+	            }
+	        });
+	        e.preventDefault();
+	    });
+
+
+		// Submit the "Request Appointment" Form
+		$('body').on('click','.booked-form input#submit-request-appointment',function(e){
+
+			$('form#newAppointmentForm p.status').show().html('<i class="fa-solid fa-circle-notch fa-spin"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_please_wait);
+	        resize_booked_modal();
+
+			e.preventDefault();
+
+			var customerType        = $('#newAppointmentForm input[name=customer_type]').val(),
+				customerID          = $('#newAppointmentForm input[name=user_id]').val(),
+				name                = $('#newAppointmentForm input[name=booked_appt_name]').val(),
+				surname             = $('#newAppointmentForm input[name=booked_appt_surname]').val(),
+				surnameActive		= $('#newAppointmentForm input[name=booked_appt_surname]').length,
+				guest_name          = $('#newAppointmentForm input[name=guest_name]').val(),
+				guest_surname      	= $('#newAppointmentForm input[name=guest_surname]').val(),
+				guest_surnameActive = $('#newAppointmentForm input[name=guest_surname]').length,
+				guest_email			= $('#newAppointmentForm input[name=guest_email]').val(),
+				guest_emailActive 	= $('#newAppointmentForm input[name=guest_email]').length,
+				email               = $('#newAppointmentForm input[name=booked_appt_email]').val(),
+				password            = $('#newAppointmentForm input[name=booked_appt_password]').val(),
+				showRequiredError   = false,
+				ajaxRequests        = [];
+
+			$(this).parents('.booked-form').find('input,textarea,select').each(function(i,field){
+
+				var required = $(this).attr('required');
+
+				if (required && $(field).attr('type') == 'hidden'){
+					var fieldParts = $(field).attr('name');
+					fieldParts = fieldParts.split('---');
+					fieldName = fieldParts[0];
+					fieldNumber = fieldParts[1].split('___');
+					fieldNumber = fieldNumber[0];
+
+					if (fieldName == 'radio-buttons-label'){
+						var radioValue = false;
+						$('input:radio[name="single-radio-button---'+fieldNumber+'[]"]:checked').each(function(){
+							if ($(this).val()){
+								radioValue = $(this).val();
+							}
+						});
+						if (!radioValue){
+							showRequiredError = true;
+						}
+					} else if (fieldName == 'checkboxes-label'){
+						var checkboxValue = false;
+						$('input:checkbox[name="single-checkbox---'+fieldNumber+'[]"]:checked').each(function(){
+							if ($(this).val()){
+								checkboxValue = $(this).val();
+							}
+						});
+						if (!checkboxValue){
+							showRequiredError = true;
+						}
+					}
+
+				} else if (required && $(field).attr('type') != 'hidden' && $(field).val() == ''){
+		            showRequiredError = true;
+		        }
+
+		    });
+
+		    if (showRequiredError) {
+			    $('form#newAppointmentForm p.status').show().html('<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_fill_out_required_fields);
+				resize_booked_modal();
+			    return false;
+		    }
+
+			if ( customerType == 'new' && !name || customerType == 'new' && surnameActive && !surname || customerType == 'new' && !email || customerType == 'new' && !password ) {
+				$('form#newAppointmentForm p.status').show().html('<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_appt_required_fields);
+				resize_booked_modal();
+				return false;
+			}
+
+			if ( customerType == 'guest' && !guest_name || customerType == 'guest' && guest_emailActive && !guest_email || customerType == 'guest' && guest_surnameActive && !guest_surname ){
+				$('form#newAppointmentForm p.status').show().html('<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_appt_required_fields_guest);
+				resize_booked_modal();
+				return false;
+			}
+
+			if (customerType == 'current' && customerID ||
+				customerType == 'guest' && guest_name && !guest_surnameActive && !guest_emailActive ||
+				customerType == 'guest' && guest_name && guest_surnameActive && guest_surname && !guest_emailActive ||
+				customerType == 'guest' && guest_name && guest_emailActive && guest_email && !guest_surnameActive ||
+				customerType == 'guest' && guest_name && guest_emailActive && guest_email && guest_surnameActive && guest_surname ) {
+
+			    SubmitRequestAppointment.currentUserOrGuest();
+
+			}
+
+			if (customerType == 'new' && name && email && password) {
+				if ( !surnameActive || surnameActive && surname ){
+					SubmitRequestAppointment.newUser();
+				}
+			}
+
+		});
+
+		var SubmitRequestAppointment = {
+
+			formSelector: '#newAppointmentForm',
+			formBtnRequestSelector: '.booked-form input#submit-request-appointment',
+			formStatusSelector: 'p.status',
+			formSubmitBtnSelector: '#submit-request-appointment',
+
+			apptContainerSelector: '.booked-appointment-details',
+
+			baseFields: 	[ 'guest_name','guest_surname','guest_email','action', 'customer_type', 'user_id' ],
+			apptFields: 	[ 'appoinment', 'calendar_id', 'title', 'date', 'timestamp', 'timeslot' ],
+			userFields: 	[ 'booked_appt_name','booked_appt_surname','booked_appt_email', 'booked_appt_password' ],
+			captchaFields: 	[ 'captcha_word', 'captcha_code' ],
+
+			currentApptIndex: false,
+			currentApptCounter: false,
+			hasAnyErrors: false,
+
+			currentUserOrGuest: function() {
+				var total_appts = SubmitRequestAppointment._totalAppts();
+
+				if ( ! total_appts ) {
+					return;
+				}
+
+				SubmitRequestAppointment._showLoadingMessage();
+				SubmitRequestAppointment._resetDefaultValues();
+
+				var data = SubmitRequestAppointment._getBaseData();
+
+				SubmitRequestAppointment.currentApptIndex = 0;
+				SubmitRequestAppointment.currentApptCounter = 1;
+				SubmitRequestAppointment._doRequestAppointment( data, total_appts );
+
+			},
+
+			// pretty much the same as SubmitRequestAppointment.currentUserOrGuest(), however, it include the user name, email and password
+			newUser: function() {
+				var total_appts = SubmitRequestAppointment._totalAppts();
+
+				if ( ! total_appts ) {
+					return;
+				}
+
+				SubmitRequestAppointment._showLoadingMessage();
+				SubmitRequestAppointment._resetDefaultValues();
+
+				var data = SubmitRequestAppointment._getBaseData();
+
+				// when there are more than one appointment, we need to make the registration request first and then loop the appointments
+				if ( total_appts > 1 ) {
+					var data_obj_with_no_reference = null;
+					data_obj_with_no_reference = $.extend( true, {}, data );
+					data_obj_with_no_reference = SubmitRequestAppointment._addUserRegistrationData( data_obj_with_no_reference );
+					SubmitRequestAppointment._requestUserRegistration( data_obj_with_no_reference );
+
+					data.customer_type = 'current';
+				} else {
+					// add user registration fields values
+					data = SubmitRequestAppointment._addUserRegistrationData( data );
+				}
+
+				SubmitRequestAppointment.currentApptIndex = 0;
+				SubmitRequestAppointment._doRequestAppointment( data, total_appts );
+			},
+
+			_doRequestAppointment: function( data, total_appts ) {
+
+				var appt_fields = SubmitRequestAppointment.apptFields;
+
+				// for the first item only
+				if ( SubmitRequestAppointment.currentApptIndex === 0 ) {
+					SubmitRequestAppointment._hideCancelBtn();
+					SubmitRequestAppointment._disableSubmitBtn();
+					SubmitRequestAppointment.hasAnyErrors = false;
+				}
+				// <------end
+
+				var data_obj_with_no_reference = $.extend( true, {}, data );
+
+				// add the appointment fields to the data
+				for (var i = 0; i < appt_fields.length; i++) {
+					data_obj_with_no_reference[ appt_fields[i] ] = SubmitRequestAppointment._getFieldVal( appt_fields[i], SubmitRequestAppointment.currentApptIndex );
+				}
+
+				var calendar_id = SubmitRequestAppointment._getFieldVal( 'calendar_id', SubmitRequestAppointment.currentApptIndex );
+				data_obj_with_no_reference = SubmitRequestAppointment._addCustomFieldsData( data_obj_with_no_reference, calendar_id );
+
+				var $appt = SubmitRequestAppointment._getApptElement( SubmitRequestAppointment.currentApptIndex );
+
+				if ( ! $appt.hasClass('skip') ) {
+					$.ajax({
+						type    : 'post',
+						url     : booked_js_vars.ajax_url,
+						data    : data_obj_with_no_reference,
+						success	: function( response ) {
+
+							//SubmitRequestAppointment._enableSubmitBtn();
+							//SubmitRequestAppointment._showCancelBtn();
+
+							//console.log(response);
+							//return;
+
+							SubmitRequestAppointment._requestAppointmentResponseHandler( response );
+							SubmitRequestAppointment.currentApptIndex++;
+
+							setTimeout( function() {
+								if ( SubmitRequestAppointment.currentApptCounter === total_appts ) {
+									// for the last item only
+									if ( ! SubmitRequestAppointment.hasAnyErrors ) {
+										SubmitRequestAppointment._onAfterRequestAppointment();
+									} else {
+										SubmitRequestAppointment._enableSubmitBtn();
+										SubmitRequestAppointment._showCancelBtn();
+									}
+									// <------end
+								} else {
+									SubmitRequestAppointment.currentApptCounter++;
+									SubmitRequestAppointment._doRequestAppointment( data, total_appts );
+								}
+							}, 100 );
+						}
+					});
+				} else {
+					SubmitRequestAppointment.currentApptIndex++;
+					SubmitRequestAppointment.currentApptCounter++;
+					SubmitRequestAppointment._doRequestAppointment( data, total_appts, SubmitRequestAppointment.currentApptIndex );
+				}
+			},
+
+			_totalAppts: function() {
+				return $(SubmitRequestAppointment.formSelector + ' input[name="appoinment[]"]').length;
+			},
+
+			_getBaseData: function() {
+				var data = {},
+					fields = SubmitRequestAppointment.baseFields;
+
+				// set up the base form data
+				for ( var i = 0; i < fields.length; i++ ) {
+					data[ fields[i] ] = SubmitRequestAppointment._getFieldVal( fields[i] );
+				}
+
+				data['is_fe_form'] = true;
+				data['total_appts'] = SubmitRequestAppointment._totalAppts();
+
+				return data;
+			},
+
+			_getFieldVal: function( field_name, field_index ) {
+				var field_name = typeof field_name === 'undefined' ? '' : field_name,
+					field_index = typeof field_index === 'undefined' ? false : field_index,
+					selector = SubmitRequestAppointment.formSelector + ' ';
+
+				if ( field_index === false ) {
+					selector += ' [name=' + field_name + ']';
+					return $( selector ).val();
+				}
+
+				selector += ' [name="' + field_name + '[]"]';
+				return $( selector ).eq( field_index ).val();
+			},
+
+			_resetDefaultValues: function() {
+				 $('.booked-form input').each(function(){
+					var thisVal = $(this).val(),
+						thisDefault = $(this).attr('title');
+
+					if ( thisDefault == thisVal ){
+						$(this).val('');
+					}
+				});
+			},
+
+			_resetToDefaultValues: function() {
+				$('.booked-form input').each(function(){
+					var thisVal = $(this).val(),
+						thisDefault = $(this).attr('title');
+
+					if ( ! thisVal ){
+						$(this).val( thisDefault );
+					}
+				});
+			},
+
+			_addUserRegistrationData: function( data ) {
+				// populate the user data
+				$.each( SubmitRequestAppointment.userFields, function( index, field_name ) {
+					data[ field_name ] = SubmitRequestAppointment._getFieldVal( field_name );
+				} );
+
+				// populate captcha data if available
+				$.each( SubmitRequestAppointment.captchaFields, function( index, field_name ) {
+					var field_value = SubmitRequestAppointment._getFieldVal( field_name );
+
+					if ( ! field_value ) {
+						return;
+					}
+
+					data[ field_name ] = field_value;
+				} );
+
+				return data;
+			},
+
+			_addCustomFieldsData: function( data, calendar_id ) {
+				var custom_fields_data = $('.cf-block [name]')
+					.filter( function( index ) {
+						var $this = $(this);
+						return parseInt($this.data('calendar-id')) === parseInt(calendar_id) && $this.attr('name').match(/---\d+/g);
+					} )
+					.each( function( index ) {
+						var $this = $(this),
+							name = $this.attr('name'),
+							value = $this.val(),
+							type = $this.attr('type');
+
+						if ( ! value ) {
+							return;
+						}
+
+						if ( ! name.match(/checkbox|radio+/g) ) {
+							data[ name ] = value;
+							return;
+						}
+
+						if ( name.match(/radio+/g) && $this.is(':checked') ) {
+							data[ name ] = value;
+							return;
+						}
+
+						if ( ! name.match(/radio+/g) && typeof data[ name ] === 'undefined' || ! name.match(/radio+/g) && data[ name ].constructor !== Array ) {
+							data[ name ] = [];
+						}
+
+						if ( ! $this.is(':checked') ) {
+							return;
+						}
+
+						data[ name ].push( value );
+					} );
+
+				return data;
+			},
+
+			_requestUserRegistration: function( base_data, appt_index ) {
+				$.ajax({
+					type    : 'post',
+					url     : booked_js_vars.ajax_url,
+					data    : base_data,
+					async   : false,
+					success	: function( response ) {
+						SubmitRequestAppointment._requestUserRegistrationResponseHandler( response );
+					}
+				});
+			},
+
+			_requestUserRegistrationResponseHandler: function( response ) {
+				var response_parts = response.split('###'),
+					data_result = response_parts[0].substr( response_parts[0].length - 5 );
+
+				if ( data_result === 'error' ) {
+					// do something on registration failure
+					return;
+				}
+
+				// do something on successful registration
+			},
+
+			_requestAppointment: function( response ) {
+				SubmitRequestAppointment._requestAppointmentResponseHandler( response );
+			},
+
+			_requestAppointmentResponseHandler: function( response ) {
+				var response_parts = response.split('###'),
+					data_result = response_parts[0].substr( response_parts[0].length - 5 );
+
+				if ( data_result === 'error' ) {
+					SubmitRequestAppointment._requestAppointmentOnError( response_parts );
+					return;
+				}
+
+				SubmitRequestAppointment._requestAppointmentOnSuccess( response_parts );
+			},
+
+			_requestAppointmentOnError: function( response_parts ) {
+				var $apptEl = SubmitRequestAppointment._getApptElement();
+
+				$(document).trigger("booked-on-requested-appt-error",[$apptEl]);
+
+				SubmitRequestAppointment._highlightAppt();
+
+				SubmitRequestAppointment._setStatusMsg( response_parts[1] );
+
+				SubmitRequestAppointment.hasAnyErrors = true;
+
+				resize_booked_modal();
+			},
+
+			_requestAppointmentOnSuccess: function( response_parts ) {
+				var $apptEl = SubmitRequestAppointment._getApptElement();
+
+				$(document).trigger("booked-on-requested-appt-success",[$apptEl]);
+
+				SubmitRequestAppointment._unhighlightAppt();
+			},
+
+			_onAfterRequestAppointment: function() {
+				var redirectObj = { redirect : false };
+				var redirect = $(document).trigger("booked-on-requested-appointment",[redirectObj]);
+
+				if ( redirectObj.redirect ) {
+					return;
+				}
+
+				if ( booked_js_vars.profilePage ) {
+					window.location = booked_js_vars.profilePage;
+					return;
+				}
+
+				SubmitRequestAppointment._reloadApptsList();
+				SubmitRequestAppointment._reloadCalendarTable();
+			},
+
+			_setStatusMsg: function( msg ) {
+				var form_status_selector = SubmitRequestAppointment.formSelector + ' ' + SubmitRequestAppointment.formStatusSelector;
+				$( form_status_selector ).show().html( '<i class="fa-solid fa-triangle-exclamation" style="color:#E35656"></i>&nbsp;&nbsp;&nbsp;' + msg );
+			},
+
+			_getApptElement: function( appt_index ) {
+				var appt_index = typeof appt_index === 'undefined' ? SubmitRequestAppointment.currentApptIndex : appt_index,
+					appt_cnt_selector = SubmitRequestAppointment.formSelector + ' ' + SubmitRequestAppointment.apptContainerSelector;
+
+				return $( appt_cnt_selector ).eq( appt_index );
+			},
+
+			_highlightAppt: function( msg ) {
+				var $apptEl = SubmitRequestAppointment._getApptElement();
+
+				if ( ! $apptEl.length ) {
+					return;
+				}
+
+				$apptEl.addClass('has-error');
+			},
+
+			_unhighlightAppt: function( msg ) {
+				var $apptEl = SubmitRequestAppointment._getApptElement();
+
+				if ( ! $apptEl.length ) {
+					return;
+				}
+
+				$apptEl.removeClass('has-error').addClass('skip');
+			},
+
+			_enableSubmitBtn: function() {
+				var btn_selector = SubmitRequestAppointment.formSelector + ' ' + SubmitRequestAppointment.formSubmitBtnSelector;
+				$( btn_selector ).attr( 'disabled', false );
+			},
+
+			_disableSubmitBtn: function() {
+				var btn_selector = SubmitRequestAppointment.formSelector + ' ' + SubmitRequestAppointment.formSubmitBtnSelector;
+				$( btn_selector ).attr( 'disabled', true );
+			},
+
+			_showCancelBtn: function() {
+				$( SubmitRequestAppointment.formSelector ).find('button.cancel').show();
+			},
+
+			_hideCancelBtn: function() {
+				$( SubmitRequestAppointment.formSelector ).find('button.cancel').hide();
+			},
+
+			_showLoadingMessage: function() {
+				$('form#newAppointmentForm p.status').show().html('<i class="fa-solid fa-circle-notch fa-spin"></i>&nbsp;&nbsp;&nbsp;' + booked_js_vars.i18n_please_wait);
+			},
+
+			_reloadApptsList: function() {
+				if ( ! $('.booked-appt-list').length ){
+					return;
+				}
+
+				$('.booked-appt-list').each( function() {
+					var $thisApptList  = $(this),
+						date          = $thisApptList.attr('data-list-date'),
+						thisList      = $thisApptList.parents('.booked-list-view'),
+						defaultDate   = thisList.attr('data-default'),
+						calendar_id   = parseInt($thisApptList.find('.booked-list-view-nav').attr('data-calendar-id')) || 0;
+
+					defaultDate = typeof defaultDate === 'undefined' ? false : defaultDate;
+					calendar_id = calendar_id ? calendar_id : 0;
+
+					thisList.addClass('booked-loading');
+
+					var booked_load_list_view_date_booking_options = {
+						'action'		: 'booked_appointment_list_date',
+						'date'			: date,
+						'calendar_id'	: calendar_id,
+						'force_default'	: defaultDate
+					};
+
+					$(document).trigger("booked-before-loading-appointment-list-booking-options");
+					thisList.spin('booked_top');
+
+					$.ajax({
+						url: booked_js_vars.ajax_url,
+						type: 'post',
+						data: booked_load_list_view_date_booking_options,
+						success: function( html ) {
+							thisList.html( html );
+
+							close_booked_modal();
+							init_appt_list_date_picker();
+							setTimeout(function(){
+								thisList.removeClass('booked-loading');
+							},1);
+						}
+					});
+				});
+			},
+
+			_reloadCalendarTable: function() {
+				if ( ! $('.bc-col.active').length ) {
+					return;
+				}
+
+				var $activeTD = $('.bc-col.active'),
+					activeDate = $activeTD.attr('data-date'),
+					calendar_id = parseInt( $activeTD.parents('table').data('calendar-id') ) || 0;
+
+				booked_load_calendar_date_booking_options = { 'action':'booked_calendar_date', 'date':activeDate, 'calendar_id':calendar_id };
+				$(document).trigger("booked-before-loading-calendar-booking-options");
+
+				$.ajax({
+					url: booked_js_vars.ajax_url,
+					type: 'post',
+					data: booked_load_calendar_date_booking_options,
+					success: function( html ) {
+
+						$('.bc-row.entryBlock').find('.bc-col').html( html );
+
+						close_booked_modal();
+						$('.bc-row.entryBlock').removeClass('booked-loading');
+						$('.bc-row.entryBlock').find('.booked-appt-list').hide().fadeIn(300);
+						$('.bc-row.entryBlock').find('.booked-appt-list').addClass('shown');
+						adjust_calendar_boxes();
+					}
+				});
+			}
+		}
+	});
+
+	function bookedRemoveEmptyTRs(){
+		$('div.booked-calendar').find('.bc-row.week').each(function(){
+			if ($(this).children().length == 0){
+				$(this).remove();
+			}
+		});
+	}
+
+	// Saving state updater
+	function savingState(show,limit_to){
+
+		show = typeof show !== 'undefined' ? show : true;
+		limit_to = typeof limit_to !== 'undefined' ? limit_to : false;
+
+		if (limit_to){
+
+			var $savingStateDIV = limit_to.find('li.active .savingState, .topSavingState.savingState, .calendarSavingState');
+			var $stuffToHide = limit_to.find('.monthName');
+			var $stuffToTransparent = limit_to.find('div.booked-calendar .bc-body');
+
+		} else {
+
+			var $savingStateDIV = $('li.active .savingState, .topSavingState.savingState, .calendarSavingState');
+			var $stuffToHide = $('.monthName');
+			var $stuffToTransparent = $('div.booked-calendar .bc-body');
+
+		}
+
+		if (show){
+			$savingStateDIV.fadeIn(200);
+			$stuffToHide.hide();
+			$stuffToTransparent.animate({'opacity':0.2},100);
+		} else {
+			$savingStateDIV.hide();
+			$stuffToHide.show();
+			$stuffToTransparent.animate({'opacity':1},0);
+		}
+
+	}
+
+	$(document).ajaxStop(function() {
+		savingState(false);
+	});
+
+	function init_appt_list_date_picker(){
+
+		$('.booked_list_date_picker').each(function(){
+			var thisDatePicker = $(this);
+			var minDateVal = thisDatePicker.parents('.booked-appt-list').attr('data-min-date');
+			var maxDateVal = thisDatePicker.parents('.booked-appt-list').attr('data-max-date');
+			if (typeof minDateVal == 'undefined'){ var minDateVal = thisDatePicker.attr('data-min-date'); }
+
+			thisDatePicker.datepicker({
+		        dateFormat: 'yy-mm-dd',
+		        minDate: minDateVal,
+		        maxDate: maxDateVal,
+		        showAnim: false,
+		        beforeShow: function(input, inst) {
+					$('#ui-datepicker-div').removeClass();
+					$('#ui-datepicker-div').addClass('booked_custom_date_picker');
+			    },
+			    onClose: function(dateText){
+					$('.booked_list_date_picker_trigger').removeClass('booked-dp-active');
+			    },
+			    onSelect: function(dateText){
+
+				   	var thisInput 			= $(this),
+						date				= dateText,
+						thisList			= thisInput.parents('.booked-list-view'),
+						defaultDate			= thisList.attr('data-default'),
+						calendar_id			= thisInput.parents('.booked-list-view-nav').attr('data-calendar-id');
+
+					if (typeof defaultDate == 'undefined'){ defaultDate = false; }
+
+					if (!calendar_id){ calendar_id = 0; }
+					thisList.addClass('booked-loading');
+
+					var booked_load_list_view_date_booking_options = {
+						'action'		: 'booked_appointment_list_date',
+						'date'			: date,
+						'calendar_id'	: calendar_id,
+						'force_default'	: defaultDate
+					};
+
+					$(document).trigger("booked-before-loading-appointment-list-booking-options");
+					thisList.spin('booked_top');
+
+					$.ajax({
+						url: booked_js_vars.ajax_url,
+						type: 'post',
+						data: booked_load_list_view_date_booking_options,
+						success: function( html ) {
+
+							thisList.html( html );
+
+							init_appt_list_date_picker();
+							setTimeout(function(){
+								thisList.removeClass('booked-loading');
+							},1);
+
+						}
+					});
+
+					return false;
+			    }
+		    });
+
+		});
+
+		$('body').on('click','.booked_list_date_picker_trigger',function(e){
+			e.preventDefault();
+			if (!$(this).hasClass('booked-dp-active')){
+				$(this).addClass('booked-dp-active');
+				$(this).parents('.booked-appt-list').find('.booked_list_date_picker').datepicker('show');
+			}
+
+	    });
+
+	}
+
+	var BookedTabs = {
+		bookingModalSelector: '.booked-modal',
+		tabSelector: '.booked-tabs',
+		tabNavSelector: '.booked-tabs-nav span',
+		tabCntSelector: '.booked-tabs-cnt',
+
+		Init: function() {
+			$(document).on( 'click', this.tabNavSelector, this.tabsNav );
+		},
+
+		tabsNav: function( event ) {
+			event.preventDefault();
+
+			BookedTabs.switchToTab( $(this) );
+			BookedTabs.maybeResizeBookingModal();
+		},
+
+		switchToTab: function( tab_nav_item ) {
+			var $nav_item = tab_nav_item,
+				tab_cnt_class = '.' + $nav_item.data('tab-cnt'),
+				$tabs_container = $nav_item.parents( BookedTabs.tabSelector );
+
+			$nav_item
+				.addClass( 'active' )
+				.siblings()
+				.removeClass( 'active' )
+
+			$tabs_container
+				.find( BookedTabs.tabCntSelector + ' ' + tab_cnt_class )
+				.addClass( 'active' )
+				.siblings()
+				.removeClass( 'active' );
+		},
+
+		maybeResizeBookingModal: function() {
+			if ( ! $(BookedTabs.bookingModalSelector).length ) {
+				return;
+			}
+
+			resize_booked_modal();
+		}
+	}
+
+})(jQuery, window, document);
+
+// Create Booked Modal
+function create_booked_modal(){
+	var windowHeight = jQuery(window).height();
+	var windowWidth = jQuery(window).width();
+	if (windowWidth > 720){
+		var maxModalHeight = windowHeight - 295;
+	} else {
+		var maxModalHeight = windowHeight;
+	}
+
+	jQuery('body input, body textarea, body select').blur();
+	jQuery('body').addClass('booked-noScroll');
+	jQuery('<div class="booked-modal bm-loading"><div class="bm-overlay"></div><div class="bm-window"><div style="height:100px"></div></div></div>').appendTo('body');
+	jQuery('.booked-modal .bm-overlay').spin('booked_white');
+	jQuery('.booked-modal .bm-window').css({'max-height':maxModalHeight+'px'});
+}
+
+var previousRealModalHeight = 100;
+
+function resize_booked_modal(){
+
+	var windowHeight = jQuery(window).height();
+	var windowWidth = jQuery(window).width();
+
+	var common43 = 43;
+
+	if (jQuery('.booked-modal .bm-window .booked-scrollable').length){
+		var realModalHeight = jQuery('.booked-modal .bm-window .booked-scrollable')[0].scrollHeight;
+
+		if (realModalHeight < 100){
+			realModalHeight = previousRealModalHeight;
+		} else {
+			previousRealModalHeight = realModalHeight;
+		}
+
+	} else {
+		var realModalHeight = 0;
+	}
+	var minimumWindowHeight = realModalHeight + common43 + common43;
+	var modalScrollableHeight = realModalHeight - common43;
+	var maxModalHeight;
+	var maxFormHeight;
+
+	if (windowHeight < minimumWindowHeight){
+		modalScrollableHeight = windowHeight - common43 - common43;
+	} else {
+		modalScrollableHeight = realModalHeight;
+	}
+
+	if (windowWidth > 720){
+		maxModalHeight = modalScrollableHeight - 25;
+		maxFormHeight = maxModalHeight - 15;
+		var modalNegMargin = (maxModalHeight + 78) / 2;
+	} else {
+		maxModalHeight = windowHeight - common43;
+		maxFormHeight = maxModalHeight - 60;
+		var modalNegMargin = (maxModalHeight) / 2;
+	}
+
+	jQuery('.booked-modal').css({'margin-top':'-'+modalNegMargin+'px'});
+	jQuery('.booked-modal .bm-window').css({'max-height':maxModalHeight+'px'});
+	jQuery('.booked-modal .bm-window .booked-scrollable').css({'max-height':maxFormHeight+'px'});
+
+}
+
+function close_booked_modal(){
+	var modal = jQuery('.booked-modal');
+	modal.fadeOut(200);
+	modal.addClass('bm-closing');
+	jQuery('body').removeClass('booked-noScroll');
+	setTimeout(function(){
+		modal.remove();
+	},300);
+}
+
+function init_tooltips(container){
+	jQuery('.tooltipster').tooltipster({
+		theme: 		'tooltipster-light',
+		animation:	'grow',
+		speed:		200,
+		delay: 		50,
+		offsetY:	-15
+	});
+}
+
+// Function to adjust calendar sizing
+function adjust_calendar_boxes(){
+	jQuery('div.booked-calendar').each(function(){
+
+		var windowWidth = jQuery(window).width();
+		var smallCalendar = jQuery(this).parents('.booked-calendar-wrap').hasClass('small');
+		var boxesWidth = jQuery(this).find('.bc-body .bc-row.week .bc-col').width();
+		var calendarHeight = jQuery(this).height();
+		boxesHeight = boxesWidth * 1;
+		jQuery(this).find('.bc-body .bc-row.week .bc-col').height(boxesHeight);
+		jQuery(this).find('.bc-body .bc-row.week .bc-col .date').css('line-height',boxesHeight+'px');
+		jQuery(this).find('.bc-body .bc-row.week .bc-col .date .number').css('line-height',boxesHeight+'px');
+		if (smallCalendar || windowWidth < 720){
+			jQuery(this).find('.bc-body .bc-row.week .bc-col .date .number').css('line-height',boxesHeight+'px');
+		} else {
+			jQuery(this).find('.bc-body .bc-row.week .bc-col .date .number').css('line-height','');
+		}
+
+		var calendarHeight = jQuery(this).height();
+		jQuery(this).parent().height(calendarHeight);
+
+	});
+}
+;
+!function(){function t(){if(this.complete){var e=this.getAttribute("data-lazy-src");if(e&&this.src!==e)this.addEventListener("onload",t);else{var d=this.width,n=this.height;d&&d>0&&n&&n>0&&(this.setAttribute("width",d),this.setAttribute("height",n),i(this))}}else this.addEventListener("onload",t)}var e=function(){for(var e=document.querySelectorAll("img[data-recalc-dims]"),i=0;i<e.length;i++)t.call(e[i])},i=function(t){t.removeAttribute("data-recalc-dims"),t.removeAttribute("scale")};"undefined"!=typeof window&&"undefined"!=typeof document&&("loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()),document.body.addEventListener("is.post-load",e)}();;
+!function(){const e=document.querySelectorAll(".coblocks-animate");if("IntersectionObserver"in window){const t=new IntersectionObserver((e=>{e.forEach((e=>{e.isIntersecting&&(e.target.classList.add(e.target.dataset.coblocksAnimation),t.unobserve(e.target))}))}),{threshold:[.15]});e.forEach((e=>{t.observe(e)}))}else e.forEach((e=>{e.classList.remove("coblocks-animate"),delete e.dataset.coblocksAnimation}))}();;
+!function(){"use strict";var t={d:function(e,i){for(var n in i)t.o(i,n)&&!t.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:i[n]})},o:function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r:function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})}},e={};function i(t){if(this.formData={},this.tree={},!(t instanceof FormData))return this;this.formData=t;const e=()=>{const t=new Map;return t.largestIndex=0,t.set=function(e,i){""===e?e=t.largestIndex++:/^[0-9]+$/.test(e)&&(e=parseInt(e),t.largestIndex<=e&&(t.largestIndex=e+1)),Map.prototype.set.call(t,e,i)},t};this.tree=e();const i=/^(?<name>[a-z][-a-z0-9_:]*)(?<array>(?:\[(?:[a-z][-a-z0-9_:]*|[0-9]*)\])*)/i;for(const[t,n]of this.formData){const s=t.match(i);if(s)if(""===s.groups.array)this.tree.set(s.groups.name,n);else{const t=[...s.groups.array.matchAll(/\[([a-z][-a-z0-9_:]*|[0-9]*)\]/gi)].map((([t,e])=>e));t.unshift(s.groups.name);const i=t.pop();t.reduce(((t,i)=>{if(/^[0-9]+$/.test(i)&&(i=parseInt(i)),t.get(i)instanceof Map)return t.get(i);const n=e();return t.set(i,n),n}),this.tree).set(i,n)}}}t.r(e),t.d(e,{date:function(){return d},email:function(){return r},file:function(){return m},maxdate:function(){return x},maxfilesize:function(){return w},maxlength:function(){return u},maxnumber:function(){return v},mindate:function(){return g},minlength:function(){return f},minnumber:function(){return h},number:function(){return c},required:function(){return o},requiredfile:function(){return a},tel:function(){return l},url:function(){return p}}),i.prototype.entries=function(){return this.tree.entries()},i.prototype.get=function(t){return this.tree.get(t)},i.prototype.getAll=function(t){if(!this.has(t))return[];const e=t=>{const i=[];if(t instanceof Map)for(const[n,s]of t)i.push(...e(s));else""!==t&&i.push(t);return i};return e(this.get(t))},i.prototype.has=function(t){return this.tree.has(t)},i.prototype.keys=function(){return this.tree.keys()},i.prototype.values=function(){return this.tree.values()};var n=i;function s({rule:t,field:e,error:i,...n}){this.rule=t,this.field=e,this.error=i,this.properties=n}const o=function(t){if(0===t.getAll(this.field).length)throw new s(this)},a=function(t){if(0===t.getAll(this.field).length)throw new s(this)},r=function(t){if(!t.getAll(this.field).every((t=>{if((t=t.trim()).length<6)return!1;if(-1===t.indexOf("@",1))return!1;if(t.indexOf("@")!==t.lastIndexOf("@"))return!1;const[e,i]=t.split("@",2);if(!/^[a-zA-Z0-9!#$%&\'*+\/=?^_`{|}~\.-]+$/.test(e))return!1;if(/\.{2,}/.test(i))return!1;if(/(?:^[ \t\n\r\0\x0B.]|[ \t\n\r\0\x0B.]$)/.test(i))return!1;const n=i.split(".");if(n.length<2)return!1;for(const t of n){if(/(?:^[ \t\n\r\0\x0B-]|[ \t\n\r\0\x0B-]$)/.test(t))return!1;if(!/^[a-z0-9-]+$/i.test(t))return!1}return!0})))throw new s(this)},p=function(t){const e=t.getAll(this.field);if(!e.every((t=>{if(""===(t=t.trim()))return!1;try{return(t=>-1!==["http","https","ftp","ftps","mailto","news","irc","irc6","ircs","gopher","nntp","feed","telnet","mms","rtsp","sms","svn","tel","fax","xmpp","webcal","urn"].indexOf(t))(new URL(t).protocol.replace(/:$/,""))}catch{return!1}})))throw new s(this)},l=function(t){if(!t.getAll(this.field).every((t=>(t=(t=t.trim()).replaceAll(/[()/.*#\s-]+/g,""),/^[+]?[0-9]+$/.test(t)))))throw new s(this)},c=function(t){if(!t.getAll(this.field).every((t=>(t=t.trim(),!!/^[-]?[0-9]+(?:[eE][+-]?[0-9]+)?$/.test(t)||!!/^[-]?(?:[0-9]+)?[.][0-9]+(?:[eE][+-]?[0-9]+)?$/.test(t)))))throw new s(this)},d=function(t){if(!t.getAll(this.field).every((t=>/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(t.trim()))))throw new s(this)},m=function(t){if(!t.getAll(this.field).every((t=>t instanceof File&&this.accept?.some((e=>/^\.[a-z0-9]+$/i.test(e)?t.name.toLowerCase().endsWith(e.toLowerCase()):(t=>{const e=[],i=t.match(/^(?<toplevel>[a-z]+)\/(?<sub>[*]|[a-z0-9.+-]+)$/i);if(i){const t=i.groups.toplevel.toLowerCase(),n=i.groups.sub.toLowerCase();for(const[s,o]of(()=>{const t=new Map;return t.set("jpg|jpeg|jpe","image/jpeg"),t.set("gif","image/gif"),t.set("png","image/png"),t.set("bmp","image/bmp"),t.set("tiff|tif","image/tiff"),t.set("webp","image/webp"),t.set("ico","image/x-icon"),t.set("heic","image/heic"),t.set("asf|asx","video/x-ms-asf"),t.set("wmv","video/x-ms-wmv"),t.set("wmx","video/x-ms-wmx"),t.set("wm","video/x-ms-wm"),t.set("avi","video/avi"),t.set("divx","video/divx"),t.set("flv","video/x-flv"),t.set("mov|qt","video/quicktime"),t.set("mpeg|mpg|mpe","video/mpeg"),t.set("mp4|m4v","video/mp4"),t.set("ogv","video/ogg"),t.set("webm","video/webm"),t.set("mkv","video/x-matroska"),t.set("3gp|3gpp","video/3gpp"),t.set("3g2|3gp2","video/3gpp2"),t.set("txt|asc|c|cc|h|srt","text/plain"),t.set("csv","text/csv"),t.set("tsv","text/tab-separated-values"),t.set("ics","text/calendar"),t.set("rtx","text/richtext"),t.set("css","text/css"),t.set("htm|html","text/html"),t.set("vtt","text/vtt"),t.set("dfxp","application/ttaf+xml"),t.set("mp3|m4a|m4b","audio/mpeg"),t.set("aac","audio/aac"),t.set("ra|ram","audio/x-realaudio"),t.set("wav","audio/wav"),t.set("ogg|oga","audio/ogg"),t.set("flac","audio/flac"),t.set("mid|midi","audio/midi"),t.set("wma","audio/x-ms-wma"),t.set("wax","audio/x-ms-wax"),t.set("mka","audio/x-matroska"),t.set("rtf","application/rtf"),t.set("js","application/javascript"),t.set("pdf","application/pdf"),t.set("swf","application/x-shockwave-flash"),t.set("class","application/java"),t.set("tar","application/x-tar"),t.set("zip","application/zip"),t.set("gz|gzip","application/x-gzip"),t.set("rar","application/rar"),t.set("7z","application/x-7z-compressed"),t.set("exe","application/x-msdownload"),t.set("psd","application/octet-stream"),t.set("xcf","application/octet-stream"),t.set("doc","application/msword"),t.set("pot|pps|ppt","application/vnd.ms-powerpoint"),t.set("wri","application/vnd.ms-write"),t.set("xla|xls|xlt|xlw","application/vnd.ms-excel"),t.set("mdb","application/vnd.ms-access"),t.set("mpp","application/vnd.ms-project"),t.set("docx","application/vnd.openxmlformats-officedocument.wordprocessingml.document"),t.set("docm","application/vnd.ms-word.document.macroEnabled.12"),t.set("dotx","application/vnd.openxmlformats-officedocument.wordprocessingml.template"),t.set("dotm","application/vnd.ms-word.template.macroEnabled.12"),t.set("xlsx","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"),t.set("xlsm","application/vnd.ms-excel.sheet.macroEnabled.12"),t.set("xlsb","application/vnd.ms-excel.sheet.binary.macroEnabled.12"),t.set("xltx","application/vnd.openxmlformats-officedocument.spreadsheetml.template"),t.set("xltm","application/vnd.ms-excel.template.macroEnabled.12"),t.set("xlam","application/vnd.ms-excel.addin.macroEnabled.12"),t.set("pptx","application/vnd.openxmlformats-officedocument.presentationml.presentation"),t.set("pptm","application/vnd.ms-powerpoint.presentation.macroEnabled.12"),t.set("ppsx","application/vnd.openxmlformats-officedocument.presentationml.slideshow"),t.set("ppsm","application/vnd.ms-powerpoint.slideshow.macroEnabled.12"),t.set("potx","application/vnd.openxmlformats-officedocument.presentationml.template"),t.set("potm","application/vnd.ms-powerpoint.template.macroEnabled.12"),t.set("ppam","application/vnd.ms-powerpoint.addin.macroEnabled.12"),t.set("sldx","application/vnd.openxmlformats-officedocument.presentationml.slide"),t.set("sldm","application/vnd.ms-powerpoint.slide.macroEnabled.12"),t.set("onetoc|onetoc2|onetmp|onepkg","application/onenote"),t.set("oxps","application/oxps"),t.set("xps","application/vnd.ms-xpsdocument"),t.set("odt","application/vnd.oasis.opendocument.text"),t.set("odp","application/vnd.oasis.opendocument.presentation"),t.set("ods","application/vnd.oasis.opendocument.spreadsheet"),t.set("odg","application/vnd.oasis.opendocument.graphics"),t.set("odc","application/vnd.oasis.opendocument.chart"),t.set("odb","application/vnd.oasis.opendocument.database"),t.set("odf","application/vnd.oasis.opendocument.formula"),t.set("wp|wpd","application/wordperfect"),t.set("key","application/vnd.apple.keynote"),t.set("numbers","application/vnd.apple.numbers"),t.set("pages","application/vnd.apple.pages"),t})())("*"===n&&o.startsWith(t+"/")||o===i[0])&&e.push(...s.split("|"))}return e})(e).some((e=>(e="."+e.trim(),t.name.toLowerCase().endsWith(e.toLowerCase())))))))))throw new s(this)},f=function(t){const e=t.getAll(this.field);let i=0;if(e.forEach((t=>{"string"==typeof t&&(i+=t.length)})),0!==i&&i<parseInt(this.threshold))throw new s(this)},u=function(t){const e=t.getAll(this.field);let i=0;if(e.forEach((t=>{"string"==typeof t&&(i+=t.length)})),parseInt(this.threshold)<i)throw new s(this)},h=function(t){if(!t.getAll(this.field).every((t=>!(parseFloat(t)<parseFloat(this.threshold)))))throw new s(this)},v=function(t){if(!t.getAll(this.field).every((t=>!(parseFloat(this.threshold)<parseFloat(t)))))throw new s(this)},g=function(t){if(!t.getAll(this.field).every((t=>(t=t.trim(),!(/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(t)&&/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(this.threshold)&&t<this.threshold)))))throw new s(this)},x=function(t){if(!t.getAll(this.field).every((t=>(t=t.trim(),!(/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(t)&&/^[0-9]{4,}-[0-9]{2}-[0-9]{2}$/.test(this.threshold)&&this.threshold<t)))))throw new s(this)},w=function(t){const e=t.getAll(this.field);let i=0;if(e.forEach((t=>{t instanceof File&&(i+=t.size)})),parseInt(this.threshold)<i)throw new s(this)};var b;window.swv={validators:e,validate:(t,i,o={})=>{const a=(t.rules??[]).filter((({rule:t,...i})=>"function"==typeof e[t]&&("function"!=typeof e[t].matches||e[t].matches(i,o))));if(!a.length)return new Map;const r=new n(i);return a.reduce(((t,i)=>{const{rule:n,...o}=i;if(t.get(o.field)?.error)return t;try{e[n].call({rule:n,...o},r)}catch(e){if(e instanceof s)return t.set(o.field,e)}return t.set(o.field,{})}),new Map)},...null!==(b=window.swv)&&void 0!==b?b:{}}}();;
+!function(){"use strict";const e=e=>Math.abs(parseInt(e,10)),t=(e,t)=>{const a=new Map([["init","init"],["validation_failed","invalid"],["acceptance_missing","unaccepted"],["spam","spam"],["aborted","aborted"],["mail_sent","sent"],["mail_failed","failed"],["submitting","submitting"],["resetting","resetting"],["validating","validating"],["payment_required","payment-required"]]);a.has(t)&&(t=a.get(t)),Array.from(a.values()).includes(t)||(t=`custom-${t=(t=t.replace(/[^0-9a-z]+/i," ").trim()).replace(/\s+/,"-")}`);const r=e.getAttribute("data-status");return e.wpcf7.status=t,e.setAttribute("data-status",t),e.classList.add(t),r&&r!==t&&e.classList.remove(r),t},a=(e,t,a)=>{const r=new CustomEvent(`wpcf7${t}`,{bubbles:!0,detail:a});"string"==typeof e&&(e=document.querySelector(e)),e.dispatchEvent(r)},r=e=>{const{root:t,namespace:a="contact-form-7/v1"}=wpcf7.api;return n.reduceRight(((e,t)=>a=>t(a,e)),(e=>{let r,n,{url:o,path:c,endpoint:s,headers:i,body:l,data:d,...p}=e;"string"==typeof s&&(r=a.replace(/^\/|\/$/g,""),n=s.replace(/^\//,""),c=n?r+"/"+n:r),"string"==typeof c&&(-1!==t.indexOf("?")&&(c=c.replace("?","&")),c=c.replace(/^\//,""),o=t+c),i={Accept:"application/json, */*;q=0.1",...i},delete i["X-WP-Nonce"],d&&(l=JSON.stringify(d),i["Content-Type"]="application/json");const u={code:"fetch_error",message:"You are probably offline."},f={code:"invalid_json",message:"The response is not a valid JSON response."};return window.fetch(o||c||window.location.href,{...p,headers:i,body:l}).then((e=>Promise.resolve(e).then((e=>{if(e.status>=200&&e.status<300)return e;throw e})).then((e=>{if(204===e.status)return null;if(e&&e.json)return e.json().catch((()=>{throw f}));throw f}))),(()=>{throw u}))}))(e)},n=[];function o(e){var a,r,n,o;let i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};const l=e;if(void 0===(null===(a=e.wpcf7)||void 0===a?void 0:a.schema))return;const d={...e.wpcf7.schema};if(null===(r=i.target)||void 0===r||!r.closest(".wpcf7-form-control-wrap[data-name]"))return;if(null!==(n=i.target)&&void 0!==n&&n.closest(".novalidate"))return;const p=new FormData,u=[];for(const e of l.querySelectorAll(".wpcf7-form-control-wrap"))if(!e.closest(".novalidate")&&(e.querySelectorAll(":where( input, textarea, select ):enabled").forEach((e=>{if(e.name)switch(e.type){case"button":case"image":case"reset":case"submit":break;case"checkbox":case"radio":e.checked&&p.append(e.name,e.value);break;case"select-multiple":for(const t of e.selectedOptions)p.append(e.name,t.value);break;case"file":for(const t of e.files)p.append(e.name,t);break;default:p.append(e.name,e.value)}})),e.dataset.name&&(u.push(e.dataset.name),e.setAttribute("data-under-validation","1"),e.dataset.name===i.target.name.replace(/\[.*\]$/,""))))break;d.rules=(null!==(o=d.rules)&&void 0!==o?o:[]).filter((e=>{let{field:t}=e;return u.includes(t)}));const f=e.getAttribute("data-status");Promise.resolve(t(e,"validating")).then((t=>{if(void 0!==swv){const t=swv.validate(d,p,i);for(const[a,{error:r}]of t)s(e,a),void 0!==r&&c(e,a,r)}})).finally((()=>{t(e,f),e.querySelectorAll(".wpcf7-form-control-wrap[data-under-validation]").forEach((e=>{e.removeAttribute("data-under-validation")}))}))}r.use=e=>{n.unshift(e)};const c=(e,t,a)=>{var r;const n=`${null===(r=e.wpcf7)||void 0===r?void 0:r.unitTag}-ve-${t}`.replaceAll(/[^0-9a-z_-]+/gi,""),o=e.querySelector(`.wpcf7-form-control-wrap[data-name="${t}"] .wpcf7-form-control`);(()=>{const t=document.createElement("li");t.setAttribute("id",n),o&&o.id?t.insertAdjacentHTML("beforeend",`<a href="#${o.id}">${a}</a>`):t.insertAdjacentText("beforeend",a),e.wpcf7.parent.querySelector(".screen-reader-response ul").appendChild(t)})(),e.querySelectorAll(`.wpcf7-form-control-wrap[data-name="${t}"]`).forEach((t=>{if("validating"===e.getAttribute("data-status")&&!t.dataset.underValidation)return;const r=document.createElement("span");r.classList.add("wpcf7-not-valid-tip"),r.setAttribute("aria-hidden","true"),r.insertAdjacentText("beforeend",a),t.appendChild(r),t.querySelectorAll("[aria-invalid]").forEach((e=>{e.setAttribute("aria-invalid","true")})),t.querySelectorAll(".wpcf7-form-control").forEach((e=>{e.classList.add("wpcf7-not-valid"),e.setAttribute("aria-describedby",n),"function"==typeof e.setCustomValidity&&e.setCustomValidity(a),e.closest(".use-floating-validation-tip")&&(e.addEventListener("focus",(e=>{r.setAttribute("style","display: none")})),r.addEventListener("click",(e=>{r.setAttribute("style","display: none")})))}))}))},s=(e,t)=>{var a,r;const n=`${null===(a=e.wpcf7)||void 0===a?void 0:a.unitTag}-ve-${t}`.replaceAll(/[^0-9a-z_-]+/gi,"");null===(r=e.wpcf7.parent.querySelector(`.screen-reader-response ul li#${n}`))||void 0===r||r.remove(),e.querySelectorAll(`.wpcf7-form-control-wrap[data-name="${t}"]`).forEach((e=>{var t;null===(t=e.querySelector(".wpcf7-not-valid-tip"))||void 0===t||t.remove(),e.querySelectorAll("[aria-invalid]").forEach((e=>{e.setAttribute("aria-invalid","false")})),e.querySelectorAll(".wpcf7-form-control").forEach((e=>{e.removeAttribute("aria-describedby"),e.classList.remove("wpcf7-not-valid"),"function"==typeof e.setCustomValidity&&e.setCustomValidity("")}))}))};function i(e){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(wpcf7.blocked)return l(e),void t(e,"submitting");const o=new FormData(e);n.submitter&&n.submitter.name&&o.append(n.submitter.name,n.submitter.value);const s={contactFormId:e.wpcf7.id,pluginVersion:e.wpcf7.pluginVersion,contactFormLocale:e.wpcf7.locale,unitTag:e.wpcf7.unitTag,containerPostId:e.wpcf7.containerPost,status:e.wpcf7.status,inputs:Array.from(o,(e=>{const t=e[0],a=e[1];return!t.match(/^_/)&&{name:t,value:a}})).filter((e=>!1!==e)),formData:o};r({endpoint:`contact-forms/${e.wpcf7.id}/feedback`,method:"POST",body:o,wpcf7:{endpoint:"feedback",form:e,detail:s}}).then((r=>{const n=t(e,r.status);return s.status=r.status,s.apiResponse=r,["invalid","unaccepted","spam","aborted"].includes(n)?a(e,n,s):["sent","failed"].includes(n)&&a(e,`mail${n}`,s),a(e,"submit",s),r})).then((t=>{t.posted_data_hash&&(e.querySelector('input[name="_wpcf7_posted_data_hash"]').value=t.posted_data_hash),"mail_sent"===t.status&&(e.reset(),e.wpcf7.resetOnMailSent=!0),t.invalid_fields&&t.invalid_fields.forEach((t=>{c(e,t.field,t.message)})),e.wpcf7.parent.querySelector('.screen-reader-response [role="status"]').insertAdjacentText("beforeend",t.message),e.querySelectorAll(".wpcf7-response-output").forEach((e=>{e.innerText=t.message}))})).catch((e=>console.error(e)))}r.use(((e,r)=>{if(e.wpcf7&&"feedback"===e.wpcf7.endpoint){const{form:r,detail:n}=e.wpcf7;l(r),a(r,"beforesubmit",n),t(r,"submitting")}return r(e)}));const l=e=>{e.querySelectorAll(".wpcf7-form-control-wrap").forEach((t=>{t.dataset.name&&s(e,t.dataset.name)})),e.wpcf7.parent.querySelector('.screen-reader-response [role="status"]').innerText="",e.querySelectorAll(".wpcf7-response-output").forEach((e=>{e.innerText=""}))};function d(e){const n=new FormData(e),o={contactFormId:e.wpcf7.id,pluginVersion:e.wpcf7.pluginVersion,contactFormLocale:e.wpcf7.locale,unitTag:e.wpcf7.unitTag,containerPostId:e.wpcf7.containerPost,status:e.wpcf7.status,inputs:Array.from(n,(e=>{const t=e[0],a=e[1];return!t.match(/^_/)&&{name:t,value:a}})).filter((e=>!1!==e)),formData:n};r({endpoint:`contact-forms/${e.wpcf7.id}/refill`,method:"GET",wpcf7:{endpoint:"refill",form:e,detail:o}}).then((r=>{e.wpcf7.resetOnMailSent?(delete e.wpcf7.resetOnMailSent,t(e,"mail_sent")):t(e,"init"),o.apiResponse=r,a(e,"reset",o)})).catch((e=>console.error(e)))}r.use(((e,a)=>{if(e.wpcf7&&"refill"===e.wpcf7.endpoint){const{form:a,detail:r}=e.wpcf7;l(a),t(a,"resetting")}return a(e)}));const p=(e,t)=>{for(const a in t){const r=t[a];e.querySelectorAll(`input[name="${a}"]`).forEach((e=>{e.value=""})),e.querySelectorAll(`img.wpcf7-captcha-${a.replaceAll(":","")}`).forEach((e=>{e.setAttribute("src",r)}));const n=/([0-9]+)\.(png|gif|jpeg)$/.exec(r);n&&e.querySelectorAll(`input[name="_wpcf7_captcha_challenge_${a}"]`).forEach((e=>{e.value=n[1]}))}},u=(e,t)=>{for(const a in t){const r=t[a][0],n=t[a][1];e.querySelectorAll(`.wpcf7-form-control-wrap[data-name="${a}"]`).forEach((e=>{e.querySelector(`input[name="${a}"]`).value="",e.querySelector(".wpcf7-quiz-label").textContent=r,e.querySelector(`input[name="_wpcf7_quiz_answer_${a}"]`).value=n}))}};function f(t){const a=new FormData(t);t.wpcf7={id:e(a.get("_wpcf7")),status:t.getAttribute("data-status"),pluginVersion:a.get("_wpcf7_version"),locale:a.get("_wpcf7_locale"),unitTag:a.get("_wpcf7_unit_tag"),containerPost:e(a.get("_wpcf7_container_post")),parent:t.closest(".wpcf7"),schema:void 0},t.querySelectorAll(".has-spinner").forEach((e=>{e.insertAdjacentHTML("afterend",'<span class="wpcf7-spinner"></span>')})),(e=>{e.querySelectorAll(".wpcf7-exclusive-checkbox").forEach((t=>{t.addEventListener("change",(t=>{const a=t.target.getAttribute("name");e.querySelectorAll(`input[type="checkbox"][name="${a}"]`).forEach((e=>{e!==t.target&&(e.checked=!1)}))}))}))})(t),(e=>{e.querySelectorAll(".has-free-text").forEach((t=>{const a=t.querySelector("input.wpcf7-free-text"),r=t.querySelector('input[type="checkbox"], input[type="radio"]');a.disabled=!r.checked,e.addEventListener("change",(e=>{a.disabled=!r.checked,e.target===r&&r.checked&&a.focus()}))}))})(t),(e=>{e.querySelectorAll(".wpcf7-validates-as-url").forEach((e=>{e.addEventListener("change",(t=>{let a=e.value.trim();a&&!a.match(/^[a-z][a-z0-9.+-]*:/i)&&-1!==a.indexOf(".")&&(a=a.replace(/^\/+/,""),a="http://"+a),e.value=a}))}))})(t),(e=>{if(!e.querySelector(".wpcf7-acceptance")||e.classList.contains("wpcf7-acceptance-as-validation"))return;const t=()=>{let t=!0;e.querySelectorAll(".wpcf7-acceptance").forEach((e=>{if(!t||e.classList.contains("optional"))return;const a=e.querySelector('input[type="checkbox"]');(e.classList.contains("invert")&&a.checked||!e.classList.contains("invert")&&!a.checked)&&(t=!1)})),e.querySelectorAll(".wpcf7-submit").forEach((e=>{e.disabled=!t}))};t(),e.addEventListener("change",(e=>{t()})),e.addEventListener("wpcf7reset",(e=>{t()}))})(t),(t=>{const a=(t,a)=>{const r=e(t.getAttribute("data-starting-value")),n=e(t.getAttribute("data-maximum-value")),o=e(t.getAttribute("data-minimum-value")),c=t.classList.contains("down")?r-a.value.length:a.value.length;t.setAttribute("data-current-value",c),t.innerText=c,n&&n<a.value.length?t.classList.add("too-long"):t.classList.remove("too-long"),o&&a.value.length<o?t.classList.add("too-short"):t.classList.remove("too-short")},r=e=>{e={init:!1,...e},t.querySelectorAll(".wpcf7-character-count").forEach((r=>{const n=r.getAttribute("data-target-name"),o=t.querySelector(`[name="${n}"]`);o&&(o.value=o.defaultValue,a(r,o),e.init&&o.addEventListener("keyup",(e=>{a(r,o)})))}))};r({init:!0}),t.addEventListener("wpcf7reset",(e=>{r()}))})(t),window.addEventListener("load",(e=>{wpcf7.cached&&t.reset()})),t.addEventListener("reset",(e=>{wpcf7.reset(t)})),t.addEventListener("submit",(e=>{wpcf7.submit(t,{submitter:e.submitter}),e.preventDefault()})),t.addEventListener("wpcf7submit",(e=>{e.detail.apiResponse.captcha&&p(t,e.detail.apiResponse.captcha),e.detail.apiResponse.quiz&&u(t,e.detail.apiResponse.quiz)})),t.addEventListener("wpcf7reset",(e=>{e.detail.apiResponse.captcha&&p(t,e.detail.apiResponse.captcha),e.detail.apiResponse.quiz&&u(t,e.detail.apiResponse.quiz)})),r({endpoint:`contact-forms/${t.wpcf7.id}/feedback/schema`,method:"GET"}).then((e=>{t.wpcf7.schema=e})),t.addEventListener("change",(e=>{e.target.closest(".wpcf7-form-control")&&wpcf7.validate(t,{target:e.target})}))}document.addEventListener("DOMContentLoaded",(e=>{var t;"undefined"!=typeof wpcf7?void 0!==wpcf7.api?"function"==typeof window.fetch?"function"==typeof window.FormData?"function"==typeof NodeList.prototype.forEach?"function"==typeof String.prototype.replaceAll?(wpcf7={init:f,submit:i,reset:d,validate:o,...null!==(t=wpcf7)&&void 0!==t?t:{}},document.querySelectorAll(".wpcf7 > form").forEach((e=>{wpcf7.init(e)}))):console.error("Your browser does not support String.replaceAll()."):console.error("Your browser does not support NodeList.forEach()."):console.error("Your browser does not support window.FormData()."):console.error("Your browser does not support window.fetch()."):console.error("wpcf7.api is not defined."):console.error("wpcf7 is not defined.")}))}();;
+!function(t,e){"use strict";function r(r,a,i,l,u){function f(){B=t.devicePixelRatio>1,i=c(i),a.delay>=0&&setTimeout((function(){s(!0)}),a.delay),(a.delay<0||a.combined)&&(l.e=function(t,e){var n,i=0;return function(o,l){function u(){i=+new Date,e.call(r,o)}var f=+new Date-i;n&&clearTimeout(n),f>t||!a.enableThrottle||l?u():n=setTimeout(u,t-f)}}(a.throttle,(function(t){"resize"===t.type&&(z=w=-1),s(t.all)})),l.a=function(t){t=c(t),i.push.apply(i,t)},l.g=function(){return i=n(i).filter((function(){return!n(this).data(a.loadedName)}))},l.f=function(t){for(var e=0;e<t.length;e++){var r=i.filter((function(){return this===t[e]}));r.length&&s(!1,r)}},s(),n(a.appendScroll).on("scroll."+u+" resize."+u,l.e))}function c(t){for(var i=a.defaultImage,o=a.placeholder,l=a.imageBase,u=a.srcsetAttribute,f=a.loaderAttribute,c=a._f||{},s=0,d=(t=n(t).filter((function(){var t=n(this),r=m(this);return!t.data(a.handledName)&&(t.attr(a.attribute)||t.attr(u)||t.attr(f)||c[r]!==e)})).data("plugin_"+a.name,r)).length;s<d;s++){var A=n(t[s]),g=m(t[s]),h=A.attr(a.imageBaseAttribute)||l;g===I&&h&&A.attr(u)&&A.attr(u,b(A.attr(u),h)),c[g]===e||A.attr(f)||A.attr(f,c[g]),g===I&&i&&!A.attr(N)?A.attr(N,i):g===I||!o||A.css(C)&&"none"!==A.css(C)||A.css(C,"url('"+o+"')")}return t}function s(t,e){if(i.length){for(var o=e||i,l=!1,u=a.imageBase||"",f=a.srcsetAttribute,c=a.handledName,s=0;s<o.length;s++)if(t||e||A(o[s])){var g=n(o[s]),h=m(o[s]),b=g.attr(a.attribute),v=g.attr(a.imageBaseAttribute)||u,p=g.attr(a.loaderAttribute);g.data(c)||a.visibleOnly&&!g.is(":visible")||!((b||g.attr(f))&&(h===I&&(v+b!==g.attr(N)||g.attr(f)!==g.attr(E))||h!==I&&v+b!==g.css(C))||p)||(l=!0,g.data(c,!0),d(g,h,v,p))}l&&(i=n(i).filter((function(){return!n(this).data(c)})))}else a.autoDestroy&&r.destroy()}function d(t,e,r,i){++y;var o=function(){p("onError",t),v(),o=n.noop};p("beforeLoad",t);var l=a.attribute,u=a.srcsetAttribute,f=a.sizesAttribute,c=a.retinaAttribute,s=a.removeAttribute,d=a.loadedName,A=t.attr(c);if(i){var g=function(){s&&t.removeAttr(a.loaderAttribute),t.data(d,!0),p(L,t),setTimeout(v,1),g=n.noop};t.off(D).one(D,o).one(T,g),p(i,t,(function(e){e?(t.off(T),g()):(t.off(D),o())}))||t.trigger(D)}else{var h=n(new Image);h.one(D,o).one(T,(function(){t.hide(),e===I?t.attr(F,h.attr(F)).attr(E,h.attr(E)).attr(N,h.attr(N)):t.css(C,"url('"+h.attr(N)+"')"),t[a.effect](a.effectTime),s&&(t.removeAttr(l+" "+u+" "+c+" "+a.imageBaseAttribute),f!==F&&t.removeAttr(f)),t.data(d,!0),p(L,t),h.remove(),v()}));var m=(B&&A?A:t.attr(l))||"";h.attr(F,t.attr(f)).attr(E,t.attr(u)).attr(N,m?r+m:null),h.complete&&h.trigger(T)}}function A(t){var e=t.getBoundingClientRect(),r=a.scrollDirection,n=a.threshold,i=h()+n>e.top&&-n<e.bottom,o=g()+n>e.left&&-n<e.right;return"vertical"===r?i:("horizontal"===r||i)&&o}function g(){return z>=0?z:z=n(t).width()}function h(){return w>=0?w:w=n(t).height()}function m(t){return t.tagName.toLowerCase()}function b(t,e){if(e){var r=t.split(",");t="";for(var a=0,n=r.length;a<n;a++)t+=e+r[a].trim()+(a!==n-1?",":"")}return t}function v(){--y,i.length||y||p("onFinishedAll")}function p(t,e,n){return!!(t=a[t])&&(t.apply(r,[].slice.call(arguments,1)),!0)}var y=0,z=-1,w=-1,B=!1,L="afterLoad",T="load",D="error",I="img",N="src",E="srcset",F="sizes",C="background-image";"event"===a.bind||o?f():n(t).on(T+"."+u,f)}function a(a,o){var l=this,u=n.extend({},l.config,o),f={},c=u.name+"-"+ ++i;return l.config=function(t,r){return r===e?u[t]:(u[t]=r,l)},l.addItems=function(t){return f.a&&f.a("string"===n.type(t)?n(t):t),l},l.getItems=function(){return f.g?f.g():{}},l.update=function(t){return f.e&&f.e({},!t),l},l.force=function(t){return f.f&&f.f("string"===n.type(t)?n(t):t),l},l.loadAll=function(){return f.e&&f.e({all:!0},!0),l},l.destroy=function(){return n(u.appendScroll).off("."+c,f.e),n(t).off("."+c),f={},e},r(l,u,a,f,c),u.chainable?a:l}var n=t.jQuery||t.Zepto,i=0,o=!1;n.fn.Lazy=n.fn.lazy=function(t){return new a(this,t)},n.Lazy=n.lazy=function(t,r,i){if(n.isFunction(r)&&(i=r,r=[]),n.isFunction(i)){t=n.isArray(t)?t:[t],r=n.isArray(r)?r:[r];for(var o=a.prototype.config,l=o._f||(o._f={}),u=0,f=t.length;u<f;u++)(o[t[u]]===e||n.isFunction(o[t[u]]))&&(o[t[u]]=i);for(var c=0,s=r.length;c<s;c++)l[r[c]]=t[0]}},a.prototype.config={name:"lazy",chainable:!0,autoDestroy:!0,bind:"load",threshold:500,visibleOnly:!1,appendScroll:t,scrollDirection:"both",imageBase:null,defaultImage:"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",placeholder:null,delay:-1,combined:!1,attribute:"data-src",srcsetAttribute:"data-srcset",sizesAttribute:"data-sizes",retinaAttribute:"data-retina",loaderAttribute:"data-loader",imageBaseAttribute:"data-imagebase",removeAttribute:!0,handledName:"handled",loadedName:"loaded",effect:"show",effectTime:0,enableThrottle:!0,throttle:250,beforeLoad:e,afterLoad:e,onError:e,onFinishedAll:e},n(t).on("load",(function(){o=!0}))}(window);;
+!function(t){var e={};function i(n){if(e[n])return e[n].exports;var o=e[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,i),o.l=!0,o.exports}i.m=t,i.c=e,i.d=function(t,e,n){i.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},i.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)i.d(n,o,function(e){return t[e]}.bind(null,o));return n},i.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return i.d(e,"a",e),e},i.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},i.p="",i(i.s=11)}({11:function(t,e){function i(t){return(i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var n;(n=jQuery)(window).on("load",(function(){var t=!1;function e(){t||(t=!0,(window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(t){window.setTimeout(t,1e3/60)})(o))}function o(){n(".zoom-instagram-widget__items").zoomInstagramWidget(),t=!1}n.fn.zoomLoadAsyncImages=function(){return n(this).each((function(){var t=n(this),e=t.data("image-width"),i=t.data("image-resolution"),o=t.find("li").filter((function(){return n(this).data("media-id")})).map((function(){return{"media-id":n(this).attr("data-media-id"),nonce:n(this).attr("data-nonce"),"regenerate-thumbnails":n(this)[0].hasAttribute("data-regenerate-thumbnails")}}));o.length&&function n(o){if(0!=o.length){var a=o.shift();wp.ajax.post("wpzoom_instagram_get_image_async",{"media-id":a["media-id"],nonce:a.nonce,"image-resolution":i,"image-width":e,"regenerate-thumbnails":a["regenerate-thumbnails"]}).done((function(e){t.find('li[data-media-id="'+a["media-id"]+'"] .zoom-instagram-link').css("background-image","url("+e.image_src+")")})).fail((function(){})).always((function(){n(o)}))}}(o.toArray())}))},n.fn.zoomLightbox=function(){return n(this).each((function(){var t=n(this).closest(".widget").find(".wpz-insta-lightbox-wrapper > .swiper-container");if(t.length>0){var e=t.find(".image-wrapper > .swiper-container");new Swiper(t.get(0),{direction:"horizontal",loop:!1,spaceBetween:20,autoHeight:!0,watchOverflow:!0,navigation:{nextEl:t.find("> .swiper-button-next").get(0),prevEl:t.find("> .swiper-button-prev").get(0)},keyboard:{enabled:!0,onlyInViewport:!0}}),e.each((function(){new Swiper(n(this).get(0),{direction:"horizontal",loop:!1,spaceBetween:20,nested:!0,watchOverflow:!0,pagination:{el:n(this).find("> .swiper-pagination").get(0),type:"bullets",clickable:!0,hideOnClick:!1},navigation:{nextEl:n(this).find("> .swiper-button-next").get(0),prevEl:n(this).find("> .swiper-button-prev").get(0)},keyboard:{enabled:!0,onlyInViewport:!0}})})),n(this).find(".zoom-instagram-link").magnificPopup({items:{type:"inline",src:n(this).closest(".widget").find(".wpz-insta-lightbox-wrapper")},closeBtnInside:!1,mainClass:"wpzoom-lightbox",midClick:!0,callbacks:{open:function(){var t=n.magnificPopup.instance.st.el,e=this.content.find("> .swiper-container").get(0).swiper;"object"===i(e)&&e.slideTo(this.content.find('> .swiper-container > .swiper-wrapper > .swiper-slide[data-uid="'+t.data("mfp-src")+'"]').index())}}}),n(this).find(".zoom-instagram-link").addClass("magnific-active")}}))},n.fn.zoomInstagramWidget=function(){return n(this).each((function(){var t,e,i=n(this),o=i.data("images-per-row"),a=i.data("image-width"),r=i.data("image-spacing"),s=i.data("image-lazy-loading"),d=i.width();d/a<o?(t=o,e=Math.floor((d-1-(o-1)*r)/o)):(t=Math.floor((d-1)/a),e=Math.floor((d-1-(t-1)*r)/t)),i.find("li").each((function(e){var i=++e;i%t==1?n(this).css("clear","left"):n(this).css("clear","none"),i%t==0?n(this).css("margin-right","0"):(n(this).css("margin-right",r+"px"),n(this).css("margin-bottom",r+"px"))})),i.find("a.zoom-instagram-link").css({width:e,height:e}),s&&i.find("a.zoom-instagram-link").lazy(),i.removeClass("zoom-instagram-widget__items--no-js")}))},n(window).on("resize orientationchange",e),e(),n(".zoom-instagram-widget__items").zoomLoadAsyncImages(),n('.zoom-instagram-widget__items[data-lightbox="1"]').zoomLightbox();var a=_.debounce((function(){n(".zoom-instagram-widget__items").length&&(n(".zoom-instagram-widget__items").zoomInstagramWidget(),n(".zoom-instagram-widget__items").zoomLoadAsyncImages())}),1500);n(document).on("panels_setup_preview",a)}))}});;
+/**
+ * Init scripts
+ *
+ * @package WordPress
+ * @subpackage ThemeREX Utilities
+ * @since v3.0
+ */
+
+/* global jQuery:false */
+
+// Global variables storage
+if (typeof TRX_UTILS_STORAGE == 'undefined') var TRX_UTILS_STORAGE = {};
+
+jQuery(document).ready(function() {
+	"use strict";
+
+	// Forms validation
+    //----------------------------------------------
+
+	// Login form
+	jQuery('.popup_form.login_form').submit(function(e){
+		"use strict";
+		var rez = trx_utils_login_validate(jQuery(this));
+
+		if (!rez)
+			e.preventDefault();
+		return rez;
+	});
+	
+	// Registration form
+	jQuery('.popup_form.registration_form').submit(function(e){
+		"use strict";
+		var rez = trx_utils_registration_validate(jQuery(this));
+		if (!rez)
+			e.preventDefault();
+		return rez;
+	});
+
+	// Comment form
+	jQuery("form#commentform").submit(function(e) {
+		"use strict";
+		var rez = trx_utils_comments_validate(jQuery(this));
+		if (!rez)
+			e.preventDefault();
+		return rez;
+	});
+
+});
+
+
+
+
+
+// Forms validation
+//-------------------------------------------------------
+
+
+/*
+// Usage example:
+var error = trx_utils_form_validate(jQuery(form_selector), {				// -------- Options ---------
+	error_message_show: true,									// Display or not error message
+	error_message_time: 5000,									// Time to display error message
+	error_message_class: 'sc_infobox sc_infobox_style_error',	// Class, appended to error message block
+	error_message_text: 'Global error text',					// Global error message text (if don't write message in checked field)
+	error_fields_class: 'error_fields_class',					// Class, appended to error fields
+	exit_after_first_error: false,								// Cancel validation and exit after first error
+	rules: [
+		{
+			field: 'author',																// Checking field name
+			min_length: { value: 1,	 message: 'The author name can\'t be empty' },			// Min character count (0 - don't check), message - if error occurs
+			max_length: { value: 60, message: 'Too long author name'}						// Max character count (0 - don't check), message - if error occurs
+		},
+		{
+			field: 'email',
+			min_length: { value: 7,	 message: 'Too short (or empty) email address' },
+			max_length: { value: 60, message: 'Too long email address'},
+			mask: { value: '^([a-z0-9_\\-]+\\.)*[a-z0-9_\\-]+@[a-z0-9_\\-]+(\\.[a-z0-9_\\-]+)*\\.[a-z]{2,6}$', message: 'Invalid email address'}
+		},
+		{
+			field: 'comment',
+			min_length: { value: 1,	 message: 'The comment text can\'t be empty' },
+			max_length: { value: 200, message: 'Too long comment'}
+		},
+		{
+			field: 'pwd1',
+			min_length: { value: 5,	 message: 'The password can\'t be less then 5 characters' },
+			max_length: { value: 20, message: 'Too long password'}
+		},
+		{
+			field: 'pwd2',
+			equal_to: { value: 'pwd1',	 message: 'The passwords in both fields must be equals' }
+		}
+	]
+});
+*/
+
+function trx_utils_form_validate(form, opt) {
+	"use strict";
+	var error_msg = '';
+	form.find(":input").each(function() {
+		"use strict";
+		if (error_msg!='' && opt.exit_after_first_error) return;
+		for (var i = 0; i < opt.rules.length; i++) {
+			if (jQuery(this).attr("name") == opt.rules[i].field) {
+				var val = jQuery(this).val();
+				var error = false;
+				if (typeof(opt.rules[i].min_length) == 'object') {
+					if (opt.rules[i].min_length.value > 0 && val.length < opt.rules[i].min_length.value) {
+						if (error_msg=='') jQuery(this).get(0).focus();
+						error_msg += '<p class="error_item">' + (typeof(opt.rules[i].min_length.message)!='undefined' ? opt.rules[i].min_length.message : opt.error_message_text ) + '</p>'
+						error = true;
+					}
+				}
+				if ((!error || !opt.exit_after_first_error) && typeof(opt.rules[i].max_length) == 'object') {
+					if (opt.rules[i].max_length.value > 0 && val.length > opt.rules[i].max_length.value) {
+						if (error_msg=='') jQuery(this).get(0).focus();
+						error_msg += '<p class="error_item">' + (typeof(opt.rules[i].max_length.message)!='undefined' ? opt.rules[i].max_length.message : opt.error_message_text ) + '</p>'
+						error = true;
+					}
+				}
+				if ((!error || !opt.exit_after_first_error) && typeof(opt.rules[i].mask) == 'object') {
+					if (val.length > 0 && opt.rules[i].mask.value != '') {
+						var regexp = new RegExp(opt.rules[i].mask.value);
+						if (!regexp.test(val)) {
+							if (error_msg=='') jQuery(this).get(0).focus();
+							error_msg += '<p class="error_item">' + (typeof(opt.rules[i].mask.message)!='undefined' ? opt.rules[i].mask.message : opt.error_message_text ) + '</p>'
+							error = true;
+						}
+					}
+				}
+				if ((!error || !opt.exit_after_first_error) && typeof(opt.rules[i].state) == 'object') {
+					if (opt.rules[i].state.value=='checked' && !jQuery(this).get(0).checked) {
+						if (error_msg=='') jQuery(this).get(0).focus();
+						error_msg += '<p class="error_item">' + (typeof(opt.rules[i].state.message)!='undefined' ? opt.rules[i].state.message : opt.error_message_text ) + '</p>'
+						error = true;
+					}
+				}
+				if ((!error || !opt.exit_after_first_error) && typeof(opt.rules[i].equal_to) == 'object') {
+					if (opt.rules[i].equal_to.value != '' && val!=jQuery(jQuery(this).get(0).form[opt.rules[i].equal_to.value]).val()) {
+						if (error_msg=='') jQuery(this).get(0).focus();
+						error_msg += '<p class="error_item">' + (typeof(opt.rules[i].equal_to.message)!='undefined' ? opt.rules[i].equal_to.message : opt.error_message_text ) + '</p>'
+						error = true;
+					}
+				}
+				if (opt.error_fields_class != '') jQuery(this).toggleClass(opt.error_fields_class, error);
+			}
+		}
+	});
+	if (error_msg!='' && opt.error_message_show) {
+		var error_message_box = form.find(".result");
+		if (error_message_box.length == 0) error_message_box = form.parent().find(".result");
+		if (error_message_box.length == 0) {
+			form.append('<div class="result"></div>');
+			error_message_box = form.find(".result");
+		}
+		if (opt.error_message_class) error_message_box.toggleClass(opt.error_message_class, true);
+		error_message_box.html(error_msg).fadeIn();
+		setTimeout(function() { error_message_box.fadeOut(); }, opt.error_message_time);
+	}
+	return error_msg!='';
+}
+
+
+// Comments form
+function trx_utils_comments_validate(form) {
+	"use strict";
+	form.find('input').removeClass('error_fields_class');
+	var rules = {
+		error_message_text: TRX_UTILS_STORAGE['msg_error_global'],	// Global error message text (if don't write in checked field)
+		error_message_show: true,									// Display or not error message
+		error_message_time: 4000,									// Error message display time
+		error_message_class: 'sc_infobox sc_infobox_style_error',	// Class appended to error message block
+		error_fields_class: 'error_fields_class',					// Class appended to error fields
+		exit_after_first_error: false,								// Cancel validation and exit after first error
+		rules: [
+			{
+				field: 'comment',
+				min_length: { value: 1, message: TRX_UTILS_STORAGE['msg_text_empty'] },
+				max_length: { value: TRX_UTILS_STORAGE['comments_maxlength'], message: TRX_UTILS_STORAGE['msg_text_long']}
+			}
+		]
+	};
+	if (form.find('.comments_author input[aria-required="true"]').length > 0) {
+		rules.rules.push(
+			{
+				field: 'author',
+				min_length: { value: 1, message: TRX_UTILS_STORAGE['msg_name_empty']},
+				max_length: { value: 60, message: TRX_UTILS_STORAGE['msg_name_long']}
+			}
+		);
+	}
+	if (form.find('.comments_email input[aria-required="true"]').length > 0) {
+		rules.rules.push(
+			{
+				field: 'email',
+				min_length: { value: 7, message: TRX_UTILS_STORAGE['msg_email_empty']},
+				max_length: { value: 60, message: TRX_UTILS_STORAGE['msg_email_long']},
+				mask: { value: TRX_UTILS_STORAGE['email_mask'], message: TRX_UTILS_STORAGE['msg_email_not_valid']}
+			}
+		);
+	}
+	var error = trx_utils_form_validate(form, rules);
+	return !error;
+}
+
+
+// Login form
+function trx_utils_login_validate(form) {
+	"use strict";
+	form.find('input').removeClass('error_fields_class');
+	var error = trx_utils_form_validate(form, {
+		error_message_show: true,
+		error_message_time: 4000,
+		error_message_class: 'sc_infobox sc_infobox_style_error',
+		error_fields_class: 'error_fields_class',
+		exit_after_first_error: true,
+		rules: [
+			{
+				field: "log",
+				min_length: { value: 1, message: TRX_UTILS_STORAGE['msg_login_empty'] },
+				max_length: { value: 60, message: TRX_UTILS_STORAGE['msg_login_long'] }
+			},
+			{
+				field: "pwd",
+				min_length: { value: 4, message: TRX_UTILS_STORAGE['msg_password_empty'] },
+				max_length: { value: 30, message: TRX_UTILS_STORAGE['msg_password_long'] }
+			}
+		]
+	});
+	if (TRX_UTILS_STORAGE['login_via_ajax'] && !error) {
+		jQuery.post(TRX_UTILS_STORAGE['ajax_url'], {
+			action: 'trx_utils_login_user',
+			nonce: TRX_UTILS_STORAGE['ajax_nonce'],
+			remember: form.find('#rememberme').val(),
+			user_log: form.find('#log').val(),
+			user_pwd: form.find('#password').val()
+		}).done(function(response) {
+			var rez = {};
+			try {
+				rez = JSON.parse(response);
+			} catch (e) {
+				rez = { error: TRX_UTILS_STORAGE['ajax_error'] };
+				console.log(response);
+			}
+			var result_box = form.find('.result');
+			if (result_box.length==0) result_box = form.siblings('.result');
+			if (result_box.length==0) result_box = form.after('<div class="result"></div>').next('.result');
+			result_box.toggleClass('sc_infobox_style_error', false).toggleClass('sc_infobox_style_success', false);
+			if (rez.error === '') {
+				result_box.addClass('sc_infobox sc_infobox_style_success').html(TRX_UTILS_STORAGE['msg_login_success']);
+				setTimeout(function() { 
+					location.reload(); 
+					}, 3000);
+			} else {
+				result_box.addClass('sc_infobox sc_infobox_style_error').html(TRX_UTILS_STORAGE['msg_login_failed'] + '<br>' + rez.error);
+			}
+			result_box.fadeIn().delay(3000).fadeOut();
+		});
+	}
+	return !TRX_UTILS_STORAGE['login_via_ajax'] && !error;
+}
+
+
+// Registration form 
+function trx_utils_registration_validate(form) {
+	"use strict";
+	form.find('input').removeClass('error_fields_class');
+	var error = trx_utils_form_validate(form, {
+		error_message_show: true,
+		error_message_time: 4000,
+		error_message_class: "sc_infobox sc_infobox_style_error",
+		error_fields_class: "error_fields_class",
+		exit_after_first_error: true,
+		rules: [
+			{
+				field: "registration_agree",
+				state: { value: 'checked', message: TRX_UTILS_STORAGE['msg_not_agree'] },
+			},
+			{
+				field: "registration_username",
+				min_length: { value: 1, message: TRX_UTILS_STORAGE['msg_login_empty'] },
+				max_length: { value: 60, message: TRX_UTILS_STORAGE['msg_login_long'] }
+			},
+			{
+				field: "registration_email",
+				min_length: { value: 7, message: TRX_UTILS_STORAGE['msg_email_empty'] },
+				max_length: { value: 60, message: TRX_UTILS_STORAGE['msg_email_long'] },
+				mask: { value: TRX_UTILS_STORAGE['email_mask'], message: TRX_UTILS_STORAGE['msg_email_not_valid'] }
+			},
+			{
+				field: "registration_pwd",
+				min_length: { value: 4, message: TRX_UTILS_STORAGE['msg_password_empty'] },
+				max_length: { value: 30, message: TRX_UTILS_STORAGE['msg_password_long'] }
+			},
+			{
+				field: "registration_pwd2",
+				equal_to: { value: 'registration_pwd', message: TRX_UTILS_STORAGE['msg_password_not_equal'] }
+			}
+		]
+	});
+	if (!error) {
+		jQuery.post(TRX_UTILS_STORAGE['ajax_url'], {
+			action: 'trx_utils_registration_user',
+			nonce: TRX_UTILS_STORAGE['ajax_nonce'],
+			user_name: 	form.find('#registration_username').val(),
+			user_email: form.find('#registration_email').val(),
+			user_pwd: 	form.find('#registration_pwd').val()
+		}).done(function(response) {
+			var rez = {};
+			try {
+				rez = JSON.parse(response);
+			} catch (e) {
+				rez = { error: TRX_UTILS_STORAGE['ajax_error'] };
+				console.log(response);
+			}
+			var result_box = form.find('.result');
+			if (result_box.length==0) result_box = form.siblings('.result');
+			if (result_box.length==0) result_box = form.after('<div class="result"></div>').next('.result');
+			result_box.toggleClass('sc_infobox_style_error', false).toggleClass('sc_infobox_style_success', false);
+			if (rez.error === '') {
+				result_box.addClass('sc_infobox sc_infobox_style_success').html(TRX_UTILS_STORAGE['msg_registration_success']);
+				setTimeout(function() { 
+					jQuery('.popup_login_link').trigger('click'); 
+					}, 3000);
+			} else {
+				result_box.addClass('sc_infobox sc_infobox_style_error').html(TRX_UTILS_STORAGE['msg_registration_failed'] + ' ' + rez.error);
+			}
+			result_box.fadeIn().delay(3000).fadeOut();
+		});
+	}
+	return false;
+}
+;
+/*!
+ * JavaScript Cookie v2.1.4
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+!function(e){var n,o,t=!1;"function"==typeof define&&define.amd&&(define(e),t=!0),"object"==typeof exports&&(module.exports=e(),t=!0),t||(n=window.Cookies,(o=window.Cookies=e()).noConflict=function(){return window.Cookies=n,o})}(function(){function m(){for(var e=0,n={};e<arguments.length;e++){var o,t=arguments[e];for(o in t)n[o]=t[o]}return n}return function e(C){function g(e,n,o){var t,r;if("undefined"!=typeof document){if(1<arguments.length){"number"==typeof(o=m({path:"/"},g.defaults,o)).expires&&((r=new Date).setMilliseconds(r.getMilliseconds()+864e5*o.expires),o.expires=r),o.expires=o.expires?o.expires.toUTCString():"";try{t=JSON.stringify(n),/^[\{\[]/.test(t)&&(n=t)}catch(l){}n=C.write?C.write(n,e):encodeURIComponent(String(n)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),e=(e=(e=encodeURIComponent(String(e))).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent)).replace(/[\(\)]/g,escape);var i,c="";for(i in o)o[i]&&(c+="; "+i,!0!==o[i]&&(c+="="+o[i]));return document.cookie=e+"="+n+c}e||(t={});for(var s=document.cookie?document.cookie.split("; "):[],f=/(%[0-9A-Z]{2})+/g,p=0;p<s.length;p++){var a=s[p].split("=");'"'===(u=a.slice(1).join("=")).charAt(0)&&(u=u.slice(1,-1));try{var d=a[0].replace(f,decodeURIComponent),u=C.read?C.read(u,d):C(u,d)||u.replace(f,decodeURIComponent);if(this.json)try{u=JSON.parse(u)}catch(l){}if(e===d){t=u;break}e||(t[d]=u)}catch(l){}}return t}}return(g.set=g).get=function(e){return g.call(g,e)},g.getJSON=function(){return g.apply({json:!0},[].slice.call(arguments))},g.defaults={},g.remove=function(e,n){g(e,"",m(n,{expires:-1}))},g.withConverter=e,g}(function(){})});;
+jQuery(function(s){s(".woocommerce-ordering").on("change","select.orderby",function(){s(this).closest("form").trigger("submit")}),s("input.qty:not(.product-quantity input.qty)").each(function(){var o=parseFloat(s(this).attr("min"));0<=o&&parseFloat(s(this).val())<o&&s(this).val(o)});var e="store_notice"+(s(".woocommerce-store-notice").data("noticeId")||"");"hidden"===Cookies.get(e)?s(".woocommerce-store-notice").hide():s(".woocommerce-store-notice").show(),s(".woocommerce-store-notice__dismiss-link").on("click",function(o){Cookies.set(e,"hidden",{path:"/"}),s(".woocommerce-store-notice").hide(),o.preventDefault()}),s(".woocommerce-input-wrapper span.description").length&&s(document.body).on("click",function(){s(".woocommerce-input-wrapper span.description:visible").prop("aria-hidden",!0).slideUp(250)}),s(".woocommerce-input-wrapper").on("click",function(o){o.stopPropagation()}),s(".woocommerce-input-wrapper :input").on("keydown",function(o){var e=s(this).parent().find("span.description");if(27===o.which&&e.length&&e.is(":visible"))return e.prop("aria-hidden",!0).slideUp(250),o.preventDefault(),!1}).on("click focus",function(){var o=s(this).parent(),e=o.find("span.description");o.addClass("currentTarget"),s(".woocommerce-input-wrapper:not(.currentTarget) span.description:visible").prop("aria-hidden",!0).slideUp(250),e.length&&e.is(":hidden")&&e.prop("aria-hidden",!1).slideDown(250),o.removeClass("currentTarget")}),s.scroll_to_notices=function(o){o.length&&s("html, body").animate({scrollTop:o.offset().top-100},1e3)},s('.woocommerce form .woocommerce-Input[type="password"]').wrap('<span class="password-input"></span>'),s(".woocommerce form input").filter(":password").parent("span").addClass("password-input"),s(".password-input").append('<span class="show-password-input"></span>'),s(".show-password-input").on("click",function(){s(this).hasClass("display-password")?s(this).removeClass("display-password"):s(this).addClass("display-password"),s(this).hasClass("display-password")?s(this).siblings(['input[type="password"]']).prop("type","text"):s(this).siblings('input[type="text"]').prop("type","password")})});;

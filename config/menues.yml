@@ -17,7 +17,7 @@
 - id: 201 
   id_no: 20000
   category: 'Services'
-  name: 'Balancing Acupuncture'
+  name: 'Acupuncture'
   link: '' 
   active: true
   note: 
@@ -25,7 +25,7 @@
 - id: 202 
   id_no: 20000
   category: 'Services'
-  name: 'Cupping & Medical Massage'
+  name: 'Cupping & Massage & Physical Therapy'
   link: '' 
   active: true
   note: 
@@ -33,15 +33,16 @@
 - id: 203 
   id_no: 20000
   category: 'Services'
-  name: 'Detox ‧ Purification ‧ Weight Loss'
+  name: 'Detox & Weight Management'
   link: '' 
   active: true 
   note: 
 
+
 - id: 204 
   id_no: 20000
   category: 'Services'
-  name: 'Health Test'
+  name: 'Health Tests'
   link: '' 
   active: true 
   note: 
@@ -49,7 +50,7 @@
 - id: 205 
   id_no: 20000
   category: 'Services'
-  name: 'Skin Care'
+  name: 'Facial Care'
   link: '' 
   active: true 
   note: 
@@ -57,10 +58,30 @@
 - id: 206 
   id_no: 20000
   category: 'Services'
-  name: 'Consulting & Education'
+  name: 'Oncology Supportive Care'
   link: '' 
   active: true 
   note: 
+
+- id: 207 
+  id_no: 20000
+  category: 'Services'
+  name: 'Homeopathic & Natural Supplements'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 208 
+  id_no: 20000
+  category: 'Services'
+  name: 'Health Test'
+  link: '' 
+  active: true 
+  note: 
+
+
+
+
 
 - id: 300 
   id_no: 10000
@@ -113,7 +134,7 @@
 - id: 306 
   id_no: 10000
   category: 'Conditions'
-  name: 'Systemic Diseases'
+  name: 'Oncology Supportive Care'
   link: '' 
   active: true
   note:
@@ -121,7 +142,7 @@
 - id: 307 
   id_no: 10000
   category: 'Conditions'
-  name: 'Reproductive Disorders'
+  name: 'Women''s Health'
   link: '' 
   active: true
   note:
@@ -145,7 +166,7 @@
 - id: 310
   id_no: 10000
   category: 'Conditions'
-  name: 'Pediatric Care'
+  name: 'Men''s Health'
   link: '' 
   active: true
   note:

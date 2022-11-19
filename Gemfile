@@ -7,6 +7,8 @@ end
 gem 'rake'
 gem 'pundit'
 gem 'rails_12factor'
+gem 'sassc-rails'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
