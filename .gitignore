@@ -25,3 +25,6 @@
 db.dump 
 node_modules 
 *.un~  
+
+# Ignore application configuration
+/config/application.yml

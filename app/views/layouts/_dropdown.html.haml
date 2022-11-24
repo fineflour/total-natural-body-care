@@ -2,7 +2,7 @@
   .container.is-mobile
     %div.column.flex-middle-center
       %a.navbar-brand{:href => "/"}
-        %img{:alt => "Life and Nature", :src => "/assets/logo_sm.png"}/
+        %img{:alt => "Life and Nature", :src => "#{ENV['IMG_PATH']}/logo_sm.png"}/
     %div.column.flex-middle
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
         %span.close ×
@@ -20,16 +20,16 @@
             %li
               %a.dropdown-item{:href => "/sites/cupping?menu_values=202"} Cupping & Massage & Physical Therapy 
             %li
-              %a.dropdown-item{:href => "/sites/detox?menu_values=203"} Detox & Weight Management 
+              %a.dropdown-item{:href => "/sites/detox?menu_values=203"} Detox & Balance
             %li
               %a.dropdown-item{:href => "/sites/skincare?menu_values=205"} Facial Care
             %li
               %a.dropdown-item{:href => "/sites/oncology?menu_values=206"} Oncology Supportive Care
             %li
-              %a.dropdown-item{:href => "/sites/labtest?menu_values=207"}Homeopathic & Natural Supplements
+              %a.dropdown-item{:href => "/sites/supplements?menu_values=207"}Homeopathic & Natural Supplements
 
             %li
-              %a.dropdown-item{:href => "/sites/consulting?menu_values=208"} Health Test 
+              %a.dropdown-item{:href => "/sites/labtest?menu_values=208"} Health Test 
 
         %li.nav-item.dropdown
           %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}

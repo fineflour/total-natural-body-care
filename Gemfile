@@ -87,3 +87,5 @@ gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'jquery-rails', '~> 4.3.5'
 
 gem "font-awesome-rails"
+
+gem "figaro"
